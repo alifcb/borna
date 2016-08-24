@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ <link rel="stylesheet" type="text/css" href="css/index.css" />
+ <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+<script src="js/jquery-1.11.3.min.js"></script> 
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<!-- Demo -->
+
+
+ <script src="js/angular.min.js"></script>
+<script src="js/angularjs.js"></script>
+<script src="js/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script> 
+        <title>Hello World</title>
+    </head>
+<body class="noselect" ng-app="App"   ng-controller="CenterCTRL" ng-cloak>
+     <input  id="inter" style="display:none" value="0" type="text">
+     <input  id="online" style="display:none" value="1" type="text">
+
+<!------------------------------------- register-------------------------------------------------->
+    <div data-role="page" id="register" data-theme="a" >
+  <div data-role="header" class="blue ">
+ <a href="#myPanel" class="pad_ha" data-role="none"><img src="img/logout.png"></a>
+    <h1>فعالسازی برنامه</h1>
+ <!--<a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>-->
+  </div>
+
+  <div data-role="main" class="ui-content">
+  <p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
+   <input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
+<a  href="#sherkat" ng-click="sabtcode();" class="ui-btn green">ثبت </a>
+<br />
+<br />
+  <p>در صورتی که کد فعالسازی را تهیه ننموده اید می توانید آن را از طریق زیر خریداری نمایید.</p>
+<a  onclick="window.open('http://www.borna-grp.ir/request.php', '_system');"  class="ui-btn green">خرید کد فعالسازی</a>
+  </div>
+
+</div>
+
+<!------------------------------------- sherkat ha-------------------------------------------------->
+<div data-role="page"   id="sherkat">
+ <div data-role="panel" id="myPanel" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+  <div data-role="header"  class="blue ">
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>
+    <h1>برنا</h1>
+  <a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h2 class="margint0" >لیست شرکت ها</h2>
+    <form class="ui-filterable">
+      <input id="myFilter" data-type="search">
+    </form>
+    <ul data-role="listview" data-filter="true" data-input="#myFilter"    data-inset="false"  class="right listst">
+
+      <li data-icon="false" ng-repeat="xc in company">
+        <a href="#mashinha" onClick="reloads()"  ng-click="comp_id(xc.ids)" data-transition="fade">
+        <img width="72" height="72" src="{{xc.direct}}{{xc.pic}}">
+        <h2>{{xc.name}}</h2>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<!------------------------------------- mashinha ha-------------------------------------------------->
+<div data-role="page"   id="mashinha">
+
+ <div data-role="panel" id="myPanel2" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا</h1>
+ <a href="#myPanel2" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h2 class="margint0">لیست خودرو ها</h2>
+    <form class="ui-filterable">
+      <input id="myFilterc" data-type="search">
+    </form>
+   <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
+ 
+ <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in cars | filter:{ company: pageid }:true">
+        <a href="#tozihat" class="ui-btn" ng-click="cars_id(xc.ids)" data-transition="fade">
+        <img width="72" height="72" src="{{xc.direct}}{{xc.pic}}">
+        <h2>{{xc.name}}</h2>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!------------------------------------- mashinha ha-------------------------------------------------->
+<div data-role="page"   id="tozihat">
+
+ <div data-role="panel" id="myPanel3" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header" class="blue "> 
+ <a  class="pad_ha" ng-click="faver(efaver,carid)" data-role="none"><img src="{{iconslike}}"></a>    <h1>برنا</h1>
+ <a href="#myPanel3" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+
+ <div data-role="main" class="ui-content" dir="rtl" ng-repeat="xc in carm | filter:{ ids: carid }">
+    <!--<h2>لیست ماشین ها</h2>-->
+    <div class="ui-grid-solo" >
+ <div class="ui-block-a" style="height:200px;">
+ <img src="{{xc.direct}}{{xc.pic}}" width="100%" height="100%">
+ </div>
+</div>
+<div class=" gray_d right rooz">
+<p class="fgreen tick"> {{xc.name}}</p> 
+<p ng-repeat="xcom in company | filter:{ ids: xc.company }:true"><span class="fred info">شرکت سازنده: </span> {{xcom.name}}</p> 
+<p><span class="fred info"> محل قرارگيري شماره شاسي:</span> {{xc.comment}}</p> 
+<p> <span class="fred info">حق بیمه شخص ثالث: </span>{{xc.bime}}</p> 
+</div>
+  </div>
+
+
+  <div data-role="popup" id="myone">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    </div>
+
+   <div data-role="popup" id="mytwo">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    </div>
+ 
+    <div data-role="popup" id="mythree">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    </div>
+ 
+    <div data-role="popup" id="myfour">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    </div>
+ 
+    <div data-role="popup" id="myfive">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    </div>
+ 
+
+<p class="red right last sinma"> تصاویر خودرو</p>
+
+<div id="owl-demo" class="owl-carousel owl-theme">
+<div class="item one" ><a href="#myone" data-rel="popup" data-position-to="window"><img src="" ></a></div>
+<div class="item two" ><a href="#mytwo" data-rel="popup" data-position-to="window"><img src="" ></a></div>
+<div class="item three" ><a href="#mythree" data-rel="popup" data-position-to="window"><img src="" ></a></div>
+<div class="item four" ><a href="#myfour" data-rel="popup" data-position-to="window"><img src="" ></a></div>
+<div class="item five" ><a href="#myfive" data-rel="popup" data-position-to="window"><img src="" ></a></div>
+<!--<div class="item"  ng-repeat="xc in picmi | filter:{ idcar: carid }"><img src="{{xc.direct}}{{xc.pic}}"></div>-->
+</div>
+
+  
+
+</div>
+</div>
+<!------------------------------------- favert ha-------------------------------------------------->
+<div data-role="page"   id="favert">
+
+ <div data-role="panel" id="myPanel4" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#myPanel4" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h2 class="margint0">لیست علاقه مندی ها</h2>
+    <form class="ui-filterable">
+      <input id="myFilterf" data-type="search">
+    </form>
+   <ul data-role="listview" data-filter="true" data-input="#myFilterf"  data-inset="false"  class="right listst"   >
+ 
+ <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in myfaver">
+        <a href="#tozihat" class="ui-btn" ng-click="cars_id(xc.ids)" data-transition="fade">
+        <img width="72" height="72" src="{{xc.direct}}{{xc.pic}}">
+        <h2>{{xc.name}}</h2>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!------------------------------------- add ha-------------------------------------------------->
+<div data-role="page"   id="add">
+
+ <div data-role="panel" id="myPanel5" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header" class="blue ">
+ <a href="#myPanel" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
+    <h1>برنا</h1>
+ <a href="#myPanel5" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+
+ <div data-role="main" class="ui-content" dir="rtl" >
+  <div data-role="main" class="ui-content">
+
+      <p  > لطفاً در صورتي كه از خودروي جديدي بازديد مي كنيد كه اطلاعات آن در برنامه موجود نيست و يا در صورتي كه تصاوير بهتري از خودروهاي موجود در برنامه و محل قرارگيري شماره شاسي حك شده آنها تهيه نموده ايد، تصاوير مربوطه را به همراه نام خودرو براي استفاده در برنامه براي ما ارسال نمایید.</p>
+
+       
+      <input style=" display: none; " ng-model="user.company" type="text">
+
+      <label>نام خودرو</label>
+      <input ng-model="user.cars" type="text">
+         <a  onclick="getPhotof(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 1</a>
+         <a  onclick="getPhotoy(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 2</a>
+         <a  onclick="getPhotod(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 3</a>
+         <a  onclick="getPhotos(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 4</a>
+         <div style=" display:block;">
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage0" src="img/hh.jpg" />
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage1" src="img/hh.jpg" />
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage2" src="img/hh.jpg" />
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage3" src="img/hh.jpg" />
+         </div>
+      <input ng-click="sendform();" type="button" value="ارسال">
+     
+  </div>
+</div>
+</div>
+<!------------------------------------- contact -------------------------------------------------->
+<div data-role="page"   id="contact">
+
+ <div data-role="panel" id="myPanel6" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#myPanel6" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex colorw ">ارتباط با ما</h2>
+    </div>
+
+<p >كاربر گرامي شما مي توانيد از راه هاي زير با ما در تماس باشيد: <br>
+<br />
+
+وبسايت گروه برنا:<a href="#"  class="center acc colorw" onclick="window.open('http://www.borna-grp.ir', '_system');" >www.borna-grp.ir</a> <br><br />
+
+
+كانال تلگرام: <a  href="#" class="center acc colorw"  onclick="window.open('https://telegram.me/bornagrp', '_system');" >bornagrp@</a> 
+</p><br />
+  </div>
+</div>
+<!------------------------------------- about_us -------------------------------------------------->
+<div data-role="page"   id="about_us">
+
+ <div data-role="panel" id="myPanel7" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#myPanel7" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex colorw ">درباره ما</h2>
+    </div>
+
+<p class="md-padding">هدف از ایجاد گروه نرم افزاری برنا ، ارائه نرم افزارهای مطلوب بیمه ای و کاهش دغدغه مدیران، کارشناسان و نمایندگان شرکتهای بیمه می باشد با توجه به این اصل گروه برنا در سال 1394 تاسیس گردید.<br />
+
+یکی از محصولات گروه برنا، نرم افزار راهنمای بازدید اولیه اتومبیل می باشد که کلیه کارشناسان صنعت بیمه می توانند شماره شاسی حک شده خودرو مورد نظر را به راحتی بیابند و دیگر دغدغه ای در خصوص بازدید اولیه اتومبیل نداشته باشند.
+
+</p><br>
+  </div>
+</div>
+
+<!------------------------------------- online -------------------------------------------------->
+<div data-role="page"   id="online">
+
+ <div data-role="panel" id="myPanel8" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#myPanel8" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex colorw ">اتصال به اینترنت برقرار نیست</h2>
+    </div>
+
+<p class="md-padding">لطفا اتصال خود را به اینترنت برقرار کنید.
+
+</p><br>
+  </div>
+</div>
+
+<!------------------------------------- help -------------------------------------------------->
+<div data-role="page"   id="help">
+
+ <div data-role="panel" id="myPanel9" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+
+  <div data-role="header"  class="blue ">
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#myPanel9" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex colorw "> راهنما</h2>
+    </div>
+
+    <p class="helpt">  حق بيمه شخص ثالث خودروها برمبناي خودروهاي صفر كيلومتر محاسبه گرديده است. </p>
+    <p class="helpt">لطفاً در صورتي كه از خودروي جديدي بازديد مي كنيد كه اطلاعات آن در برنامه موجود نيست و يا در صورتي كه تصاوير بهتري از خودروهاي موجود در برنامه و محل قرارگيري شماره شاسي حك شده آنها تهيه نموده ايد، با استفاده از منوي سمت راست و انتخاب دكمه "خودروي جديد" تصاوير مربوطه را به همراه نام خودرو براي استفاده در برنامه براي ما ارسال فرماييد.</p>
+
+ 
+
+  </div>
+</div>
+ <!--   <div class="app">
+            <h1>PhoneGap</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+-->     
+
+<style>
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</style>
+
+<script src="js/owl.carousel.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+			
+$(document).ready(function(){
+      $("#owl-demo").owlCarousel({
+	itemsCustom : [
+      [0, 3],
+	  [450, 3],
+	  [600, 3],
+	  [700, 3],
+	  [1000, 3],
+	  [1200, 3],
+	  [1400, 4],
+	  [1600, 4]
+	],
+	pagination : false,
+    navigation : false,
+    autoHeight : false,
+      autoPlay: 5000,
+  });
+});
+        </script>
+    </body>
+</html>
