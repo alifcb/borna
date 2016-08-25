@@ -239,7 +239,7 @@ function onConfirm(button) {
 }}else
 if(online==0 && interd==0){
     $.mobile.changePage( "#online", { transition: "slideup"} );
-}
+} 
 $scope.go = function ( path ) {$location.path( path );};
 
 todoServicez.idreg().then(function(items)

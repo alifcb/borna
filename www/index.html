@@ -29,7 +29,7 @@
 <!------------------------------------- register-------------------------------------------------->
     <div data-role="page" id="register" data-theme="a" >
   <div data-role="header" class="blue ">
- <a href="#myPanel" class="pad_ha" data-role="none"><img src="img/logout.png"></a>
+ <a onclick="exitFromApp()" class="pad_ha" data-role="none"><img src="img/logout.png"></a>
     <h1>فعالسازی برنامه</h1>
  <!--<a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>-->
   </div>
@@ -61,7 +61,7 @@
     </ul>
   </div> 
   <div data-role="header"  class="blue ">
- <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>
+  <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
     <h1>برنا</h1>
   <a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
@@ -358,22 +358,8 @@
 <!------------------------------------- online -------------------------------------------------->
 <div data-role="page"   id="online">
 
- <div data-role="panel" id="myPanel8" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
-      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
-      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
-      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
-    </ul>
-  </div> 
-
   <div data-role="header"  class="blue ">
- <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
- <a href="#myPanel8" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+ <a href="#sherkat" class="pad_ha" data-role="none"><img src="img/back.png"></a>    <h1>برنا</h1>
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
