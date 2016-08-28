@@ -37,7 +37,7 @@
   <div data-role="main" class="ui-content">
   <p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
    <input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
-<a  ng-click="sabtcode();" class="ui-btn green">ثبت </a>
+<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>
 <br />
 <br />
   <p>در صورتی که کد فعالسازی را تهیه ننموده اید می توانید آن را از طریق زیر خریداری نمایید.</p>
@@ -52,9 +52,9 @@
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -90,9 +90,9 @@
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -124,16 +124,16 @@
   </div>
 </div>
 
-<!------------------------------------- mashinha ha-------------------------------------------------->
+<!------------------------------------- tozihat -------------------------------------------------->
 <div data-role="page"   id="tozihat">
 
  <div data-role="panel" id="myPanel3" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -162,34 +162,34 @@
 
 
   <div data-role="popup" id="myone">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"  >
     </div>
 
-   <div data-role="popup" id="mytwo">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+   <div data-role="popup" id="mytwo" data-overlay-theme="b" data-theme="b">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"   >
     </div>
  
-    <div data-role="popup" id="mythree">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    <div data-role="popup" id="mythree" data-overlay-theme="b" data-theme="b">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"    >
     </div>
  
-    <div data-role="popup" id="myfour">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    <div data-role="popup" id="myfour"  data-overlay-theme="b" data-theme="b">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"   >
     </div>
  
-    <div data-role="popup" id="myfive">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg" style="width:600px;height:400px;"  >
+    <div data-role="popup" data-overlay-theme="b" data-theme="b" id="myfive">
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"   >
     </div>
  
 
 <p class="red right last sinma"> تصاویر خودرو</p>
 
 <div id="owl-demo" class="owl-carousel owl-theme">
-<div class="item one" ><a href="#myone" data-rel="popup" data-position-to="window"><img src="" ></a></div>
-<div class="item two" ><a href="#mytwo" data-rel="popup" data-position-to="window"><img src="" ></a></div>
-<div class="item three" ><a href="#mythree" data-rel="popup" data-position-to="window"><img src="" ></a></div>
-<div class="item four" ><a href="#myfour" data-rel="popup" data-position-to="window"><img src="" ></a></div>
-<div class="item five" ><a href="#myfive" data-rel="popup" data-position-to="window"><img src="" ></a></div>
+<div class="item one" ><a href="#myone" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item two" ><a href="#mytwo" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item three" ><a href="#mythree" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item four" ><a href="#myfour" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item five" ><a href="#myfive" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
 <!--<div class="item"  ng-repeat="xc in picmi | filter:{ idcar: carid }"><img src="{{xc.direct}}{{xc.pic}}"></div>-->
 </div>
 
@@ -204,9 +204,9 @@
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" class="car" ng-click="comp_id()" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -243,9 +243,9 @@
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -253,7 +253,7 @@
   </div> 
 
   <div data-role="header" class="blue ">
- <a href="#myPanel" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
+ <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
     <h1>برنا</h1>
  <a href="#myPanel5" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
@@ -272,14 +272,14 @@
          <a  onclick="getPhotoy(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 2</a>
          <a  onclick="getPhotod(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 3</a>
          <a  onclick="getPhotos(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 4</a>
-         <div style=" display:block;">
+         <div id="shoso" style=" display:block;">
          <img style="display:none; padding:15px" width="64" height="64" id="largeImage0" src="img/hh.jpg" />
          <img style="display:none; padding:15px" width="64" height="64" id="largeImage1" src="img/hh.jpg" />
          <img style="display:none; padding:15px" width="64" height="64" id="largeImage2" src="img/hh.jpg" />
          <img style="display:none; padding:15px" width="64" height="64" id="largeImage3" src="img/hh.jpg" />
-         </div>
-      <input ng-click="sendform();" type="button" value="ارسال">
-     
+         
+      <input id="shoo"  ng-click="sendform();" type="button" value="ارسال">
+     </div>
   </div>
 </div>
 </div>
@@ -290,9 +290,9 @@
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -327,9 +327,9 @@
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -381,9 +381,9 @@
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a onClick="cat(3)" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -423,6 +423,7 @@
   display: block;
   width: 100%;
   height: auto;
+
 }
 </style>
 
@@ -433,12 +434,12 @@
 $(document).ready(function(){
       $("#owl-demo").owlCarousel({
 	itemsCustom : [
-      [0, 3],
-	  [450, 3],
-	  [600, 3],
-	  [700, 3],
-	  [1000, 3],
-	  [1200, 3],
+      [0, 2],
+	  [450, 2],
+	  [600, 2],
+	  [700, 2],
+	  [1000, 2],
+	  [1200, 2],
 	  [1400, 4],
 	  [1600, 4]
 	],

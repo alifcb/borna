@@ -100,10 +100,11 @@ h1 {
     text-shadow: 0 1px 0 #CCC !important;
 }
 .gray_d {
-    background-color: #E1E1E1 !important;
-	border-right:3px solid #CCC !important;
+background-color: #fbfbFb !important;
+    border-right: 3px solid #CCC !important;
     color: #333 !important;
     text-shadow: 0 1px 0 #DEDEDE !important;
+    border-radius: 5px 0px 0px 5px;
 }
 .green {
     background-color: #3cbd58 !important;
@@ -166,7 +167,8 @@ h1 {
     text-align: center !important;
 }
 .rooz{
-	width:100% !important;
+  padding: 1px 0 !important;
+	width:99% !important;
 	max-height:200px !important;
      min-height:36px !important;
 
@@ -217,7 +219,7 @@ h1 {
     padding-right: 40px !important;
   
 }
-.info {
+.infoe {
     background: rgba(0, 0, 0, 0) url("../img/info.png") no-repeat right 6px center;
     padding-right: 30px !important;
   
@@ -233,13 +235,13 @@ h1 {
 }
 .rooz p{
 	text-align:justify;
-	padding: 5px 15px 5px 10px;
+	padding: 0px 10px 0px 10px;
 		font-family:'BKoodakBold' ;
 		color:#333;
 		
 }
-.fred{font-size: 14px !important; color: #2e89d2; padding: 8px 30px 8px 0  !important;}
-.fgreen{font-size: 19px !important; color: #7d0a8a !important;}
+.fred{font-size: 14px !important; color: #222; padding: 8px 10px 8px 0  !important;}
+.fgreen{font-size: 17px !important; color: #666666 !important;}
 p,li,input{
 	 font-family:'BYekan' !important;
 	 direction:rtl;
@@ -328,7 +330,7 @@ ul li a{
 }
 
 ul li a:active{
-	background-color:#FFC !important;
+	background-color:#f3f3f3 !important;
 	
 }
 @media only screen and (max-device-width: 400px) {
@@ -391,13 +393,13 @@ ul li a:active{
     padding: 30px;
 }
 .ui-input-text input, .ui-input-search input{text-align:right !important; padding: 0.6em !important; font-size: 15px !important;}
-.ui-header .ui-title, .ui-footer .ui-title{font-size: 17px !important}
+.ui-header .ui-title, .ui-footer .ui-title{font-size: 21px !important;     padding: .4em 0 !important;}
 .ui-btn-left, .ui-btn-right {
     top: 0.33em !important;
 }
 .ui-panel-inner h2{margin: 25px 0 !important;}
 .ui-listview>.ui-li-has-thumb>.ui-btn, .ui-listview>.ui-li-static.ui-li-has-thumb {
-    min-height: 3.6em !important;
+    min-height: 2.8em !important;
     padding-left: 1.25em !important;
 }
 .ui-mobile a img, .ui-mobile fieldset {
@@ -407,9 +409,11 @@ ul li a:active{
 .ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb{
         border-radius: 50%;
     box-sizing: content-box;
-    margin-bottom: 8px;
-    margin-right: 12px;
-    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-right: 8px;
+    margin-top: 5px;
+    max-height: 3.6em !important;
+    max-width: 3.6em !important;
 }
 .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
     background-color: #ffffff !important;
@@ -611,3 +615,13 @@ left: 50%;
 }
 /*---------------------------- end toast----------------------------------------------------*/
     
+ .ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active {
+    background-color: #f3f3f3 !important;
+    border-color: #f6f6f6 !important;
+    color: #999 !important;
+    text-shadow: 0 0px 0 #059 !important;
+}   
+.ui-listview>li h1, .ui-listview>li h2, .ui-listview>li h3, .ui-listview>li h4, .ui-listview>li h5, .ui-listview>li h6 {
+    font-size: 14px !important;
+    font-weight: normal !important;
+    }

@@ -49,7 +49,7 @@ var  ides;
  	$scope.picmi = response.data.pics;
 	$scope.caridp=ides;	
 var i;
-var src='';
+var src='images/not-found.png';
 //alert($scope.carid);
 /////////////////////////////////////////////////////////////
 todoServicez.sherm(ides).then(function(items)
@@ -189,10 +189,12 @@ if(online==0){
 Toast_Material({ content : "اتصال به اینترنت برقرار نیست!", updown:"bottom", position:"center", align:"center" });	
 }else
 {	
+
 $scope.btshow=true;
-
+document.getElementById('shoo').value='در حال ارسال ...';
+  document.getElementById('shoso').style.display="none";
 Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
-
+$scope.disa=true;
 for(var i = 0; i < 4; i++){
 var d = new Date();	
 namefile=d.getTime()+'.jpg';
@@ -206,8 +208,15 @@ todoServicez.UserImg(imageURI,namefile,ends).then(function(items)
 //alert(items);
 if(items=='end' || items=='not'){
 $scope.btshow=false;	
+$scope.user.cars="";
+Toast_Material({ content : "ارسال به اتمام رسید!", updown:"bottom", position:"center", align:"center" });
+ document.getElementById('largeImage0').src="";
+document.getElementById('largeImage2').src="";
+document.getElementById('largeImage3').src="";
+ document.getElementById('largeImage1').src="";
 
-Toast_Material({ content : "ارسال به اتمام رسید!", updown:"bottom", position:"center", align:"center" });	
+document.getElementById('shoo').value='ارسال';
+  document.getElementById('shoso').style.display="block";
 }
 });
  
@@ -401,8 +410,8 @@ this.getfaver = function()
 	  var db = window.openDatabase("Database", "1.0", "Cordova borna", 200000);
 	  db.transaction(function(tx) 
 	  {
-	   tx.executeSql("select * from cars where fav=1", [], function(tx, res) 
-		  {
+	   tx.executeSql("select DISTINCT id_car,name,pic,direct from cars where fav=1", [], function(tx, res) 
+		  {//alert(res.rows.length);
 		for(var i = 0; i < res.rows.length; i++)
 		{
 		  result.push({ids : res.rows.item(i).id_car, name : res.rows.item(i).name, pic: res.rows.item(i).pic,fav : res.rows.item(i).fav, direct: res.rows.item(i).direct})
