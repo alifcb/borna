@@ -38,6 +38,7 @@
   <p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
    <input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
 <a ng-click="sabtcode();" class="ui-btn green">ثبت </a>
+<!--<a href="#sherkat" class="ui-btn green">ثبت </a>-->
 <br />
 <br />
   <p>در صورتی که کد فعالسازی را تهیه ننموده اید می توانید آن را از طریق زیر خریداری نمایید.</p>
@@ -48,7 +49,7 @@
 
 <!------------------------------------- sherkat ha-------------------------------------------------->
 <div data-role="page"   id="sherkat">
- <div data-role="panel" id="myPanel" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
@@ -69,12 +70,12 @@
  <div data-role="main" class="ui-content" dir="rtl" >
     <h2 class="margint0" >لیست شرکت ها</h2>
     <form class="ui-filterable">
-      <input id="myFilter" data-type="search">
+      <input id="myFilter" data-type="search" placeholder="نام شرکت">
     </form>
     <ul data-role="listview" data-filter="true" data-input="#myFilter"    data-inset="false"  class="right listst">
 
       <li data-icon="false" ng-repeat="xc in company">
-        <a href="#mashinha" onClick="reloads()"  ng-click="comp_id(xc.ids)" data-transition="fade">
+        <a href="#mashinha" onClick="reloads()"  ng-click="comp_id(xc.ids,xc.name)" data-transition="fade">
         <img width="72" height="72" src="{{xc.direct}}{{xc.pic}}">
         <h2>{{xc.name}}</h2>
         </a>
@@ -86,7 +87,7 @@
 <!------------------------------------- mashinha ha-------------------------------------------------->
 <div data-role="page"   id="mashinha">
 
- <div data-role="panel" id="myPanel2" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
@@ -107,9 +108,9 @@
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
-    <h2 class="margint0">لیست خودرو ها</h2>
+    <h3 class="margint0">لیست خودرو ها {{namee}}</h3>
     <form class="ui-filterable">
-      <input id="myFilterc" data-type="search">
+      <input id="myFilterc" data-type="search" placeholder="نام خودرو">
     </form>
    <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
  
@@ -127,7 +128,7 @@
 <!------------------------------------- tozihat -------------------------------------------------->
 <div data-role="page"   id="tozihat">
 
- <div data-role="panel" id="myPanel3" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel3" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
@@ -154,7 +155,7 @@
 </div>
 <div class=" gray_d right rooz">
 <p class="fgreen tick"> {{xc.name}}</p> 
-<p ng-repeat="xcom in company | filter:{ ids: xc.company }:true"><span class="fred info">شرکت سازنده: </span> {{xcom.name}}</p> 
+<p ng-repeat="xcom in company | filter:{ ids: xc.company }:true"><span class="fred infoe">شرکت سازنده: </span> {{xcom.name}}</p> 
 <p><span class="fred info"> محل قرارگيري شماره شاسي:</span> {{xc.comment}}</p> 
 <p> <span class="fred info">حق بیمه شخص ثالث: </span>{{xc.bime}}</p> 
 </div>
@@ -185,11 +186,11 @@
 <p class="red right last sinma"> تصاویر خودرو</p>
 
 <div id="owl-demo" class="owl-carousel owl-theme">
-<div class="item one" ><a href="#myone" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
-<div class="item two" ><a href="#mytwo" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
-<div class="item three" ><a href="#mythree" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
-<div class="item four" ><a href="#myfour" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
-<div class="item five" ><a href="#myfive" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item one dispno"   ><a href="#myone" data-rel="popup" data-position-to="window"><img src="images/not-found.png"  ></a></div>
+<div class="item two dispno"   ><a href="#mytwo" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item three dispno" ><a href="#mythree" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item four dispno" ><a href="#myfour" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
+<div class="item five dispno" ><a href="#myfive" data-rel="popup" data-position-to="window"><img src="images/not-found.png" ></a></div>
 <!--<div class="item"  ng-repeat="xc in picmi | filter:{ idcar: carid }"><img src="{{xc.direct}}{{xc.pic}}"></div>-->
 </div>
 
@@ -200,7 +201,7 @@
 <!------------------------------------- favert ha-------------------------------------------------->
 <div data-role="page"   id="favert">
 
- <div data-role="panel" id="myPanel4" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel4" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
@@ -221,7 +222,7 @@
  <div data-role="main" class="ui-content" dir="rtl" >
     <h2 class="margint0">لیست علاقه مندی ها</h2>
     <form class="ui-filterable">
-      <input id="myFilterf" data-type="search">
+      <input id="myFilterf" data-type="search" placeholder="نام خودرو">
     </form>
    <ul data-role="listview" data-filter="true" data-input="#myFilterf"  data-inset="false"  class="right listst"   >
  
@@ -239,7 +240,7 @@
 <!------------------------------------- add ha-------------------------------------------------->
 <div data-role="page"   id="add">
 
- <div data-role="panel" id="myPanel5" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel5" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
@@ -286,7 +287,7 @@
 <!------------------------------------- contact -------------------------------------------------->
 <div data-role="page"   id="contact">
 
- <div data-role="panel" id="myPanel6" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel6" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
@@ -323,7 +324,7 @@
 <!------------------------------------- about_us -------------------------------------------------->
 <div data-role="page"   id="about_us">
 
- <div data-role="panel" id="myPanel7" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel7" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
@@ -349,7 +350,8 @@
 
 <p class="md-padding">هدف از ایجاد گروه نرم افزاری برنا ، ارائه نرم افزارهای مطلوب بیمه ای و کاهش دغدغه مدیران، کارشناسان و نمایندگان شرکتهای بیمه می باشد با توجه به این اصل گروه برنا در سال 1394 تاسیس گردید.<br />
 
-یکی از محصولات گروه برنا، نرم افزار راهنمای بازدید اولیه اتومبیل می باشد که کلیه کارشناسان صنعت بیمه می توانند شماره شاسی حک شده خودرو مورد نظر را به راحتی بیابند و دیگر دغدغه ای در خصوص بازدید اولیه اتومبیل نداشته باشند.
+یکی از محصولات گروه برنا، نرم افزار راهنمای بازدید اولیه اتومبیل می باشد که کلیه کارشناسان صنعت بیمه می توانند شماره شاسی حک شده خودرو مورد نظر را به راحتی بیابند و دیگر دغدغه ای در خصوص بازدید اولیه اتومبیل نداشته باشند.<br>
+داراي مجوز رسمي از وزارت فرهنگ و ارشاد اسلامي (شماره مجوز: ٢٠١١٥٢١٥)
 
 </p><br>
   </div>
@@ -377,7 +379,7 @@
 <!------------------------------------- help -------------------------------------------------->
 <div data-role="page"   id="help">
 
- <div data-role="panel" id="myPanel9" data-display="overlay" data-position="right">
+ <div data-role="panel" data-position-fixed="true" id="myPanel9" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>

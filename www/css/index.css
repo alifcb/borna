@@ -215,13 +215,18 @@ background-color: #fbfbFb !important;
     color: #888 !important;
 }
 .tick {
-    background: rgba(0, 0, 0, 0) url("../img/tick.png") no-repeat right 6px center;
+    background: rgba(0, 0, 0, 0) url("../img/car2.png") no-repeat right 6px center;
     padding-right: 40px !important;
   
 }
 .infoe {
+    background: rgba(0, 0, 0, 0) url("../img/office-block.png") no-repeat right 6px center;
+    padding: 35px 35px 35px 0 !important;
+  
+}
+.info {
     background: rgba(0, 0, 0, 0) url("../img/info.png") no-repeat right 6px center;
-    padding-right: 30px !important;
+	padding:25px 25px 25px 0 !important;
   
 }
 .panels li a{
@@ -240,7 +245,7 @@ background-color: #fbfbFb !important;
 		color:#333;
 		
 }
-.fred{font-size: 14px !important; color: #222; padding: 8px 10px 8px 0  !important;}
+.fred{font-size: 14px !important; color: #222; }
 .fgreen{font-size: 17px !important; color: #666666 !important;}
 p,li,input{
 	 font-family:'BYekan' !important;
@@ -285,6 +290,8 @@ h4{
 	background-color:#39C !important;
 	text-shadow: 0 1px 0 #666 !important; 
 }
+.dispno{display:none ;}
+.displi{display:inline ;}
 .pad_ha {
     padding: 0.3em !important;
 }

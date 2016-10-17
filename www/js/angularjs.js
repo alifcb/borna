@@ -99,28 +99,34 @@ $('#myone img').attr('src', src);
 for(i = 0; i < response.data.pics.length; i++) {
 if(response.data.pics[i].id_car==ides){//alert(response.data.pics[i].id_car);
        src=response.data.pics[i].direct+response.data.pics[i].pic ;
+
 x=x+1;
 switch(x) {
     case 1:
+ $('#owl-demo .one').css("display", "inline"); 
 $('#owl-demo .one img').attr('src', src);
 $('#myone img').attr('src', src);
         break;
     case 2:
+	 $('#owl-demo .two').css("display", "inline"); 
 $('#owl-demo .two img').attr('src', src);
 $('#mytwo img').attr('src', src);
         break;
      case 3:
+	  $('#owl-demo .three').css("display", "inline"); 
 $('#owl-demo .three img').attr('src', src);
 $('#mythree img').attr('src', src);
         break;
     case 4:
+	 $('#owl-demo .four').css("display", "inline"); 
 $('#owl-demo .four img').attr('src', src);
-$('#owl-demo .five img').attr('src', src);
 $('#myfour img').attr('src', src);
    
         break;		
     case 5:
-$('#owl-demo .five img').attr('src', src);
+
+ $('#owl-demo .five').css("display", "inline"); 
+ $('#owl-demo .five img').attr('src', src);
 $('#myfive img').attr('src', src);
         break;			
 }
