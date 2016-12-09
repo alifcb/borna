@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
- <link rel="stylesheet" type="text/css" href="css/index.css" />
- <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
 <script src="js/jquery-1.11.3.min.js"></script> 
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 <!-- Demo -->
@@ -20,31 +20,30 @@
 <script src="js/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script> 
-        <title>Hello World</title>
-    </head>
+<title>برنا</title>
+</head>
 <body class="noselect" ng-app="App"   ng-controller="CenterCTRL" ng-cloak>
-     <input  id="inter" style="display:none" value="0" type="text">
-     <input  id="online" style="display:none" value="1" type="text">
-
+<input  id="inter" style="display:none" value="0" type="text">
+<input  id="online" style="display:none" value="1" type="text">
+<input  id="update" style="display:none" value="0" type="text">
 <!------------------------------------- register-------------------------------------------------->
-    <div data-role="page" id="register" data-theme="a" >
-  <div data-role="header" class="blue ">
- <a onclick="exitFromApp()" class="pad_ha" data-role="none"><img src="img/logout.png"></a>
-    <h1>فعالسازی برنامه</h1>
- <!--<a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>-->
-  </div>
+<div data-role="page" id="register" data-theme="a" >
+<div data-role="header" class="blue ">
+<a onclick="exitFromApp()" class="pad_ha" data-role="none"><img src="img/logout.png"></a>
+<h1>فعالسازی برنامه</h1>
+<!--<a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>-->
+</div>
 
-  <div data-role="main" class="ui-content">
-  <p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
-   <input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
-<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>
-<!--<a href="#sherkat" class="ui-btn green">ثبت </a>-->
+<div data-role="main" class="ui-content">
+<p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
+<input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
+<!--<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>-->
+<a href="#sherkat" class="ui-btn green">ثبت </a>
 <br />
 <br />
-  <p>در صورتی که کد فعالسازی را تهیه ننموده اید می توانید آن را از طریق زیر خریداری نمایید.</p>
+<p>در صورتی که کد فعالسازی را تهیه ننموده اید می توانید آن را از طریق زیر خریداری نمایید.</p>
 <a  onclick="window.open('http://www.borna-grp.ir/request.php', '_system');"  class="ui-btn green">خرید کد فعالسازی</a>
-  </div>
-
+</div>
 </div>
 
 <!------------------------------------- sherkat ha-------------------------------------------------->
@@ -52,6 +51,9 @@
  <div data-role="panel" data-position-fixed="true" id="myPanel" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="listco" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="listco" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
@@ -65,9 +67,11 @@
   <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
     <h1>برنا</h1>
   <a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
+ <p class="updates" id="uppo"><a href="http://www.borna-grp.ir/borna.apk">لطفا نسخه جدید برنامه را دریافت کنید.</a></p>
     <h2 class="margint0" >لیست شرکت ها</h2>
     <form class="ui-filterable">
       <input id="myFilter" data-type="search" placeholder="نام شرکت">
@@ -90,6 +94,7 @@
  <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
@@ -123,6 +128,148 @@
 
     </ul>
   </div>
+</div>
+<!------------------------------------- shobe ha-------------------------------------------------->
+<div data-role="page"   id="markaz">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>  
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا</h1>
+ <a href="#myPanel2" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h3 class="margint0">لیست شعبه ها</h3>
+    <form class="ui-filterable">
+      <input id="myFilterc" data-type="search" placeholder="نام شعبه">
+    </form>
+   <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
+ 
+
+ <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in shobe"  >
+        <a   class="ui-btn shobe" ng-click="shob(xc.ids)" data-transition="fade">
+        <!--<img width="72" height="72" src="img/4.jpg">-->
+        <h2 class="font17">{{xc.name}}</h2>
+        
+        <p style="display:none" id="shob{{xc.ids}}"><span>آدرس: </span>{{xc.address}}<br>
+        <span>تلفن: </span>{{xc.tell}}<br>
+        <span>مدیر شعبه: </span>{{xc.boss}}<br>
+        <span>کد شعبه: </span>{{xc.code}}<br>
+        
+    </p>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+<!------------------------------------- markaz bazdid ha-------------------------------------------------->
+<div data-role="page"   id="bazdids">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>  
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا</h1>
+ <a href="#myPanel2" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h3 class="margint0">لیست شعبه ها</h3>
+    <form class="ui-filterable">
+      <input id="myFilterc" data-type="search" placeholder="نام شعبه">
+    </form>
+   <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
+ 
+
+ <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in mbazdid"  >
+        <a   class="ui-btn shobe" ng-click="mbaz(xc.ids)" data-transition="fade">
+        <!--<img width="72" height="72" src="img/4.jpg">-->
+        <h2 class="font17">{{xc.name}}</h2>
+        
+        <p style="display:none" id="bazdid{{xc.ids}}"><span>آدرس: </span>{{xc.address}}<br>
+        <span>تلفن: </span>{{xc.tell}}<br>
+        <span>مدیر شعبه: </span>{{xc.boss}}<br>
+        <span>کد شعبه: </span>{{xc.code}}<br>
+        
+    </p>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+<!------------------------------------- books  ha-------------------------------------------------->
+<div data-role="page"   id="books">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanelb" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>  
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا</h1>
+ <a href="#myPanelb" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h3>لیست جزوات</h3>
+    <div class="ui-grid-a  " >
+    <div  ng-repeat="xc in mbook">
+      <div class="ui-block-a" >
+        <a href="http://www.borna-grp.ir/{{xc.direct}}{{xc.link}}" class="ui-btn  "><img src="http://www.borna-grp.ir/{{xc.direct}}{{xc.link}}" width="100%" ></a><br>
+        <p style=" text-align:center">{{xc.subject}}</p>
+        <p><span>نویسنده:</span>{{xc.nvisnde}}</p>
+      </div>
+      </div>
+ 
+    </div>
+  </div>
+</div> 
+
+
 </div>
 
 <!------------------------------------- tozihat -------------------------------------------------->
@@ -382,6 +529,7 @@
  <div data-role="panel" data-position-fixed="true" id="myPanel9" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
     <ul data-role="listview" class="right panels"  data-inset="false">    
+     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>

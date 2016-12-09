@@ -3,17 +3,79 @@
 var App = angular.module('App', ['ngSanitize'] );
 
 App.controller('CenterCTRL', function ($scope,todoServicez,$http) {
-	
+//////////////////////////////////////////// show company	
 $http.get("company.json").then(function(response) {
 	$scope.company = response.data.items;
 });
 
+/////////////////check update
+var update=document.getElementById('update').value;
+if(update==0){
+	document.getElementById('update').value=1;
+	$http.get("company.json").then(function(response) {
+    $scope.vup=response.data.setting[0].value;
+	//alert($scope.vup);
+});
+ $http.get("http://borna-grp.ir/api.php?setting=update").then(function(response) {
+  $scope.iup=response.data.setting[0].value;
+  //alert($scope.iup);
+if($scope.iup>$scope.vup){alert('fjf');
+	document.getElementById('uppo').style.display='block';
+	}
+});
+
+ }  
+//////////////////////////////////////show book
+$scope.books = function (ides) {
+	//alert(ides);
+	$http.get("http://borna-grp.ir/api.php?books=1").then(function(response) {
+	$scope.mbook = response.data.books;
+	 //alert(response.data.books[0].ids);
+});	
+}
+///////////////////////////////show car	
 $scope.comp_id = function (ides) {
 	//alert(ides);
 	$http.get("company.json").then(function(response) {
 	$scope.cars = response.data.cars;
 	  $scope.pageid=ides;
 });	
+}
+
+/////////////////////////////////show marakez
+$scope.markaz = function (ides) {
+	//alert(ides);
+	$http.get("http://borna-grp.ir/api.php?id=2&type=1").then(function(response) {
+	$scope.shobe = response.data.shobe;
+	//alert(response.data.shobe[0].ids);
+});	
+}
+$scope.shob = function (ides) {
+	var view=document.getElementById('shob'+ides).style.display;
+	if(view=='none'){
+document.getElementById('shob'+ides).style.display='block';		
+		}else{
+document.getElementById('shob'+ides).style.display='none';		
+	}
+
+}
+
+$scope.bazdid = function (ides) {
+	//
+	$http.get("http://borna-grp.ir/api.php?id=4&type=2").then(function(response) {
+	$scope.mbazdid = response.data.shobe;
+	//alert(response.data.shobe[0].ids);
+});	
+}
+$scope.mbaz = function (ides) {
+	//alert(ides);
+	var view=document.getElementById('bazdid'+ides).style.display;
+	if(view=='none'){
+     document.getElementById('bazdid'+ides).style.display='block';		
+		}else{
+     document.getElementById('bazdid'+ides).style.display='none';		
+	}
+
 }
 ////////////////////////////////////////
 $scope.showfaver = function () {

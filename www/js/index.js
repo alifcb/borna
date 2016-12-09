@@ -72,7 +72,6 @@ function flag_one(tx) {
 tx.executeSql('SELECT * FROM settings where title="last_car"', [], again_car, errorSE);
 }
 
-
 function errorSE() {  
  // alert('kjh');
 $.getJSON("company.json", function(json) {

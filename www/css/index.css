@@ -394,10 +394,20 @@ ul li a:active{
 .ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb{right:5px;}
 .ui-input-text input, .ui-input-search input{text-align:right; direction:rtl; padding-right:20px;}
 .ui-block-a, .ui-block-b, .ui-block-c {
-    background-color: lightgray;
-    height: 100px;
+    border:1px solid #C5C3C3 !important;
+	border-radius:4px;
     text-align: center;
-    padding: 30px;
+    padding:  0px !important;
+	margin:4px !important;
+}
+.ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b {
+    width: 48% !important;
+}
+.ui-block-a .ui-btn, .ui-block-b .ui-btn, .ui-block-c .ui-btn {
+	margin:0 !important;
+		border-radius:4px;
+	border:none !important;
+    padding:  0px !important;
 }
 .ui-input-text input, .ui-input-search input{text-align:right !important; padding: 0.6em !important; font-size: 15px !important;}
 .ui-header .ui-title, .ui-footer .ui-title{font-size: 21px !important;     padding: .4em 0 !important;}
@@ -622,13 +632,22 @@ left: 50%;
 }
 /*---------------------------- end toast----------------------------------------------------*/
     
- .ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active {
+.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active {
     background-color: #f3f3f3 !important;
     border-color: #f6f6f6 !important;
     color: #999 !important;
     text-shadow: 0 0px 0 #059 !important;
 }   
+
 .ui-listview>li h1, .ui-listview>li h2, .ui-listview>li h3, .ui-listview>li h4, .ui-listview>li h5, .ui-listview>li h6 {
     font-size: 14px !important;
     font-weight: normal !important;
-    }
+}
+
+.ui-listview li .font17{font-size:17px !important;}	
+.ui-listview  .shobe {padding:0px 15px !important;}
+.ui-listview  span {
+	color:#AB1197;
+}
+.updates{background-color:#FF3366; padding:5px; display:none;    margin: -13px -13px 0; color:#fff; font-size:13px;}
+.updates a{ color:#fff !important; text-decoration:none;font-weight:normal !important;  font-size:13px;}
