@@ -14,8 +14,7 @@
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 <!-- Demo -->
 
-
- <script src="js/angular.min.js"></script>
+<script src="js/angular.min.js"></script>
 <script src="js/angularjs.js"></script>
 <script src="js/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
@@ -50,10 +49,18 @@
 <div data-role="page"   id="sherkat">
  <div data-role="panel" data-position-fixed="true" id="myPanel" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="listco" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="listco" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+        <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+
+    </ul>
+    </div>
+    
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+ 
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
@@ -93,8 +100,17 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
@@ -134,8 +150,17 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">  
-     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>  
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
@@ -159,7 +184,7 @@
       <input id="myFilterc" data-type="search" placeholder="نام شعبه">
     </form>
    <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
- 
+      <div id="loadim" style="text-align:center"><img src="img/loader1.gif"></div>
 
  <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in shobe"  >
         <a   class="ui-btn shobe" ng-click="shob(xc.ids)" data-transition="fade">
@@ -184,8 +209,16 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-    <ul data-role="listview" class="right panels"  data-inset="false">  
-     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>  
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+
+    </ul>
+    </div>
+    <ul data-role="listview" class="right panels"  data-inset="false">   
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
@@ -204,12 +237,12 @@
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
-    <h3 class="margint0">لیست شعبه ها</h3>
+    <h3 class="margint0">لیست مراکز بازدید</h3>
     <form class="ui-filterable">
       <input id="myFilterc" data-type="search" placeholder="نام شعبه">
     </form>
    <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
- 
+      <div id="loadiv" style="text-align:right; float:right"><img src="img/loader1.gif"></div>
 
  <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in mbazdid"  >
         <a   class="ui-btn shobe" ng-click="mbaz(xc.ids)" data-transition="fade">
@@ -235,8 +268,17 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanelb" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">  
-     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>  
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
@@ -256,16 +298,14 @@
   
  <div data-role="main" class="ui-content" dir="rtl" >
     <h3>لیست جزوات</h3>
-    <div class="ui-grid-a  " >
-    <div  ng-repeat="xc in mbook">
-      <div class="ui-block-a" >
-        <a href="http://www.borna-grp.ir/{{xc.direct}}{{xc.link}}" class="ui-btn  "><img src="http://www.borna-grp.ir/{{xc.direct}}{{xc.link}}" width="100%" ></a><br>
-        <p style=" text-align:center">{{xc.subject}}</p>
-        <p><span>نویسنده:</span>{{xc.nvisnde}}</p>
+     <div id="loadii" style="text-align:center"><img src="img/loader1.gif"></div>
+    <div class="ui-grid-a ui-responsive"  >
+      <div  ng-repeat="xc in mbook" class="ui-block-{{xc.block}}" >
+        <a href="#" ng-click="wopen(xc.link);" class="ui-btn  "><img src="http://www.borna-grp.ir/{{xc.direct}}{{xc.pic}}" width="100%" ></a> 
+        <p style=" text-align:center"><span>عنوان:</span> {{xc.subject}}</p>
+        <p style=" text-align:center"><span>نویسنده:</span>{{xc.nvisnde}}</p>
       </div>
-      </div>
- 
-    </div>
+
   </div>
 </div> 
 
@@ -277,6 +317,15 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel3" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
@@ -306,6 +355,8 @@
 <p><span class="fred info"> محل قرارگيري شماره شاسي:</span> {{xc.comment}}</p> 
 <p> <span class="fred info">حق بیمه شخص ثالث: </span>{{xc.bime}}</p> 
 </div>
+<a  href="#h_bime"  ng-click="used(xc.type)" class="ui-btn green">محاسبه حق بیمه </a>
+
   </div>
 
 
@@ -350,6 +401,15 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel4" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" class="car" ng-click="comp_id()" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
@@ -383,12 +443,115 @@
     </ul>
   </div>
 </div>
+<!------------------------------------- mohasebe hagh bime-------------------------------------------------->
+<div data-role="page"   id="h_bime">
 
+ <div data-role="panel" data-position-fixed="true" id="myPanel5" data-display="overlay" data-position="right">
+    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+    </ul>
+    </div>
+    
+    <ul data-role="listview" class="right panels"  data-inset="false">    
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header" class="blue ">
+ <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
+    <h1>برنا</h1>
+ <a href="#myPanel5" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+
+ <div data-role="main" class="ui-content" dir="rtl" >
+ <div id="loading"><img src="img/loader1.gif"></div>
+<div id="showmm">
+      <p  >جهت محاسبه حق بیمه شخص ثالث تمام موارد را تکمیل نمایید</p>
+      <input style=" display: none;"  ng-model="user.id_car" type="text">
+      
+
+      
+      <label for="sharh">مورد استفاده</label>
+      <select id="sharh" ng-model="bime.used" >
+      
+      <option ng-repeat="xb in usedn" value="{{xb.ids}}">{{ xb.name}}</option>
+      </select>
+      <label>سال ساخت</label>
+       <input ng-model="bime.sal" placeholder="1389" type="text">
+
+       <label for="blue" class="ui-btn-icon-right">بیمه نامه سال قبل دارد</label>
+       <input type="checkbox" name="favcolor"  ng-click="showso()" ng-model="bime.yes" id="blue" value="blue">
+       <hr/> 
+       <div id="showitme" style="display:none">
+      <label>تاریخ انقضا بیمه نامه</label>
+      <input ng-model="bime.engh" placeholder="1395/09/23"  type="text">
+      
+      <label>سابقه ثالث مالی</label>
+      <select data-icon="carat-d" ng-model="bime.mali"  >
+      <option value="0">سابقه دارد بدون تخفیف عدم خسارت</option>
+      <option value="1">يك سال عدم خسارت</option>
+      <option value="2">دو سال عدم خسارت</option>
+      <option value="3">سه سال عدم خسارت</option>
+      <option value="4">چهار سال عدم خسارت</option>
+      <option value="5">پنج سال عدم خسارت</option>
+      <option value="6">شش سال عدم خسارت</option>
+      <option value="7">هفت سال عدم خسارت</option>
+      <option value="8">هشت سال و بيشتر عدم خسارت</option>
+      <option value="-1">يك بار خسارت در سال گذشته</option>
+      <option value="-2">دو بار خسارت در سال گذشته</option>
+      <option value="-3">سه بار خسارت در سال گذشته</option>
+      <option value="-4">چهار بار و بیشتر خسارت در سال گذشته</option>
+      </select>
+      
+      <label>سابقه سرنشین</label>
+      <select ng-model="bime.sarn"  >
+      <option value="0">سابقه دارد بدون تخفیف عدم خسارت</option>
+      <option value="1">يك سال عدم خسارت</option>
+      <option value="2">دو سال عدم خسارت</option>
+      <option value="3">سه سال عدم خسارت</option>
+      <option value="4">چهار سال عدم خسارت</option>
+      <option value="5">پنج سال عدم خسارت</option>
+      <option value="6">شش سال عدم خسارت</option>
+      <option value="7">هفت سال عدم خسارت</option>
+      <option value="8">هشت سال و بيشتر عدم خسارت</option>
+      <option value="-1">يك بار خسارت در سال گذشته</option>
+      <option value="-2">دو بار خسارت در سال گذشته</option>
+      <option value="-3">سه بار خسارت در سال گذشته</option>
+      <option value="-4">چهار بار و بیشتر خسارت در سال گذشته</option>
+      </select>
+ </div>
+
+      <input id="bimo" class="green"  ng-click="mohasebe();" type="button" value="محاسبه">
+    <p id="showri" class="mohaseb" style=" text-align:center; color:#285F92">مبلغ حق بیمه :  </p>
+    </div>
+  </div>
+
+</div>
 <!------------------------------------- add ha-------------------------------------------------->
 <div data-role="page"   id="add">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel5" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
@@ -436,6 +599,15 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel6" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
@@ -473,6 +645,15 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel7" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">    
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
@@ -528,6 +709,15 @@
 
  <div data-role="panel" data-position-fixed="true" id="myPanel9" data-display="overlay" data-position="right">
     <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
+      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
+    <h4>سازمان</h4>
+    <ul data-role="listview" >
+      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
+    </ul>
+    </div>
+    
     <ul data-role="listview" class="right panels"  data-inset="false">    
      <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>

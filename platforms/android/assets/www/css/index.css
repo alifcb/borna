@@ -206,6 +206,15 @@ background-color: #fbfbFb !important;
 .listco{
 	 background: rgba(0, 0, 0, 0) url("../img/settings.png") no-repeat  right 6px center;
 }
+.car3{
+	 background: rgba(0, 0, 0, 0) url("../img/car3.png") no-repeat  right 6px center;
+}
+.car4{
+	 background: rgba(0, 0, 0, 0) url("../img/car4.png") no-repeat  right 6px center;
+}
+.pdf{
+	 background: rgba(0, 0, 0, 0) url("../img/pdf.png") no-repeat  right 6px center;
+}
 .help{
      background: rgba(0, 0, 0, 0) url("../img/help.png") no-repeat  right 6px center;
 }
@@ -441,6 +450,7 @@ ul li a:active{
 .ui-panel-inner{background-color:#1680b5;}
 .h2p{color: #fff !important; text-shadow:0px 0px 0px #222 !important;}
 .panels a{font-size: 13px !important; line-height: 28px; color: #555}
+.panels{ margin-top:0px !important;}
 .md-toolbar-tools {
     height: 48px;
     max-height: 48px;
@@ -651,3 +661,27 @@ left: 50%;
 }
 .updates{background-color:#FF3366; padding:5px; display:none;    margin: -13px -13px 0; color:#fff; font-size:13px;}
 .updates a{ color:#fff !important; text-decoration:none;font-weight:normal !important;  font-size:13px;}
+
+.ui-mobile label, .ui-controlgroup-label {
+    margin: 2em 0 0.4em !important;
+}
+.ui-checkbox .ui-btn, .ui-radio .ui-btn {
+    text-align: right !important;
+    font-size: 13px !important;
+}
+.postx p, h4 {
+     margin: 0px 0 !important; 
+	 text-align:right !important; 
+}
+.ui-collapsible-heading .ui-btn {
+    text-align: right !important;
+}
+.ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b {
+    width: 47% !important;
+	float: right !important;
+}
+.ui-grid-a p {
+    text-align: justify;
+    line-height: 14px !important;
+	padding:0 10px;
+}

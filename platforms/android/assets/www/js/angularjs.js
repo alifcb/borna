@@ -19,18 +19,18 @@ if(update==0){
  $http.get("http://borna-grp.ir/api.php?setting=update").then(function(response) {
   $scope.iup=response.data.setting[0].value;
   //alert($scope.iup);
-if($scope.iup>$scope.vup){alert('fjf');
+if($scope.iup>$scope.vup){//alert('fjf');
 	document.getElementById('uppo').style.display='block';
 	}
 });
-
- }  
+}  
 //////////////////////////////////////show book
 $scope.books = function (ides) {
 	//alert(ides);
+		document.getElementById('loadii').style.display='block';
 	$http.get("http://borna-grp.ir/api.php?books=1").then(function(response) {
 	$scope.mbook = response.data.books;
-	 //alert(response.data.books[0].ids);
+	 	document.getElementById('loadii').style.display='none';
 });	
 }
 ///////////////////////////////show car	
@@ -45,11 +45,14 @@ $scope.comp_id = function (ides) {
 /////////////////////////////////show marakez
 $scope.markaz = function (ides) {
 	//alert(ides);
-	$http.get("http://borna-grp.ir/api.php?id=2&type=1").then(function(response) {
+			document.getElementById('loadim').style.display='block';
+	$http.get("http://borna-grp.ir/api.php?id=1&type=1").then(function(response) {
 	$scope.shobe = response.data.shobe;
 	//alert(response.data.shobe[0].ids);
+			document.getElementById('loadim').style.display='none';
 });	
-}
+};
+///////////////////////////////// show shobe
 $scope.shob = function (ides) {
 	var view=document.getElementById('shob'+ides).style.display;
 	if(view=='none'){
@@ -58,13 +61,13 @@ document.getElementById('shob'+ides).style.display='block';
 document.getElementById('shob'+ides).style.display='none';		
 	}
 
-}
+};
 
 $scope.bazdid = function (ides) {
-	//
-	$http.get("http://borna-grp.ir/api.php?id=4&type=2").then(function(response) {
+		document.getElementById('loadiv').style.display='block';
+	$http.get("http://borna-grp.ir/api.php?id=1&type=2").then(function(response) {
 	$scope.mbazdid = response.data.shobe;
-	//alert(response.data.shobe[0].ids);
+			document.getElementById('loadiv').style.display='none';
 });	
 }
 $scope.mbaz = function (ides) {
@@ -103,7 +106,6 @@ todoServicez.faverat(id_var,favt);
 };
 ///////////////////////////////////////////////////
 $scope.cars_id = function (ides) {
-var  ides;
 	$http.get("company.json").then(function(response) {
 	$scope.carm = response.data.cars;
 	$scope.carid=ides;	
@@ -240,7 +242,89 @@ todoServicez.up_alert(items[i].ids);
 });
  
 }; 
+///////////////////////////////////////////////// محاسبه بیمه شخص ثالث
+ $scope.bime = {};	
+ 
+  $scope.showso = function() {
+	if($scope.bime.yes){
+		document.getElementById('showitme').style.display='block';
+	}else{
+         document.getElementById('showitme').style.display='none';	
+	}
+ };
+ 
 
+$scope.mohasebe = function(salo) {
+	if($scope.bime.yes){
+		document.getElementById('showitme').style.display='block';
+	}else{
+         document.getElementById('showitme').style.display='none';	
+	}
+$scope.caridm =($scope.caridp)-10000;
+//alert($scope.caridm);
+var online=document.getElementById('online').value;
+ //alert($scope.bime.sal);
+//var laImage = document.getElementById('largeImage0').src;	
+if(!$scope.bime.sal){
+
+Toast_Material({ content : "لطفا  تمام فیلد های موجود را تکمیل نمایید.", updown:"bottom", position:"center", align:"center" });	
+
+}else
+if(online==0){
+Toast_Material({ content : "اتصال به اینترنت برقرار نیست!", updown:"bottom", position:"center", align:"center" });	
+}else
+{	
+
+document.getElementById('showri').innerHTML='در حال محاسبه ...';
+Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/api.php',
+  data    : $.param({used:$scope.bime.used,yes:$scope.bime.yes,idcar:$scope.caridm,engh:$scope.bime.dateb,sal:$scope.bime.sal,sabe_m:$scope.bime.mali,sabe_s:$scope.bime.sarn}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+  .success(function(response) {
+   document.getElementById('showri').innerHTML='مبلغ حق بیمه : '+response.hbimes[0].mablagh+' ریال ';
+  Toast_Material({ content : "محاسبه به اتمام رسید", updown:"bottom", position:"center", align:"center" });
+
+  });
+
+}
+
+};
+
+ 
+$scope.used = function(idtype) {
+	document.getElementById('loading').style.display="block";
+		document.getElementById('showmm').style.display="none";
+$scope.idtype=idtype;
+var online=document.getElementById('online').value;
+
+if(online==0){
+Toast_Material({ content : "اتصال به اینترنت برقرار نیست!", updown:"bottom", position:"center", align:"center" });	
+}else
+{	// alert(idtype);
+ $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/api.php',
+  data    : $.param({usedid:$scope.idtype}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+  .success(function(response) {
+	 $scope.usedn=response.usedid;
+ 	document.getElementById('showmm').style.display="block";
+		document.getElementById('loading').style.display="none";
+  });
+
+}
+
+};
+
+$scope.wopen = function(links) {
+	//alert(links);
+ window.open(links, '_system', '');
+};
+  
 ///////////////////////////////////////////////// ارسال تصویر
  $scope.users = {};	
 $scope.sendform = function(urlpic) {
@@ -297,9 +381,9 @@ document.getElementById('shoo').value='ارسال';
   .success(function(data) {
    // alert(data.items[0].cell);
   });
+} 
+}
 };
-}
-}
 /////////////////////////////////////////////////////////ورود به سیستم
 
 interd=document.getElementById('inter').value;
@@ -517,5 +601,5 @@ this.show_alert = function()
             });
         });
         return false;
-    }
+  }
 });
