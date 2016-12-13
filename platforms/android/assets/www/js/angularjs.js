@@ -27,12 +27,16 @@ if($scope.iup>$scope.vup){//alert('fjf');
 //////////////////////////////////////show book
 $scope.books = function (ides) {
 	//alert(ides);
+	var bookid=document.getElementById('bookid').value;
+if(bookid==0){
+	    document.getElementById('bookid').value=1;
 		document.getElementById('loadii').style.display='block';
 	$http.get("http://borna-grp.ir/api.php?books=1").then(function(response) {
 	$scope.mbook = response.data.books;
 	 	document.getElementById('loadii').style.display='none';
 });	
 }
+};
 ///////////////////////////////show car	
 $scope.comp_id = function (ides) {
 	//alert(ides);
@@ -44,13 +48,16 @@ $scope.comp_id = function (ides) {
 
 /////////////////////////////////show marakez
 $scope.markaz = function (ides) {
-	//alert(ides);
+		var shobeid=document.getElementById('shobeid').value;
+if(shobeid==0){
+	    document.getElementById('shobeid').value=1;
 			document.getElementById('loadim').style.display='block';
 	$http.get("http://borna-grp.ir/api.php?id=1&type=1").then(function(response) {
 	$scope.shobe = response.data.shobe;
 	//alert(response.data.shobe[0].ids);
 			document.getElementById('loadim').style.display='none';
 });	
+}
 };
 ///////////////////////////////// show shobe
 $scope.shob = function (ides) {
@@ -64,11 +71,15 @@ document.getElementById('shob'+ides).style.display='none';
 };
 
 $scope.bazdid = function (ides) {
-		document.getElementById('loadiv').style.display='block';
-	$http.get("http://borna-grp.ir/api.php?id=1&type=2").then(function(response) {
-	$scope.mbazdid = response.data.shobe;
+	  var bazdidid=document.getElementById('bazdidid').value;
+	  if(bazdidid==0){
+		  document.getElementById('bazdidid').value=1;
+		  document.getElementById('loadiv').style.display='block';
+			$http.get("http://borna-grp.ir/api.php?id=1&type=2").then(function(response) {
+			$scope.mbazdid = response.data.shobe;
 			document.getElementById('loadiv').style.display='none';
-});	
+	  });	
+	  }
 }
 $scope.mbaz = function (ides) {
 	//alert(ides);
