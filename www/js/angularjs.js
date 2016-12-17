@@ -91,6 +91,29 @@ $scope.mbaz = function (ides) {
 	}
 
 }
+
+//////////////////////////////////////noeen daste khodro
+$scope.noeevn = function () {
+	var value = document.getElementById('groh').value; 
+	document.getElementById('loadingo').style.display="block";
+	 document.getElementById('noeevn').style.display='none';	
+ $http.get("http://borna-grp.ir/api.php?onevan="+value).then(function(response) {
+	$scope.noeen = response.data.onevan;
+	//alert($scope.noeen );
+});	
+ $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/api.php',
+  data    : $.param({usedid:value}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+  .success(function(response) {
+	 $scope.usedn=response.usedid;
+	 	document.getElementById('loadingo').style.display="none";
+ 	document.getElementById('noeevn').style.display="block";
+  });
+};
+
 ////////////////////////////////////////
 $scope.showfaver = function () {
 //faver  
@@ -336,6 +359,62 @@ $scope.wopen = function(links) {
  window.open(links, '_system', '');
 };
   
+///////////////////////////////////////////////// محاسبه بیمه شخص ثالث 2
+ $scope.bime2 = {};	
+ 
+  $scope.showso2 = function() {
+	if($scope.bime2.yes){
+		document.getElementById('showitme2').style.display='block';
+	}else{
+         document.getElementById('showitme2').style.display='none';	
+	}
+ };
+ 
+
+$scope.mohasebe2 = function(salo) {
+	if($scope.bime2.yes){
+		document.getElementById('showitme2').style.display='block';
+	}else{
+         document.getElementById('showitme2').style.display='none';	
+	}
+ 
+//alert($scope.caridm);
+var online=document.getElementById('online').value;
+ //alert($scope.bime.sal);
+//var laImage = document.getElementById('largeImage0').src;	
+if(!$scope.bime2.sal){
+
+Toast_Material({ content : "لطفا  تمام فیلد های موجود را تکمیل نمایید.", updown:"bottom", position:"center", align:"center" });	
+
+}else
+if(online==0){
+Toast_Material({ content : "اتصال به اینترنت برقرار نیست!", updown:"bottom", position:"center", align:"center" });	
+}else
+{	
+
+document.getElementById('showri2').innerHTML='در حال محاسبه ...';
+Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/api.php',
+  data    : $.param({used:$scope.bime2.used,yes:$scope.bime2.yes,noee:$scope.bime2.noee,engh:$scope.bime2.dateb,sal:$scope.bime2.sal,sabe_m:$scope.bime2.mali,sabe_s:$scope.bime2.sarn}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+  .success(function(response) {
+   document.getElementById('showri2').innerHTML='مبلغ حق بیمه : '+response.hbimes[0].mablagh+' ریال ';
+  Toast_Material({ content : "محاسبه به اتمام رسید", updown:"bottom", position:"center", align:"center" });
+
+  });
+
+}
+
+};
+  
+///////////////////////////////////////////////// نمایش نقشه گوگل
+$scope.google = function() {
+  $.mobile.changePage( "#google", { transition: "slideup"} );
+
+}  
 ///////////////////////////////////////////////// ارسال تصویر
  $scope.users = {};	
 $scope.sendform = function(urlpic) {
@@ -410,7 +489,7 @@ function onConfirm(button) {
   }
 }}else
 if(online==0 && interd==0){
-    $.mobile.changePage( "#online", { transition: "slideup"} );
+    $.mobile.changePage( "#onlinee", { transition: "slideup"} );
 } 
 $scope.go = function ( path ) {$location.path( path );};
 
@@ -433,7 +512,7 @@ $scope.user = {};
 $scope.sabtcode = function() {
 online=document.getElementById('online').value;
 if(online==0 && interd==0){
-    $.mobile.changePage( "#online", { transition: "slideup"} );
+    $.mobile.changePage( "#onlinee", { transition: "slideup"} );
 }
 
 var uid = device.uuid;

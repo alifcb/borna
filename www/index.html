@@ -19,7 +19,9 @@
 <script src="js/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script> 
-<title>برنا</title>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT3CQJy2wn2UVKv_-HNZpg70ZmqrlBQeI&callback=myMap"
+    async defer></script>
+<title>برنا، دستيار بيمه اي شما</title>
 </head>
 <body class="noselect" ng-app="App"   ng-controller="CenterCTRL" ng-cloak>
 <input  id="inter" style="display:none" value="0" type="text">
@@ -51,22 +53,16 @@
 <!------------------------------------- sherkat ha-------------------------------------------------->
 <div data-role="page"   id="sherkat">
  <div data-role="panel" data-position-fixed="true" id="myPanel" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-        <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-
-    </ul>
-    </div>
-    
+      <img width="200" height="113" src="img/taavon.png">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
- 
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -75,14 +71,14 @@
   </div> 
   <div data-role="header"  class="blue ">
   <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
-    <h1>برنا</h1>
+    <h1>برنا، دستيار بيمه اي شما</h1>
   <a href="#myPanel" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
- <p class="updates" id="uppo"><a href="http://www.borna-grp.ir/borna.apk">لطفا نسخه جدید برنامه را دریافت کنید.</a></p>
-    <h2 class="margint0" >لیست شرکت ها</h2>
+ <p class="updates" id="uppo"><a href="#"  onclick="window.open('http://www.borna-grp.ir/borna.apk', '_system');">لطفا نسخه جدید برنامه را دریافت کنید.</a></p>
+    <h2 class="margint0" >لیست شرکت های خودرو ساز</h2>
     <form class="ui-filterable">
       <input id="myFilter" data-type="search" placeholder="نام شرکت">
     </form>
@@ -102,21 +98,16 @@
 <div data-role="page"   id="mashinha">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -127,7 +118,7 @@
   <div data-role="header"  class="blue ">
    
  <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
-  <h1>برنا</h1>
+  <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel2" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   
@@ -151,22 +142,17 @@
 <!------------------------------------- shobe ha-------------------------------------------------->
 <div data-role="page"   id="markaz">
 
- <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-
-    </ul>
-    </div>
-    
+ <div data-role="panel" data-position-fixed="true" id="myPanel2e" data-display="overlay" data-position="right">
+    <img width="200" height="113" src="img/taavon.png">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -177,16 +163,16 @@
   <div data-role="header"  class="blue ">
    
  <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
-  <h1>برنا</h1>
- <a href="#myPanel2" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanel2e" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
     <h3 class="margint0">لیست شعبه ها</h3>
     <form class="ui-filterable">
-      <input id="myFilterc" data-type="search" placeholder="نام شعبه">
+      <input id="myFilterd" data-type="search" placeholder="نام شعبه">
     </form>
-   <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
+   <ul data-role="listview" data-filter="true" data-input="#myFilterd"  data-inset="false"  class="right listst"   >
       <div id="loadim" style="text-align:center"><img src="img/loader1.gif"></div>
 
  <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in shobe"  >
@@ -194,13 +180,15 @@
         <!--<img width="72" height="72" src="img/4.jpg">-->
         <h2 class="font17">{{xc.name}}</h2>
         
-        <p style="display:none" id="shob{{xc.ids}}"><span>آدرس: </span>{{xc.address}}<br>
+        <p style="display:none" id="shob{{xc.ids}}"> 
+        <span>آدرس: </span>{{xc.address}}<br>
         <span>تلفن: </span>{{xc.tell}}<br>
         <span>مدیر شعبه: </span>{{xc.boss}}<br>
         <span>کد شعبه: </span>{{xc.code}}<br>
+        <br>
+        <span  href="#google"  ng-click="google()" class="green googlea">نمایش بر روی نقشه</span>
+    </p></a>
         
-    </p>
-        </a>
       </li>
 
     </ul>
@@ -210,21 +198,17 @@
 <!------------------------------------- markaz bazdid ha-------------------------------------------------->
 <div data-role="page"   id="bazdids">
 
- <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-
-    </ul>
-    </div>
-    <ul data-role="listview" class="right panels"  data-inset="false">   
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+ <div data-role="panel" data-position-fixed="true" id="myPanel2c" data-display="overlay" data-position="right">
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -235,16 +219,16 @@
   <div data-role="header"  class="blue ">
    
  <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
-  <h1>برنا</h1>
- <a href="#myPanel2" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanel2c" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
     <h3 class="margint0">لیست مراکز بازدید</h3>
     <form class="ui-filterable">
-      <input id="myFilterc" data-type="search" placeholder="نام شعبه">
+      <input id="myFilterf" data-type="search" placeholder="نام شعبه">
     </form>
-   <ul data-role="listview" data-filter="true" data-input="#myFilterc"  data-inset="false"  class="right listst"   >
+   <ul data-role="listview" data-filter="true" data-input="#myFilterf"  data-inset="false"  class="right listst"   >
       <div id="loadiv" style="text-align:right; float:right"><img src="img/loader1.gif"></div>
 
  <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in mbazdid"  >
@@ -252,11 +236,13 @@
         <!--<img width="72" height="72" src="img/4.jpg">-->
         <h2 class="font17">{{xc.name}}</h2>
         
-        <p style="display:none" id="bazdid{{xc.ids}}"><span>آدرس: </span>{{xc.address}}<br>
+        <p style="display:none" id="bazdid{{xc.ids}}"> 
+        <span>آدرس: </span>{{xc.address}}<br>
         <span>تلفن: </span>{{xc.tell}}<br>
         <span>مدیر شعبه: </span>{{xc.boss}}<br>
         <span>کد شعبه: </span>{{xc.code}}<br>
-        
+        <br>
+        <span  href="#google"  ng-click="google()" class="green googlea">نمایش بر روی نقشه</span>
     </p>
         </a>
       </li>
@@ -270,21 +256,16 @@
 <div data-role="page"   id="books">
 
  <div data-role="panel" data-position-fixed="true" id="myPanelb" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-
-    </ul>
-    </div>
-    
+   <img width="200" height="113" src="img/taavon.png">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a   class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -295,7 +276,7 @@
   <div data-role="header"  class="blue ">
    
  <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
-  <h1>برنا</h1>
+  <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanelb" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   
@@ -314,25 +295,66 @@
 
 
 </div>
+<!------------------------------------- google map-------------------------------------------------->
+<div data-role="page"   id="google">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanelg" data-display="overlay" data-position="right">
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanelg" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h3 class="margint0">آدرس شعبه</h3>
+   <div id="map" style="width:100%;height:500px"></div>
+
+<script>
+function myMap() {
+  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 13};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+</div>
+
+</div>
 
 <!------------------------------------- tozihat -------------------------------------------------->
 <div data-role="page"   id="tozihat">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel3" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -341,7 +363,8 @@
   </div> 
 
   <div data-role="header" class="blue "> 
- <a  class="pad_ha" ng-click="faver(efaver,carid)" data-role="none"><img src="{{iconslike}}"></a>    <h1>برنا</h1>
+ <a  class="pad_ha" ng-click="faver(efaver,carid)" data-role="none"><img src="{{iconslike}}"></a>  
+   <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel3" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
 
@@ -356,9 +379,9 @@
 <p class="fgreen tick"> {{xc.name}}</p> 
 <p ng-repeat="xcom in company | filter:{ ids: xc.company }:true"><span class="fred infoe">شرکت سازنده: </span> {{xcom.name}}</p> 
 <p><span class="fred info"> محل قرارگيري شماره شاسي:</span> {{xc.comment}}</p> 
-<p> <span class="fred info">حق بیمه شخص ثالث: </span>{{xc.bime}}</p> 
+<p> <span class="fred info">حق بيمه شخص ثالث (صفر كيلومتر): </span>{{xc.bime}}</p> 
 </div>
-<a  href="#h_bime"  ng-click="used(xc.type)" class="ui-btn green">محاسبه حق بیمه </a>
+<a  href="#h_bime"  ng-click="used(xc.type)" class="ui-btn green">محاسبه حق بيمه غير صفر</a>
 
   </div>
 
@@ -398,25 +421,21 @@
   
 
 </div>
-</div>
+
 <!------------------------------------- favert ha-------------------------------------------------->
 <div data-role="page"   id="favert">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel4" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
-      <li  data-icon="false"><a onClick="cat(1)" class="car" ng-click="comp_id()" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -425,16 +444,16 @@
   </div> 
 
   <div data-role="header"  class="blue ">
- <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel4" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
     <h2 class="margint0">لیست علاقه مندی ها</h2>
     <form class="ui-filterable">
-      <input id="myFilterf" data-type="search" placeholder="نام خودرو">
+      <input id="myFilters" data-type="search" placeholder="نام خودرو">
     </form>
-   <ul data-role="listview" data-filter="true" data-input="#myFilterf"  data-inset="false"  class="right listst"   >
+   <ul data-role="listview" data-filter="true" data-input="#myFilters"  data-inset="false"  class="right listst"   >
  
  <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in myfaver">
         <a href="#tozihat" class="ui-btn" ng-click="cars_id(xc.ids)" data-transition="fade">
@@ -446,24 +465,21 @@
     </ul>
   </div>
 </div>
-<!------------------------------------- mohasebe hagh bime-------------------------------------------------->
-<div data-role="page"   id="h_bime">
+
+<!------------------------------------- ادآوري تمديد بيمه نامه-------------------------------------------------->
+<div data-role="page"   id="yadavar">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel5" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+     <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -473,8 +489,53 @@
 
   <div data-role="header" class="blue ">
  <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
-    <h1>برنا</h1>
+    <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel5" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+
+ <div data-role="main" class="ui-content" dir="rtl" >
+ 
+      <p  >یادآوری تمديد بيمه نامه</p>
+      
+       <label>نام</label>
+       <input ng-model="bime.sal"   type="text">
+      <label>تاریخ پایان بيمه نامه</label>
+       <input ng-model="bime.sal"  type="text">
+      <label>شماره تماس</label>
+       <input ng-model="bime.sal" type="text">
+ 
+      <input id="bimod" class="green"  ng-click="mohasebe();" type="button" value="ثبت">
+ 
+ 
+  </div>
+
+</div>
+
+<!------------------------------------- mohasebe hagh bime-------------------------------------------------->
+<div data-role="page"   id="h_bime">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanel5u" data-display="overlay" data-position="right">
+     <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header" class="blue ">
+ <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
+    <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanel5u" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
 
  <div data-role="main" class="ui-content" dir="rtl" >
@@ -536,29 +597,26 @@
  </div>
 
       <input id="bimo" class="green"  ng-click="mohasebe();" type="button" value="محاسبه">
-    <p id="showri" class="mohaseb" style=" text-align:center; color:#285F92">مبلغ حق بیمه :  </p>
+    <p id="showri" class="mohaseb" style=" text-align:center;">مبلغ حق بیمه :  </p>
     </div>
   </div>
 
 </div>
-<!------------------------------------- add ha-------------------------------------------------->
-<div data-role="page"   id="add">
 
- <div data-role="panel" data-position-fixed="true" id="myPanel5" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+<!------------------------------------- mohasebe hagh bime2-------------------------------------------------->
+<div data-role="page"   id="h_bime2">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanel5r" data-display="overlay" data-position="right">
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -568,8 +626,110 @@
 
   <div data-role="header" class="blue ">
  <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
-    <h1>برنا</h1>
- <a href="#myPanel5" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+    <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanel5r" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+
+ <div data-role="main" class="ui-content" dir="rtl" >
+      <p  >جهت محاسبه حق بیمه شخص ثالث تمام موارد را تکمیل نمایید</p>
+      <input style=" display: none;"  ng-model="user.id_car" type="text">
+      <label for="groh">گروه وسیله نقلیه</label>
+      <select id="groh" ng-model="bime2.groh" ng-change="noeevn(this)" >
+      <option   value="1">موتور سیکلت</option>
+      <option   value="2">سواری</option>
+      <option   value="3">اتوکار</option>
+      <option   value="4">راهسازی و کشاورزی</option>
+      <option   value="5">بارکش</option>
+      <option   value="6">یدک</option>
+      </select>
+      
+       <div id="loadingo" style="display:none"><img src="img/loader1.gif"></div>
+       <div id="noeevn">
+       <label for="noee">نوع وسیله نقلیه</label>
+      <select id="noee" ng-model="bime2.noee" >
+      <option ng-repeat="xb in noeen" value="{{xb.ids}}">{{ xb.name}}</option>
+      </select>
+      
+      <label for="sharhs">مورد استفاده</label>
+      <select id="sharhs" ng-model="bime2.used" >
+      <option ng-repeat="xb in usedn" value="{{xb.ids}}">{{xb.name}}</option>
+      </select>
+      </div>
+      <label>سال ساخت</label> 
+       <input ng-model="bime2.sal" placeholder="1389" type="text">
+
+       <label for="blue2" class="ui-btn-icon-right">بیمه نامه سال قبل دارد</label>
+       <input type="checkbox" name="favcolor"  ng-click="showso2()" ng-model="bime2.yes" id="blue2" value="blue">
+       <hr/> 
+       <div id="showitme2" style="display:none">
+      <label>تاریخ انقضا بیمه نامه</label>
+      <input ng-model="bime2.engh" placeholder="1395/09/23"  type="text">
+      
+      <label>سابقه ثالث مالی</label>
+      <select data-icon="carat-d" ng-model="bime2.mali"  >
+      <option value="0">سابقه دارد بدون تخفیف عدم خسارت</option>
+      <option value="1">يك سال عدم خسارت</option>
+      <option value="2">دو سال عدم خسارت</option>
+      <option value="3">سه سال عدم خسارت</option>
+      <option value="4">چهار سال عدم خسارت</option>
+      <option value="5">پنج سال عدم خسارت</option>
+      <option value="6">شش سال عدم خسارت</option>
+      <option value="7">هفت سال عدم خسارت</option>
+      <option value="8">هشت سال و بيشتر عدم خسارت</option>
+      <option value="-1">يك بار خسارت در سال گذشته</option>
+      <option value="-2">دو بار خسارت در سال گذشته</option>
+      <option value="-3">سه بار خسارت در سال گذشته</option>
+      <option value="-4">چهار بار و بیشتر خسارت در سال گذشته</option>
+      </select>
+      
+      <label>سابقه سرنشین</label>
+      <select ng-model="bime2.sarn"  >
+      <option value="0">سابقه دارد بدون تخفیف عدم خسارت</option>
+      <option value="1">يك سال عدم خسارت</option>
+      <option value="2">دو سال عدم خسارت</option>
+      <option value="3">سه سال عدم خسارت</option>
+      <option value="4">چهار سال عدم خسارت</option>
+      <option value="5">پنج سال عدم خسارت</option>
+      <option value="6">شش سال عدم خسارت</option>
+      <option value="7">هفت سال عدم خسارت</option>
+      <option value="8">هشت سال و بيشتر عدم خسارت</option>
+      <option value="-1">يك بار خسارت در سال گذشته</option>
+      <option value="-2">دو بار خسارت در سال گذشته</option>
+      <option value="-3">سه بار خسارت در سال گذشته</option>
+      <option value="-4">چهار بار و بیشتر خسارت در سال گذشته</option>
+      </select>
+ </div>
+
+      <input id="bimo2" class="green"  ng-click="mohasebe2();" type="button" value="محاسبه">
+    <p id="showri2" class="mohaseb" style=" text-align:center;">مبلغ حق بیمه :  </p>
+    </div>
+  </div>
+
+<!------------------------------------- add ha-------------------------------------------------->
+<div data-role="page"   id="add">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanel5n" data-display="overlay" data-position="right">
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+      <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
+    </ul>
+  </div> 
+
+  <div data-role="header" class="blue ">
+ <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
+    <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanel5n" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
 
  <div data-role="main" class="ui-content" dir="rtl" >
@@ -601,20 +761,16 @@
 <div data-role="page"   id="contact">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel6" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -623,7 +779,7 @@
   </div> 
 
   <div data-role="header"  class="blue ">
- <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel6" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   
@@ -647,20 +803,16 @@
 <div data-role="page"   id="about_us">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel7" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
@@ -669,7 +821,7 @@
   </div> 
 
   <div data-role="header"  class="blue ">
- <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel7" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   
@@ -689,10 +841,10 @@
 </div>
 
 <!------------------------------------- online -------------------------------------------------->
-<div data-role="page"   id="online">
+<div data-role="page"   id="onlinee">
 
   <div data-role="header"  class="blue ">
- <a href="#sherkat" class="pad_ha" data-role="none"><img src="img/back.png"></a>    <h1>برنا</h1>
+ <a href="#sherkat" class="pad_ha" data-role="none"><img src="img/back.png"></a>    <h1>برنا، دستيار بيمه اي شما</h1>
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
@@ -711,22 +863,17 @@
 <div data-role="page"   id="help">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel9" data-display="overlay" data-position="right">
-    <h2 class="right margint0 h2p">بازدید اولیه برنا</h2>
-      <div data-role="collapsible"  data-iconpos="right" class="right panels"  data-inset="false">
-    <h4>سازمان</h4>
-    <ul data-role="listview" >
-      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه ها</a></li>
-      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">لیست جزوات</a></li>
-    </ul>
-    </div>
-    
-    <ul data-role="listview" class="right panels"  data-inset="false">    
-     <li  data-icon="false"><a class="listco"  href="#markaz" data-transition="fade">لیست مراکز بازدید</a></li>
-      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">لیست شرکت ها</a></li>
+    <img width="200" height="113" src="img/taavon.png">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعبه</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
-      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">افزودن خودرو</a></li>
-      <li data-icon="false"><a class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
       <li data-icon="false"><a class="help" href="#help" data-transition="fade">راهنما</a></li>
@@ -735,7 +882,7 @@
 
 
   <div data-role="header"  class="blue ">
- <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا</h1>
+ <a href="#add" class="pad_ha" data-role="none"><img src="img/plus-button.png"></a>    <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel9" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
   

@@ -186,6 +186,7 @@ background-color: #fbfbFb !important;
 	 font-family:'BYekan';
 	padding: 0.2em 0.3em !important;
 	font-size:19px !important;
+      margin-top: 0px !important;
 }
 .about{
 	 background: rgba(0, 0, 0, 0) url("../img/about.png") no-repeat  right 6px center;
@@ -207,14 +208,21 @@ background-color: #fbfbFb !important;
 	 background: rgba(0, 0, 0, 0) url("../img/settings.png") no-repeat  right 6px center;
 }
 .car3{
-	 background: rgba(0, 0, 0, 0) url("../img/car3.png") no-repeat  right 6px center;
+	 background: rgba(0, 0, 0, 0) url("../img/placeholder.png") no-repeat  right 6px center;
 }
 .car4{
-	 background: rgba(0, 0, 0, 0) url("../img/car4.png") no-repeat  right 6px center;
+	 background: rgba(0, 0, 0, 0) url("../img/eye.png") no-repeat  right 6px center;
 }
 .pdf{
-	 background: rgba(0, 0, 0, 0) url("../img/pdf.png") no-repeat  right 6px center;
+	 background: rgba(0, 0, 0, 0) url("../img/open-book.png") no-repeat  right 6px center;
 }
+.filem{
+	 background: rgba(0, 0, 0, 0) url("../img/filem.png") no-repeat  right 6px center;
+}
+.listm{
+	 background: rgba(0, 0, 0, 0) url("../img/listm.png") no-repeat  right 6px center;
+}
+
 .help{
      background: rgba(0, 0, 0, 0) url("../img/help.png") no-repeat  right 6px center;
 }
@@ -419,7 +427,8 @@ ul li a:active{
     padding:  0px !important;
 }
 .ui-input-text input, .ui-input-search input{text-align:right !important; padding: 0.6em !important; font-size: 15px !important;}
-.ui-header .ui-title, .ui-footer .ui-title{font-size: 21px !important;     padding: .4em 0 !important;}
+.ui-header .ui-title, .ui-footer .ui-title{font-size: 19px !important;     padding: .4em 0 !important; min-height: 1.5em !important;
+    margin: 0 25% !important;}
 .ui-btn-left, .ui-btn-right {
     top: 0.33em !important;
 }
@@ -447,7 +456,9 @@ ul li a:active{
     color: #333;
     text-shadow: 0 1px 0 #f3f3f3;
 }
-.ui-panel-inner{background-color:#1680b5;}
+.ui-panel-inner{background-color: rgba(204, 204, 204, 0.15);
+}
+
 .h2p{color: #fff !important; text-shadow:0px 0px 0px #222 !important;}
 .panels a{font-size: 13px !important; line-height: 28px; color: #555}
 .panels{ margin-top:0px !important;}
@@ -684,4 +695,27 @@ left: 50%;
     text-align: justify;
     line-height: 14px !important;
 	padding:0 10px;
+}
+.ui-content {
+    padding: 1em 1em 0 !important;
+}
+
+.mohaseb{
+    font-size: 17px;
+    margin: .5em 0;
+    padding: .7em 1em;
+    border: 4px solid  #1680b5;
+    border-radius: 3px;
+    color:#1680b5;
+    text-shadow: 0 0 !important;
+    }
+.ui-listview>li p {
+ 
+    text-overflow: ellipsis !important;
+    overflow: visible !important;
+    white-space: normal !important;
+}
+.googlea{
+      padding: 5px 30px;
+    border-radius: 3px;
 }
