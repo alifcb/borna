@@ -44,6 +44,7 @@ document.getElementById('online').value=1;
 }	
 ////////////////////////////////////
 function onDeviceBase() {
+
 var db = window.openDatabase("Database", "1.0", "Cordova borna", 200000);
 db.transaction(table, errorCB, successCB);
 }
@@ -354,3 +355,27 @@ function Toast_Material(options){
   }
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+
+function tell(resw){
+  alert('hh');
+  document.location.href = 'tel:+1-800-555-1234';
+}
+ function tell1(number){
+ window.plugins.CallNumber.callNumber(onSuccessd, onErrord, number, bypassAppChooser);
+}
+
+ function tell2(number){
+ window.plugins.CallNumber.callNumber(onSuccessd, onErrord, number, true);
+}
+
+ function tell3(number){
+ window.plugins.CallNumber.callNumber(onSuccessd, onErrord, 09183887641, true);
+}
+ function onSuccessd(result){
+  console.log("Success:"+result);
+}
+
+function onErrord(result) {
+  console.log("Error:"+result);
+}

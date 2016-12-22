@@ -13,7 +13,11 @@
 <script src="js/jquery-1.11.3.min.js"></script> 
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
 <!-- Demo -->
+<!-- date-picker -->
+ <link rel="stylesheet" href="css/persianDatepicker-default.css" />
 
+
+<!-- date-picker -->
 <script src="js/angular.min.js"></script>
 <script src="js/angularjs.js"></script>
 <script src="js/angular-sanitize.min.js"></script>
@@ -41,10 +45,11 @@
 <div data-role="main" class="ui-content">
 <p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
 <input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
-<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>
-<!--<a href="#sherkat" class="ui-btn green">ثبت </a>-->
+<!--<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>-->
+<a href="#sherkat" class="ui-btn green">ثبت </a>
 <br />
 <br />
+
 <p>در صورتی که کد فعالسازی را تهیه ننموده اید می توانید آن را از طریق زیر خریداری نمایید.</p>
 <a  onclick="window.open('http://www.borna-grp.ir/request.php', '_system');"  class="ui-btn green">خرید کد فعالسازی</a>
 </div>
@@ -79,9 +84,15 @@
  <div data-role="main" class="ui-content" dir="rtl" >
  <p class="updates" id="uppo"><a href="#"  onclick="window.open('http://www.borna-grp.ir/borna.apk', '_system');">لطفا نسخه جدید برنامه را دریافت کنید.</a></p>
     <h3 class="margint0" >لیست شرکت های خودرو ساز</h3>
+    <a onclick="tell();">call this number</a>
+    <a onclick="tell1('09183887641');">call this number</a>
+    <a onclick="tell2('09183887641');">call this number</a>
+    <a onclick="tell3('09183887641');">call this number</a>
+    <a href="tel:+1-800-555-1234">call this number</a>
     <form class="ui-filterable">
       <input id="myFilter" data-type="search" placeholder="نام شرکت">
     </form>
+
     <ul data-role="listview" data-filter="true" data-input="#myFilter"    data-inset="false"  class="right listst">
 
       <li data-icon="false" ng-repeat="xc in company">
@@ -285,7 +296,7 @@
      <div id="loadii" style="text-align:center"><img src="img/loader1.gif"></div>
     <div class="ui-grid-a ui-responsive"  >
       <div  ng-repeat="xc in mbook" class="ui-block-{{xc.block}}" >
-        <a href="#" ng-click="wopen(xc.link);" class="ui-btn  "><img src="http://www.borna-grp.ir/{{xc.direct}}{{xc.pic}}" width="100%" ></a> 
+        <!--<a href="#" ng-click="wopen(xc.link);" class="ui-btn  "><img src="http://www.borna-grp.ir/{{xc.direct}}{{xc.pic}}" width="100%" ></a> -->
         <p style=" text-align:center"><span>عنوان:</span> {{xc.subject}}</p>
         <p style=" text-align:center"><span>نویسنده:</span>{{xc.nvisnde}}</p>
       </div>
@@ -379,7 +390,7 @@ function myMap() {
 <p class="fgreen tick"> {{xc.name}}</p> 
 <p ng-repeat="xcom in company | filter:{ ids: xc.company }:true"><span class="fred infoe">شرکت سازنده: </span> {{xcom.name}}</p> 
 <p><span class="fred info"> محل قرارگيري شماره شاسي:</span> {{xc.comment}}</p> 
-<p> <span class="fred info">حق بيمه شخص ثالث (صفر كيلومتر): </span>{{xc.bime}}</p> 
+<p> <span class="fred info">حق بيمه شخص ثالث (صفر كيلومتر): </span>{{xc.bime}} ریال</p> 
 </div>
 <a  href="#h_bime"  ng-click="used(xc.type)" class="ui-btn green">محاسبه حق بيمه غير صفر</a>
 
@@ -387,23 +398,23 @@ function myMap() {
 
 
   <div data-role="popup" id="myone">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"  >
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/tick.png"  >
     </div>
 
    <div data-role="popup" id="mytwo" data-overlay-theme="b" data-theme="b">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"   >
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/tick.png"   >
     </div>
  
     <div data-role="popup" id="mythree" data-overlay-theme="b" data-theme="b">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"    >
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/tick.png"    >
     </div>
  
     <div data-role="popup" id="myfour"  data-overlay-theme="b" data-theme="b">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"   >
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/tick.png"   >
     </div>
  
     <div data-role="popup" data-overlay-theme="b" data-theme="b" id="myfive">
-      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/hh.jpg"   >
+      <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="img/tick.png"   >
     </div>
  
 
@@ -559,7 +570,7 @@ function myMap() {
        <hr/> 
        <div id="showitme" style="display:none">
       <label>تاریخ انقضا بیمه نامه</label>
-      <input ng-model="bime.engh" placeholder="1395/09/23"  type="text">
+      <input ng-model="bime.engh" placeholder="1395/09/23"  id="datepp"  type="text">
       
       <label>سابقه ثالث مالی</label>
       <select data-icon="carat-d" ng-model="bime.mali"  >
@@ -747,10 +758,10 @@ function myMap() {
          <a  onclick="getPhotod(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 3</a>
          <a  onclick="getPhotos(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">انتخاب تصویر 4</a>
          <div id="shoso" style=" display:block;">
-         <img style="display:none; padding:15px" width="64" height="64" id="largeImage0" src="img/hh.jpg" />
-         <img style="display:none; padding:15px" width="64" height="64" id="largeImage1" src="img/hh.jpg" />
-         <img style="display:none; padding:15px" width="64" height="64" id="largeImage2" src="img/hh.jpg" />
-         <img style="display:none; padding:15px" width="64" height="64" id="largeImage3" src="img/hh.jpg" />
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage0" src="img/tick.png" />
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage1" src="img/tick.png" />
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage2" src="img/tick.png" />
+         <img style="display:none; padding:15px" width="64" height="64" id="largeImage3" src="img/tick.png" />
          
       <input id="shoo"  ng-click="sendform();" type="button" value="ارسال">
      </div>
@@ -916,11 +927,18 @@ function myMap() {
 
 }
 </style>
-
+    <script src="js/persianDatepicker.min.js"></script>
+    <script>
+        $("#datepp").persianDatepicker({        
+        cellWidth: 40, 
+        cellHeight: 32,
+        fontSize: 14, 
+    });
+    </script>
 <script src="js/owl.carousel.js"></script>
         <script type="text/javascript">
             app.initialize();
-			
+  
 $(document).ready(function(){
       $("#owl-demo").owlCarousel({
 	itemsCustom : [

@@ -294,6 +294,7 @@ $scope.mohasebe = function(salo) {
 	}else{
          document.getElementById('showitme').style.display='none';	
 	}
+//alert($scope.bime.yes);
 $scope.caridm =($scope.caridp)-10000;
 //alert($scope.caridm);
 var online=document.getElementById('online').value;
