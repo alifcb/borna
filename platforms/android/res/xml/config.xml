@@ -1,8 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.namiaweb.borna" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <feature name="CallNumber">
-        <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber" />
-    </feature>
     <name>برنا</name>
     <description>طراحی و پیاده سازی شرکت گسترش وب نامیا</description>
     <author email="support@namiaweb.com" href="http://namiaweb.com">namiaweb</author>

@@ -7,47 +7,18 @@
         "files": {
             "res/xml/config.xml": {
                 "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
-                            "count": 1
-                        }
-                    ]
+                    "/*": []
                 }
             },
             "AndroidManifest.xml": {
                 "parents": {
-                    "/*": [
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-feature android:name=\"android.hardware.telephony\" android:required=\"false\" />",
-                            "count": 1
-                        }
-                    ]
+                    "/*": []
                 }
             }
         }
     },
-    "installed_plugins": {
-        "call-number": {
-            "PACKAGE_NAME": "com.namiaweb.borna"
-        }
-    },
+    "installed_plugins": {},
     "dependent_plugins": {},
-    "modules": [
-        {
-            "id": "call-number.CallNumber",
-            "file": "plugins/call-number/www/CallNumber.js",
-            "pluginId": "call-number",
-            "clobbers": [
-                "call"
-            ]
-        }
-    ],
-    "plugin_metadata": {
-        "call-number": "0.0.2"
-    }
+    "modules": [],
+    "plugin_metadata": {}
 }

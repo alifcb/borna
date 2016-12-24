@@ -427,7 +427,7 @@ ul li a:active{
     padding:  0px !important;
 }
 .ui-input-text input, .ui-input-search input{text-align:right !important; padding: 0.6em !important; font-size: 15px !important;}
-.ui-header .ui-title, .ui-footer .ui-title{font-size: 19px !important;     padding: .4em 0 !important; min-height: 1.5em !important;
+.ui-header .ui-title, .ui-footer .ui-title{font-size: 17px !important;     padding: .3em 0 !important; min-height: 1.5em !important;
     margin: 0 25% !important;}
 .ui-btn-left, .ui-btn-right {
     top: 0.33em !important;
@@ -440,6 +440,10 @@ ul li a:active{
 .ui-mobile a img, .ui-mobile fieldset {
     border-width: 0;
 
+}
+.ui-header .ui-btn-left, .ui-header .ui-btn-right {
+    font-size: 9.5px !important;
+    padding: 3px 5px !important;
 }
 .ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb{
         border-radius: 50%;
@@ -512,7 +516,25 @@ ul li a:active{
 .colorw{color: #fff !important; font-weight:normal !important;} 
 p{text-align: justify; line-height: 20px !important;}
 
-
+.bloader img{ position:relative; }
+.bloader span{ position:absolute; left:15px; top:0; z-index:1000}
+.bloader{position:relative !important; display:none;}
+.wid1 span{ visibility: hidden;}
+.wid1{padding: 7px 27% !important;}
+.loader{margin:0 auto ;
+margin-right:100px;
+}
+.mergicon{padding: 10px;} 	
+.backoff{
+    background-color: #000000 !important;
+    height: 1984px;
+    left: 0;
+    opacity: 0.5 ;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+}
 /*---------------------------- start toast----------------------------------------------------*/
 
 .toast_material{

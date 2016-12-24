@@ -24,19 +24,88 @@ if($scope.iup>$scope.vup){//alert('fjf');
 	}
 });
 }  
+/////////////////////////////////////////tell cell
+$scope.tellb = function (tells) {
+  document.location.href = 'tel:'+tells;
+};
+
 //////////////////////////////////////show book
 $scope.books = function (ides) {
-	//alert(ides);
-	var bookid=document.getElementById('bookid').value;
+ var bookid=document.getElementById('bookid').value;
+	//alert(bookid);
+	document.getElementById('loadii').style.display='none';
 if(bookid==0){
 	    document.getElementById('bookid').value=1;
 		document.getElementById('loadii').style.display='block';
 	$http.get("http://borna-grp.ir/api.php?books=1").then(function(response) {
-	$scope.mbook = response.data.books;
+	$scope.mbooks = response.data.books;
+	
 	 	document.getElementById('loadii').style.display='none';
 });	
 }
 };
+
+$scope.dowbooks = function (URL,File_Name,ids) {
+todoServicez.dbook(ids).then(function(items)
+{ 
+if(items!==0){
+	window.open("file:///storage/sdcard0/borna/pdf/"+File_Name, '_system', '');
+}else{
+
+
+var Onlins=document.getElementById('online').value;
+if(Onlins==0){
+Toast_Material({ content : "اتصال شما به اینترنت برقرار نیست !!", updown:"bottom", position:"center", align:"center" });	
+return 0;
+}
+
+Toast_Material({ content : "دریافت فایل کتاب آغاز شد", updown:"bottom", position:"center", align:"center" });	
+
+document.getElementById('bloader'+ids).style.visibility="visible";
+var urls=URL+File_Name;
+//alert(urls);
+var fileTransfer = new FileTransfer();
+var uri = encodeURI(urls);
+fileTransfer.download(
+uri,
+"file:///storage/sdcard0/borna/pdf/"+File_Name,
+function(entt) {
+},
+function(error) {
+	todoServicez.downbook(ids);
+  console.log("upload error code" + error.message);
+},
+false,
+{
+  headers: {
+	  "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+  }
+}
+);
+fileTransfer.onprogress = function(progressEvent) {
+		if (progressEvent.lengthComputable) {
+			var perc=0;
+			perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
+			
+			document.getElementById('bloader'+ids).innerHTML=perc+'%';
+			if(perc==100){
+				todoServicez.upbook(ids);
+				window.open("file:///storage/sdcard0/borna/pdf/"+File_Name, '_system', '');
+				document.getElementById('bloader'+ids).style.visibility="hidden";
+				document.getElementById('bloader'+ids).style.display='none';
+				}
+			//statusDom.innerHTML = perc + "% loaded...";
+		} else {
+			
+		}
+	};
+
+	}
+});
+
+};
+
+
 ///////////////////////////////show car	
 $scope.comp_id = function (ides) {
 	//alert(ides);
@@ -44,7 +113,7 @@ $scope.comp_id = function (ides) {
 	$scope.cars = response.data.cars;
 	  $scope.pageid=ides;
 });	
-}
+};
 
 /////////////////////////////////show marakez
 $scope.markaz = function (ides) {
@@ -80,7 +149,7 @@ $scope.bazdid = function (ides) {
 			document.getElementById('loadiv').style.display='none';
 	  });	
 	  }
-}
+};
 $scope.mbaz = function (ides) {
 	//alert(ides);
 	var view=document.getElementById('bazdid'+ides).style.display;
@@ -90,7 +159,7 @@ $scope.mbaz = function (ides) {
      document.getElementById('bazdid'+ides).style.display='none';		
 	}
 
-}
+};
 
 //////////////////////////////////////noeen daste khodro
 $scope.noeevn = function () {
@@ -164,11 +233,6 @@ $scope.efaver=items[0].fav;
 
 	 
 });
-
-///////////////////////////////
-
-
-
 
 //////////////////////////////////////////////////////////// آیا فیور هست
 //todoServicez.iffav(ides).then(function(items)
@@ -260,7 +324,7 @@ $scope.forms.email="";
 $scope.forms.name="";
 Toast_Material({ content : "پیام شما با موفقیت به پشتیبانی ارسال شد", updown:"bottom", position:"center", align:"center" });	
   });
- }
+ };
 ////////////////////////////////////////////////////////////////////////// 	
 $scope.randoms = Math.floor(Math.random() * 2) + 1  ;
 $scope.mylan = function (lan) {
@@ -560,6 +624,24 @@ this.sherm = function(para)
 	  });
 	  return deferred.promise;
     },
+this.dbook = function(para)
+  {  // alert(para);
+	  var deferred, result = [];
+	  deferred = $q.defer();
+	  var db = window.openDatabase("Database", "1.0", "Cordova borna", 200000);
+	  db.transaction(function(tx) 
+	  { tx.executeSql("SELECT id_book FROM books where id_book='"+para+"'", [], function(tx, res) 
+	  { //alert(res.rows.length);
+	  if(res.rows.length==0){result=0;
+
+	  }else{result=res.rows.item(0).id_book;}
+	  //alert(result);
+	  deferred.resolve(result);
+	  
+	  });
+	  });
+	  return deferred.promise;
+    },	
 this.iffav = function(para)
 {   var idcom=para;
 //alert(idcom);
@@ -585,15 +667,15 @@ this.faverat = function(idss,fave)
         db.transaction(function(tx) 
         {
 return tx.executeSql("UPDATE cars SET fav="+fave+" where id_car="+idss , [], function(tx, res) 
-            {
-                return true;
-            });
+		{
+			return true;
+		});
         });
         return false;
     },
 this.UserImg=function(imageURI,file_name,counts){
          	var deferred, result = [];
-            var deferred = $q.defer();
+             deferred = $q.defer();
 			var options = new FileUploadOptions();
 			options.fileKey="file";
 			options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -620,7 +702,7 @@ this.UserImg=function(imageURI,file_name,counts){
 
               return deferred.promise;
                },	
-             this.idreg = function()
+ this.idreg = function()
 						{  
 						var deferred, result = [];
 						deferred = $q.defer();
@@ -645,7 +727,7 @@ this.UserImg=function(imageURI,file_name,counts){
             });
         });
         return false;
-    }		
+    },		
 this.getfaver = function()
   {   
 	  var deferred, result = [];
@@ -664,6 +746,30 @@ this.getfaver = function()
 	  });
 	  return deferred.promise;
     },
+this.downbook = function(idss) 
+    {//alert(idss+fave);
+		var db = window.openDatabase("Database", "1.0", "Cordova borna", 200000);
+        db.transaction(function(tx) 
+        {
+            return tx.executeSql("DELETE FROM `books` WHERE id_book="+idss , [], function(tx, res) 
+            {
+                return true;
+            });
+        });
+        return false;
+    },
+this.upbook = function(idss) 
+    {//alert(idss+fave);
+		var db = window.openDatabase("Database", "1.0", "Cordova borna", 200000);
+        db.transaction(function(tx) 
+        {
+            return tx.executeSql('INSERT INTO books(id_book) values("'+idss+'")' , [], function(tx, res) 
+            {
+                return true;
+            });
+        });
+        return false;
+    },	
 this.show_alert = function()
   {   
 	  var deferred, result = [];

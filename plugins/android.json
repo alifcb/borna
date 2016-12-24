@@ -6,10 +6,6 @@
     "config_munge": {
         "files": {}
     },
-    "installed_plugins": {
-        "call-number": {
-            "PACKAGE_NAME": "com.namiaweb.borna"
-        }
-    },
+    "installed_plugins": {},
     "dependent_plugins": {}
 }

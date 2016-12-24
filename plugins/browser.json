@@ -9,9 +9,6 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.namiaweb.borna"
-        },
-        "call-number": {
-            "PACKAGE_NAME": "com.namiaweb.borna"
         }
     },
     "dependent_plugins": {}
