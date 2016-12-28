@@ -3,6 +3,8 @@
 var App = angular.module('App', ['ngSanitize'] );
 
 App.controller('CenterCTRL', function ($scope,todoServicez,$http) {
+$scope.logosazman="sarmad.png";	//logo sazman
+	
 //////////////////////////////////////////// show company	
 $http.get("company.json").then(function(response) {
 	$scope.company = response.data.items;
@@ -37,7 +39,7 @@ $scope.books = function (ides) {
 if(bookid==0){
 	    document.getElementById('bookid').value=1;
 		document.getElementById('loadii').style.display='block';
-	$http.get("http://borna-grp.ir/api.php?books=1").then(function(response) {
+	$http.get("http://borna-grp.ir/api.php?books=2").then(function(response) {
 	$scope.mbooks = response.data.books;
 	
 	 	document.getElementById('loadii').style.display='none';
@@ -121,7 +123,7 @@ $scope.markaz = function (ides) {
 if(shobeid==0){
 	    document.getElementById('shobeid').value=1;
 			document.getElementById('loadim').style.display='block';
-	$http.get("http://borna-grp.ir/api.php?id=1&type=1").then(function(response) {
+	$http.get("http://borna-grp.ir/api.php?id=2&type=1").then(function(response) {
 	$scope.shobe = response.data.shobe;
 	//alert(response.data.shobe[0].ids);
 			document.getElementById('loadim').style.display='none';
@@ -144,7 +146,7 @@ $scope.bazdid = function (ides) {
 	  if(bazdidid==0){
 		  document.getElementById('bazdidid').value=1;
 		  document.getElementById('loadiv').style.display='block';
-			$http.get("http://borna-grp.ir/api.php?id=1&type=2").then(function(response) {
+			$http.get("http://borna-grp.ir/api.php?id=2&type=2").then(function(response) {
 			$scope.mbazdid = response.data.shobe;
 			document.getElementById('loadiv').style.display='none';
 	  });	
@@ -476,7 +478,8 @@ Toast_Material({ content : "برنامه در حال ارسال اطلاعات �
 };
   
 ///////////////////////////////////////////////// نمایش نقشه گوگل
-$scope.google = function() {
+$scope.google = function(addr) {
+	$scope.ahobeadd=addr;
   $.mobile.changePage( "#google", { transition: "slideup"} );
 
 }  
@@ -487,6 +490,7 @@ online=document.getElementById('online').value;
 
 $scope.user.company='no';
 //var laImage = document.getElementById('largeImage0').src;	
+//alert(laImage);
 if(!$scope.user.company || !$scope.user.cars){
 
 Toast_Material({ content : "لطفا  نام خودرو را وارد کنید!", updown:"bottom", position:"center", align:"center" });	
@@ -499,7 +503,7 @@ Toast_Material({ content : "اتصال به اینترنت برقرار نیست
 
 $scope.btshow=true;
 document.getElementById('shoo').value='در حال ارسال ...';
-  document.getElementById('shoso').style.display="none";
+document.getElementById('shoso').style.display="none";
 Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
 $scope.disa=true;
 for(var i = 0; i < 4; i++){
@@ -513,10 +517,10 @@ if(i==3){ends='end'}else{ends='no'}
 todoServicez.UserImg(imageURI,namefile,ends).then(function(items)
 {
 //alert(items);
-if(items=='end' || items=='not'){
+if(items=='end' ){
 $scope.btshow=false;	
 $scope.user.cars="";
-Toast_Material({ content : "ارسال به اتمام رسید!", updown:"bottom", position:"center", align:"center" });
+Toast_Material({ content : "ارسال تصاویر به اتمام رسید!", updown:"bottom", position:"center", align:"center" });
  document.getElementById('largeImage0').src="";
 document.getElementById('largeImage2').src="";
 document.getElementById('largeImage3').src="";
@@ -674,28 +678,32 @@ return tx.executeSql("UPDATE cars SET fav="+fave+" where id_car="+idss , [], fun
         return false;
     },
 this.UserImg=function(imageURI,file_name,counts){
+	//alert(imageURI+file_name+counts);
          	var deferred, result = [];
              deferred = $q.defer();
 			var options = new FileUploadOptions();
-			options.fileKey="file";
+			options.fileKey="filed";
 			options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+			options.mimeType = "image/jpeg";
+			console.log(options.fileName);
 			var params = {};
-			params.value1 = file_name;
-			params.value2  = counts;
+			params.valuee = file_name;
+			params.valuee2  = counts;
 			options.params = params;
-			var ft = new FileTransfer();
-			ft.upload(imageURI, encodeURI('http://www.borna-grp.ir/sabt_kh.php'),
+		    options.chunkedMode = false;
+			var ftd = new FileTransfer();
+			ftd.upload(imageURI, encodeURI('http://www.borna-grp.ir/sabt_kh.php'),
 				function(r){
 					//console.log("Code = " + r.responseCode);
-					//alert("Response = " + r.response);
-					//console.log("Sent = " + r.bytesSent);
-					deferred.resolve(r.response);
+				// alert("Response = " + r.response);
+					 //console.log("Sent = " + r.bytesSent);
+					 deferred.resolve(r.response);
 
 				},
 				function(error){
 					//alert("An error has occurred: Code = " + error.code);
-					//console.error("upload error source " + error.source);
-					//console.error("upload error target " + error.target);
+					// console.error("upload error source " + error.source);
+					// console.error("upload error target " + error.target);
 					deferred.reject(error);
 
 				}, options);

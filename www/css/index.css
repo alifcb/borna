@@ -31,6 +31,15 @@
 
 * {
 }
+ .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
 body {
     background-attachment: fixed;
     background-color: #e4e4e4;
@@ -118,6 +127,8 @@ background-color: #fbfbFb !important;
     border-bottom: 1px solid #bbb;
     border-top: 1px solid #bbb;
 }
+.wid50{width:50% !important
+}
 .right li a {
     text-align: right !important;
 }
@@ -166,6 +177,8 @@ background-color: #fbfbFb !important;
     padding: 0.3em 1em !important;
     text-align: center !important;
 }
+.pad1{padding:5px 45px !important}
+.pad2{padding:5px 62px !important}
 .rooz{
   padding: 1px 0 !important;
 	width:99% !important;
@@ -427,7 +440,7 @@ ul li a:active{
     padding:  0px !important;
 }
 .ui-input-text input, .ui-input-search input{text-align:right !important; padding: 0.6em !important; font-size: 15px !important;}
-.ui-header .ui-title, .ui-footer .ui-title{font-size: 17px !important;     padding: .3em 0 !important; min-height: 1.5em !important;
+.ui-header .ui-title, .ui-footer .ui-title{font-size: 17px !important;    padding: .4em 0 .2em !important; min-height: 1.4em !important;
     margin: 0 25% !important;}
 .ui-btn-left, .ui-btn-right {
     top: 0.33em !important;
@@ -520,7 +533,8 @@ p{text-align: justify; line-height: 20px !important;}
 .bloader span{ position:absolute; left:15px; top:0; z-index:1000}
 .bloader{position:relative !important; display:none;}
 .wid1 span{ visibility: hidden;}
-.wid1{padding: 7px 27% !important;}
+.wid1{padding: 7px 23% !important;
+    margin: 0 15px 0 0px}
 .loader{margin:0 auto ;
 margin-right:100px;
 }
@@ -744,3 +758,7 @@ left: 50%;
 .pdp-default {
   width: 85% !important;
 }
+.imgpa{
+	float:right;
+	margin-bottom:5px;}
+.margb20{margin-bottom:20px !important}

@@ -58,7 +58,7 @@
 <!------------------------------------- sherkat ha-------------------------------------------------->
 <div data-role="page"   id="sherkat">
  <div data-role="panel" data-position-fixed="true" id="myPanel" data-display="overlay" data-position="right">
-      <img width="162" height="77" src="img/taavon.png">  
+      <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -105,7 +105,7 @@
 <div data-role="page"   id="mashinha">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel2" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -150,7 +150,7 @@
 <div data-role="page"   id="markaz">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel2e" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -193,8 +193,8 @@
         <span>مدیر شعبه: </span>{{xc.boss}}<br>
         <span>کد شعبه: </span>{{xc.code}}<br>
         <br>
-        <span  href="#google"  ng-click="google()" class="green googlea">نمایش بر روی نقشه</span>
-        <span  ng-click="tellb(xc.tell)" class="green googlea">تماس</span>
+        <span  href="#google"  ng-click="google(xc.address)" class="green googlea wid50 pad1">نمایش بر روی نقشه</span>
+        <span  ng-click="tellb(xc.tell)" class="green googlea wid50 pad2">تماس</span>
     </p></a>
         
       </li>
@@ -207,7 +207,7 @@
 <div data-role="page"   id="bazdids">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel2c" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -250,8 +250,8 @@
         <span>مدیر شعبه: </span>{{xc.boss}}<br>
         <span>کد شعبه: </span>{{xc.code}}<br>
         <br>
-        <span  href="#google"  ng-click="google()" class="green googlea">نمایش بر روی نقشه</span>
-        <span  ng-click="tellb(xc.tell)" class="green googlea">تماس</span>
+        <span  href="#google"  ng-click="google(xc.address)" class="green googlea wid50 pad1">نمایش بر روی نقشه</span>
+        <span  ng-click="tellb(xc.tell)" class="green googlea  wid50 pad2">تماس</span>
     </p>
         </a>
       </li>
@@ -265,7 +265,7 @@
 <div data-role="page"   id="books">
 
  <div data-role="panel" data-position-fixed="true" id="myPanelb" data-display="overlay" data-position="right">
-   <img width="162" height="77" src="img/taavon.png">  
+   <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -298,7 +298,7 @@
         <p style=" text-align:center"><span>عنوان:</span> {{xc.subject}}</p>
         <p style=" text-align:center"><span>نویسنده:</span>{{xc.nvisnde}}</p>
         <p>
-        <a  ng-click="dowbooks(xc.direct,xc.link,xc.ids)" class="green googlea wid1">دریافت <span style="visibility:hidden" id="bloader{{xc.ids}}">0</span></a>
+        <a  ng-click="dowbooks(xc.direct,xc.link,xc.ids)" class="green googlea wid1">مشاهده <span style="visibility:hidden" id="bloader{{xc.ids}}">0</span></a>
      </p>
       </div>
 
@@ -311,7 +311,7 @@
 <div data-role="page"   id="google">
 
  <div data-role="panel" data-position-fixed="true" id="myPanelg" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img  width="162" height="77" class="imgpa" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -336,14 +336,14 @@
   </div>
   
  <div data-role="main" class="ui-content" dir="rtl" >
-    <h3 class="margint0">آدرس شعبه</h3>
+    <h3 class="margint0">آدرس شعبه: {{ahobeadd}}</h3>
    <div id="map" style="width:100%;height:500px"></div>
 
 <script>
 function myMap() {
-  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var myCenter = new google.maps.LatLng(35.726205,51.419151);
   var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 13};
+  var mapOptions = {center: myCenter, zoom:13};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
@@ -357,7 +357,7 @@ function myMap() {
 <div data-role="page"   id="tozihat">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel3" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -383,8 +383,8 @@ function myMap() {
  <div data-role="main" class="ui-content" dir="rtl" ng-repeat="xc in carm | filter:{ ids: carid }">
     <!--<h2>لیست ماشین ها</h2>-->
     <div class="ui-grid-solo" >
- <div class="ui-block-a" style="height:162px;">
- <img src="{{xc.direct}}{{xc.pic}}" width="100%" height="100%">
+ <div class="ui-block-a" style="height:185px;">
+ <img src="{{xc.direct}}{{xc.pic}}" style="max-width:380px" height="100%">
  </div>
 </div>
 <div class=" gray_d right rooz">
@@ -393,7 +393,7 @@ function myMap() {
 <p><span class="fred info"> محل قرارگيري شماره شاسي:</span> {{xc.comment}}</p> 
 <p> <span class="fred info">حق بيمه شخص ثالث (صفر كيلومتر): </span>{{xc.bime}} ریال</p> 
 </div>
-<a  href="#h_bime"  ng-click="used(xc.type)" class="ui-btn green">محاسبه حق بيمه غير صفر</a>
+<a  href="#h_bime"  ng-click="used(xc.type)" class="ui-btn green ">محاسبه حق بيمه غير صفر</a>
 
   </div>
 
@@ -438,7 +438,7 @@ function myMap() {
 <div data-role="page"   id="favert">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel4" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -482,7 +482,7 @@ function myMap() {
 <div data-role="page"   id="yadavar">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel5" data-display="overlay" data-position="right">
-     <img width="162" height="77" src="img/taavon.png">  
+     <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -527,7 +527,7 @@ function myMap() {
 <div data-role="page"   id="h_bime">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel5u" data-display="overlay" data-position="right">
-     <img width="162" height="77" src="img/taavon.png">  
+     <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -619,7 +619,7 @@ function myMap() {
 <div data-role="page"   id="h_bime2">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel5r" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -721,7 +721,7 @@ function myMap() {
 <div data-role="page"   id="add">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel5n" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -773,7 +773,7 @@ function myMap() {
 <div data-role="page"   id="contact">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel6" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -815,7 +815,7 @@ function myMap() {
 <div data-role="page"   id="about_us">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel7" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
@@ -875,7 +875,7 @@ function myMap() {
 <div data-role="page"   id="help">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel9" data-display="overlay" data-position="right">
-    <img width="162" height="77" src="img/taavon.png">  
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
