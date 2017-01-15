@@ -3,7 +3,7 @@
 var App = angular.module('App', ['ngSanitize'] );
 
 App.controller('CenterCTRL', function ($scope,todoServicez,$http) {
-$scope.logosazman="sarmad.png";	//logo sazman
+$scope.logosazman="logo-razi.png";	//logo sazman
 	
 //////////////////////////////////////////// show company	
 $http.get("company.json").then(function(response) {
@@ -39,7 +39,7 @@ $scope.books = function (ides) {
 if(bookid==0){
 	    document.getElementById('bookid').value=1;
 		document.getElementById('loadii').style.display='block';
-	$http.get("http://borna-grp.ir/api.php?books=2").then(function(response) {
+	$http.get("http://borna-grp.ir/api.php?books=3").then(function(response) {
 	$scope.mbooks = response.data.books;
 	
 	 	document.getElementById('loadii').style.display='none';
@@ -123,7 +123,7 @@ $scope.markaz = function (ides) {
 if(shobeid==0){
 	    document.getElementById('shobeid').value=1;
 			document.getElementById('loadim').style.display='block';
-	$http.get("http://borna-grp.ir/api.php?id=2&type=1").then(function(response) {
+	$http.get("http://borna-grp.ir/api.php?id=3&type=1").then(function(response) {
 	$scope.shobe = response.data.shobe;
 	//alert(response.data.shobe[0].ids);
 			document.getElementById('loadim').style.display='none';
@@ -146,7 +146,7 @@ $scope.bazdid = function (ides) {
 	  if(bazdidid==0){
 		  document.getElementById('bazdidid').value=1;
 		  document.getElementById('loadiv').style.display='block';
-			$http.get("http://borna-grp.ir/api.php?id=2&type=2").then(function(response) {
+			$http.get("http://borna-grp.ir/api.php?id=3&type=2").then(function(response) {
 			$scope.mbazdid = response.data.shobe;
 			document.getElementById('loadiv').style.display='none';
 	  });	
