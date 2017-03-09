@@ -51,11 +51,13 @@ db.transaction(table, errorCB, successCB);
 // end onDeviceBase
 
 function table(tx){    
-//tx.executeSql('DROP TABLE IF EXISTS books');
+//tx.executeSql('DROP TABLE IF EXISTS yadavari');
 //tx.executeSql('DROP TABLE IF EXISTS settings');
 tx.executeSql('CREATE TABLE IF NOT EXISTS cars(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, id_car INTEGER, name text,comment text,bime text,pic text,direct text,company INTEGER,flag INTEGER,fav INTEGER)');
 tx.executeSql('CREATE TABLE IF NOT EXISTS settings(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, title text,valuem text)');
 tx.executeSql('CREATE TABLE IF NOT EXISTS books(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, id_book INTEGER,links text,direct text,flag INTEGER)');
+tx.executeSql('CREATE TABLE IF NOT EXISTS yadavari(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name text,date text,tell text,flag INTEGER)');
+
 }
 
 ///////////////////////////////////////error db

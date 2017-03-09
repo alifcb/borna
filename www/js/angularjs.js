@@ -30,7 +30,10 @@ if($scope.iup>$scope.vup){//alert('fjf');
 $scope.tellb = function (tells) {
   document.location.href = 'tel:'+tells;
 };
-
+/////////////////////////////////////////tell cell
+$scope.smsb = function (sms) {
+  document.location.href = 'sms:'+sms;
+};
 //////////////////////////////////////show book
 $scope.books = function (ides) {
  var bookid=document.getElementById('bookid').value;
@@ -107,7 +110,15 @@ fileTransfer.onprogress = function(progressEvent) {
 
 };
 
-
+/////////////////////////////////show links - pyvand ha
+$scope.linkss = function (ides) {
+ 	//document.getElementById('loadivc').style.display='block';
+	$http.get("http://borna-grp.ir/api.php?id_link=3").then(function(response) {
+	$scope.links = response.data.links;
+	//alert(response.data.shobe[0].ids);
+	document.getElementById('loadivc').style.display='none';
+});	
+};
 ///////////////////////////////show car	
 $scope.comp_id = function (ides) {
 	//alert(ides);
@@ -169,8 +180,8 @@ $scope.noeevn = function () {
 	document.getElementById('loadingo').style.display="block";
 	 document.getElementById('noeevn').style.display='none';	
  $http.get("http://borna-grp.ir/api.php?onevan="+value).then(function(response) {
-	$scope.noeen = response.data.onevan;
-	//alert($scope.noeen );
+	$scope.noeencar = response.data.onevan;
+	//alert($scope.noeencar );
 });	
  $http({
   method  : 'POST',
@@ -360,7 +371,8 @@ $scope.mohasebe = function(salo) {
 	}else{
          document.getElementById('showitme').style.display='none';	
 	}
-//alert($scope.bime.yes);
+ var dateb=document.getElementById('datepp').value;
+ 
 $scope.caridm =($scope.caridp)-10000;
 //alert($scope.caridm);
 var online=document.getElementById('online').value;
@@ -381,7 +393,7 @@ Toast_Material({ content : "برنامه در حال ارسال اطلاعات �
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/api.php',
-  data    : $.param({used:$scope.bime.used,yes:$scope.bime.yes,idcar:$scope.caridm,engh:$scope.bime.dateb,sal:$scope.bime.sal,sabe_m:$scope.bime.mali,sabe_s:$scope.bime.sarn}),  // pass in data as strings
+  data    : $.param({used:$scope.bime.used,yes:$scope.bime.yes,idcar:$scope.caridm,engh:dateb,sal:$scope.bime.sal,sabe_m:$scope.bime.mali,sabe_s:$scope.bime.sarn}),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
   .success(function(response) {
@@ -444,6 +456,7 @@ $scope.mohasebe2 = function(salo) {
 	}else{
          document.getElementById('showitme2').style.display='none';	
 	}
+ var dateb=document.getElementById('datepp2').value;
  
 //alert($scope.caridm);
 var online=document.getElementById('online').value;
@@ -464,7 +477,7 @@ Toast_Material({ content : "برنامه در حال ارسال اطلاعات �
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/api.php',
-  data    : $.param({used:$scope.bime2.used,yes:$scope.bime2.yes,noee:$scope.bime2.noee,engh:$scope.bime2.dateb,sal:$scope.bime2.sal,sabe_m:$scope.bime2.mali,sabe_s:$scope.bime2.sarn}),  // pass in data as strings
+  data    : $.param({used:$scope.bime2.used,yes:$scope.bime2.yes,noee:$scope.bime2.noee,engh:dateb,sal:$scope.bime2.sal,sabe_m:$scope.bime2.mali,sabe_s:$scope.bime2.sarn}),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
   .success(function(response) {
@@ -476,13 +489,93 @@ Toast_Material({ content : "برنامه در حال ارسال اطلاعات �
 }
 
 };
+///////////////////////////////////////// لیست رشته ها
+$scope.list_kar = function (ides) {
+	//alert(ides);
+	$http.get("http://www.borna-grp.ir/api.php?id_reshte=3").then(function(response) {
+	$scope.noeen = response.data.reshteha;
+	   
+});	
+};
+
+  ///////////////////////////////////////////////// محاسبه کارمزد
+ $scope.karmozd = {};	
+$scope.karmozd = function(salo) {
+ 
+var online=document.getElementById('online').value;
+ 
+if(!$scope.karmozd.reshte){
+
+Toast_Material({ content : "لطفا  تمام فیلد های موجود را تکمیل نمایید.", updown:"bottom", position:"center", align:"center" });	
+
+}else
+if(online==0){
+Toast_Material({ content : "اتصال به اینترنت برقرار نیست!", updown:"bottom", position:"center", align:"center" });	
+}else
+{	
+
+document.getElementById('showri3').innerHTML='در حال محاسبه ...';
+Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/api.php',
+  data    : $.param({noe:$scope.karmozd.noe,moaref:$scope.karmozd.moaref,hagh:$scope.karmozd.hagh,karmozd:$scope.karmozd.reshte }),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+  .success(function(response) {
+   document.getElementById('showri3').innerHTML='مبلغ کارمزد: '+response.karmozd[0].mablagh+' ریال ';
+  Toast_Material({ content : "محاسبه به اتمام رسید", updown:"bottom", position:"center", align:"center" });
+
+  });
+
+}
+
+};
+///////////////////////////////////////////////// ثبت یاداوری ها
+ $scope.yad = {};	
+  $scope.yadavariw = function() {
+ 
+var name=$scope.yad.name;
+var date= document.getElementById('sheew').innerHTML;
+var tell=$scope.yad.tell;	
+
   
+if(!$scope.yad.name){
+Toast_Material({ content : "لطفا  تمام فیلد های موجود را تکمیل نمایید.", updown:"bottom", position:"center", align:"center" });
+return 0;	
+}
+Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
+todoServicez.yadavar(name,date,tell);
+Toast_Material({ content : "ثبت با موفقیت انجام شد", updown:"bottom", position:"center", align:"center" });
+$scope.yad.name="";
+$scope.yad.dates="";
+$scope.yad.tell="";	
+};
+ 
+ //////////////////////////////////////// نمایش لیست یادآوری ها
+$scope.list_yad = function () {
+//faver  
+todoServicez.list_yad().then(function(items)
+{//alert(items[0].ids);
+	$scope.listyadc = items;
+});
+};
+///////////////////////////////// show list yad avari
+$scope.listy = function (ides) {
+	var view=document.getElementById('listy'+ides).style.display;
+	if(view=='none'){
+document.getElementById('listy'+ides).style.display='block';		
+		}else{
+document.getElementById('listy'+ides).style.display='none';		
+	}
+
+};
 ///////////////////////////////////////////////// نمایش نقشه گوگل
 $scope.google = function(addr) {
 	$scope.ahobeadd=addr;
   $.mobile.changePage( "#google", { transition: "slideup"} );
 
-}  
+};  
 ///////////////////////////////////////////////// ارسال تصویر
  $scope.users = {};	
 $scope.sendform = function(urlpic) {
@@ -735,7 +828,37 @@ this.UserImg=function(imageURI,file_name,counts){
             });
         });
         return false;
-    },		
+    },	
+this.yadavar = function(name,date,tell) 
+		{
+		var db = window.openDatabase("Database", "1.0", "Cordova borna", 200000);
+        db.transaction(function(tx) 
+        {
+            return tx.executeSql('INSERT INTO yadavari(name,date,tell) values("'+name+'","'+date+'","'+tell+'")' , [], function(tx, res) 
+            {
+                return true;
+            });
+        });
+        return false;
+    },	
+this.list_yad = function()
+  {   
+	  var deferred, result = [];
+	  deferred = $q.defer();
+	  var db = window.openDatabase("Database", "1.0", "Cordova borna", 200000);
+	  db.transaction(function(tx) 
+	  {
+	   tx.executeSql("select DISTINCT * from yadavari order by date DESC", [], function(tx, res) 
+		  {//alert(res.rows.length);
+		for(var i = 0; i < res.rows.length; i++)
+		{
+		  result.push({ids : res.rows.item(i).id, name : res.rows.item(i).name, tell: res.rows.item(i).tell,date : res.rows.item(i).date });
+		}
+		  deferred.resolve(result);
+		});
+	  });
+	  return deferred.promise;
+    },			
 this.getfaver = function()
   {   
 	  var deferred, result = [];

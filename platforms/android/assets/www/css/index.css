@@ -1,34 +1,19 @@
 /* CSS Document */
 @font-face {
   font-family: 'BYekan';
-  src: url('../fonts/BYekan.eot?#') format('eot'),  /* IE6–8 */
-       url('../fonts/BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-       url('../fonts/BYekan.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+  src: url('../fonts/IRANSansWeb.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	   url('../fonts/IRANSansWeb.woff2') format('woff2'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/  
+       url('../fonts/IRANSansWeb.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
 }
 @font-face {
-  font-family: 'BHoma';
-  src: url('../fonts/BHoma.eot?#') format('eot'),  /* IE6–8 */
-       url('../fonts/BHoma.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-       url('../fonts/BHoma.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+  font-family: 'BYekanl';
+  src: url('../fonts/IRANSansWeb_Light.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+	   url('../fonts/IRANSansWeb_Light.woff2') format('woff2'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/  
+       url('../fonts/IRANSansWeb_Light.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
 }
-@font-face {
-  font-family: 'nassim-bold';
-  src: url('../fonts/nassim-bold.eot?#') format('eot'),  /* IE6–8 */
-       url('../fonts/nassim-bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-       url('../fonts/nassim-bold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
-}
-@font-face {
-
-  font-family: 'BKoodakBold';
-
-  src: url('../fonts/BKoodakBold.eot?#') format('eot'),  /* IE6–8 */
-
-       url('../fonts/BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-
-       url('../fonts/BKoodakBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
-
-}
-
+ 
 * {
 }
  .noselect {
@@ -120,7 +105,7 @@ background-color: #fbfbFb !important;
     border-color: #999 !important;
     color: #fff !important;
     text-shadow: 0 1px 0 #999 !important;
-	 font-family:'nassim-bold' !important;
+	 font-family:'BYekan' !important;
 }
 
 .border-tb {
@@ -177,7 +162,7 @@ background-color: #fbfbFb !important;
     padding: 0.3em 1em !important;
     text-align: center !important;
 }
-.pad1{padding:5px 45px !important}
+.pad1{padding:5px 33px !important}
 .pad2{padding:5px 62px !important}
 .rooz{
   padding: 1px 0 !important;
@@ -239,6 +224,12 @@ background-color: #fbfbFb !important;
 .help{
      background: rgba(0, 0, 0, 0) url("../img/help.png") no-repeat  right 6px center;
 }
+.credit-card{
+     background: rgba(0, 0, 0, 0) url("../img/credit-card.png") no-repeat  right 6px center;
+}
+.links{
+     background: rgba(0, 0, 0, 0) url("../img/chains.png") no-repeat  right 6px center;
+}
 .helpt {
     background: rgba(0, 0, 0, 0) url("../img/help.png") no-repeat right 6px center;
     padding-right: 40px;
@@ -271,7 +262,7 @@ background-color: #fbfbFb !important;
 .rooz p{
 	text-align:justify;
 	padding: 0px 10px 0px 10px;
-		font-family:'BKoodakBold' ;
+		font-family:'BYekan' ;
 		color:#333;
 		
 }
@@ -477,7 +468,7 @@ ul li a:active{
 }
 
 .h2p{color: #fff !important; text-shadow:0px 0px 0px #222 !important;}
-.panels a{font-size: 13px !important; line-height: 28px; color: #555}
+.panels a{font-size: 12px !important;  font-family: 'BYekanl'; line-height: 28px; color: #555}
 .panels{ margin-top:0px !important;}
 .md-toolbar-tools {
     height: 48px;
@@ -701,7 +692,7 @@ left: 50%;
     font-weight: normal !important;
 }
 
-.ui-listview li .font17{font-size:17px !important;}	
+.ui-listview li .font17{font-size:15px !important;}	
 .ui-listview  .shobe {padding:0px 15px !important;}
 .ui-listview  span {
 	color:#AB1197;
@@ -733,7 +724,7 @@ left: 50%;
 	padding:0 10px;
 }
 .ui-content {
-    padding: 1em 1em 0 !important;
+    padding: 1em 1em  !important;
 }
 
 .mohaseb{
@@ -762,3 +753,11 @@ left: 50%;
 	float:right;
 	margin-bottom:5px;}
 .margb20{margin-bottom:20px !important}
+.ui-btn-icon-left:after {
+    right: .5625em !important;
+	left:auto !important;
+}
+.ui-btn-icon-left {
+    padding-right: 2.5em !important ;
+	padding-left: 0 !important;
+}

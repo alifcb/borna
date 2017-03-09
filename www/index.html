@@ -58,20 +58,21 @@
 <!------------------------------------- sherkat ha-------------------------------------------------->
 <div data-role="page"   id="sherkat">
  <div data-role="panel" data-position-fixed="true" id="myPanel" data-display="overlay" data-position="right">
-      <img width="164" height="93" class="imgpa" src="img/{{logosazman}}">  
+   <img width="164" height="93" class="imgpa" src="img/{{logosazman}}">  
     <ul data-role="listview" class="right panels"  data-inset="false">  
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
       <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
-     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
-     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
-       
     </ul>
   </div> 
   <div data-role="header"  class="blue ">
@@ -113,9 +114,11 @@
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+       <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -158,9 +161,11 @@
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -203,6 +208,56 @@
   </div>
 
 </div>
+<!------------------------------------- link  ha-------------------------------------------------->
+<div data-role="page"   id="links">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanel2l" data-display="overlay" data-position="right">
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+       
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanel2l" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h3 class="margint0">لیست پیوند های مفید</h3>
+    <form class="ui-filterable">
+      <input id="myFilterf" data-type="search" placeholder="نام پیوند">
+    </form>
+   <ul data-role="listview" data-filter="true" data-input="#myFilterf"  data-inset="false"  class="right listst"   >
+      <div id="loadivc" style="text-align:right; float:right"><img src="img/loader1.gif"></div>
+
+ <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in links"  >
+        <a   class="ui-btn shobe" href="#"  ng-click="wopen( xc.link  )"    data-transition="fade">
+        <!--<img width="72" height="72" src="img/4.jpg">-->
+        <h2 class="font17">{{xc.name}}</h2>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
 <!------------------------------------- markaz bazdid ha-------------------------------------------------->
 <div data-role="page"   id="bazdids">
 
@@ -215,9 +270,11 @@
       <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
       <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -273,9 +330,11 @@
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -319,9 +378,11 @@
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -365,9 +426,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -446,9 +509,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -490,9 +555,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -500,29 +567,84 @@ function myMap() {
   </div> 
 
   <div data-role="header" class="blue ">
- <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
+ <a  href="#list_yad"  class="pad_ha" data-role="none"  ng-click="list_yad();"><img src="img/list.png"></a>
     <h1>برنا، دستيار بيمه اي شما</h1>
  <a href="#myPanel5" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
   </div>
 
  <div data-role="main" class="ui-content" dir="rtl" >
- 
+ <a id="bimod" href="#list_yad" class="green ui-btn" style="width:100%" >نمایش لیست</a>
+ <hr />
       <p  >یادآوری تمديد بيمه نامه</p>
       
        <label>نام</label>
-       <input ng-model="bime.sal"   type="text">
+       <input ng-model="yad.name"   type="text">
       <label>تاریخ پایان بيمه نامه</label>
-       <input ng-model="bime.sal"  type="text">
+       <p ng-model="yad.dates" id="sheew"  ></p>
+       <input id="datepp3"  type="text">
       <label>شماره تماس</label>
-       <input ng-model="bime.sal" type="text">
+       <input ng-model="yad.tell" type="text">
+      <input id="yado" class="green"  onClick="datemo(datepp3.value)"  ng-click="yadavariw();" type="button" value="ثبت">
  
-      <input id="bimod" class="green"  ng-click="mohasebe();" type="button" value="ثبت">
- 
- 
+   </div>
+
+</div>
+<!------------------------------------- لیست یاد آوری ها-------------------------------------------------->
+<div data-role="page"   id="list_yad">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanely" data-display="overlay" data-position="right">
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+       
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanely" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h3 class="margint0">لیست یادآوری ها</h3>
+    <form class="ui-filterable">
+      <input id="myFilterdr" data-type="search" placeholder="نام شعبه">
+    </form>
+   <ul data-role="listview" data-filter="true" data-input="#myFilterdr"  data-inset="false"  class="right listst"   >
+
+ <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in listyadc"  >
+        <a   class="ui-btn shobe" ng-click="listy(xc.ids)" data-transition="fade">
+        <!--<img width="72" height="72" src="img/4.jpg">-->
+        <h2 class="font17">{{xc.name}}</h2>
+           
+        <p style="display:none" id="listy{{xc.ids}}"> 
+        <span>تاریخ: </span>{{xc.date}}<br>
+        <span>تلفن: </span>{{xc.tell}}<br>
+        <br>
+        <span  ng-click="smsb(xc.tell)" class="green googlea wid50 pad1">پیامک</span>
+        <span  ng-click="tellb(xc.tell)" class="green googlea wid50 pad2">تماس</span>
+    </p></a>
+        
+      </li>
+
+    </ul>
   </div>
 
 </div>
-
 <!------------------------------------- mohasebe hagh bime-------------------------------------------------->
 <div data-role="page"   id="h_bime">
 
@@ -535,9 +657,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -615,7 +739,70 @@ function myMap() {
 
 </div>
 
-<!------------------------------------- mohasebe hagh bime2-------------------------------------------------->
+<!------------------------------------- mohasebe karmozd-------------------------------------------------->
+<div data-role="page"   id="karmozd">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanel5e" data-display="overlay" data-position="right">
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+       
+    </ul>
+  </div> 
+
+  <div data-role="header" class="blue ">
+ <a href="#sherkat" class="pad_ha" data-role="none"  data-rel="back"><img src="img/back.png"></a>
+    <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanel5e" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+
+ <div data-role="main" class="ui-content" dir="rtl" >
+      <p  >جهت محاسبه کارمزد تمام موارد را تکمیل نمایید</p>
+      <label for="groh">نوع رشته بیمه ای</label>
+      <select   ng-model="karmozd.reshte"   >
+      <option ng-repeat="xb in noeen" value="{{xb.ids}}">{{ xb.reshte}}</option>
+      </select>
+      
+       <div id="loadingo" style="display:none"><img src="img/loader1.gif"></div>
+ 
+      <fieldset data-role="controlgroup1">
+      <legend>نوع نمایندگی:</legend>
+        <label for="haghighi">حقیقی</label>
+        <input type="radio" name="gender" id="haghighi"  ng-model="karmozd.noe" value="1" checked>
+        <label for="hoghoghi">حقوقی</label>
+        <input type="radio" name="gender" id="hoghoghi"  ng-model="karmozd.noe" value="0">
+      </fieldset>
+ 
+      <label></label> 
+      <fieldset data-role="controlgroup2">
+      <legend>آیا معرف همان واحد صدور است؟</legend>
+        <label for="yes">بله</label>
+        <input type="radio" name="gender1" id="yes"  ng-model="karmozd.moaref" value="1" checked>
+        <label for="no">خیر</label>
+        <input type="radio" name="gender1" id="no"  ng-model="karmozd.moaref" value="0">
+      </fieldset>
+              <hr/> 
+      <label>حق بیمه با مالیات:</label>
+      <input ng-model="karmozd.hagh"   type="text">
+ 
+
+      <input id="bimo2" class="green"  ng-click="karmozd();" type="button" value="محاسبه">
+    <p id="showri3" class="mohaseb" style=" text-align:center;">مبلغ کارمزد:  </p>
+    </div>
+  </div>
+  
 <div data-role="page"   id="h_bime2">
 
  <div data-role="panel" data-position-fixed="true" id="myPanel5r" data-display="overlay" data-position="right">
@@ -627,9 +814,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -659,7 +848,7 @@ function myMap() {
        <div id="noeevn">
        <label for="noee">نوع وسیله نقلیه</label>
       <select id="noee" ng-model="bime2.noee" >
-      <option ng-repeat="xb in noeen" value="{{xb.ids}}">{{ xb.name}}</option>
+      <option ng-repeat="xb in noeencar" value="{{xb.ids}}">{{ xb.name}}</option>
       </select>
       
       <label for="sharhs">مورد استفاده</label>
@@ -729,9 +918,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -781,9 +972,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -823,9 +1016,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -883,9 +1078,11 @@ function myMap() {
      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
        
@@ -928,7 +1125,11 @@ function myMap() {
 }
 </style>
     <script src="js/persianDatepicker.min.js"></script>
-    <script>
+    <script>	
+function datemo(dates) {
+document.getElementById('sheew').innerHTML=dates;
+ 
+}	
         $("#datepp").persianDatepicker({        
         cellWidth: 40, 
         cellHeight: 32,
@@ -939,9 +1140,15 @@ function myMap() {
         cellHeight: 32,
         fontSize: 14, 
     });
+	$("#datepp3").persianDatepicker({        
+        cellWidth: 40, 
+        cellHeight: 32,
+        fontSize: 14, 
+    });
     </script>
 <script src="js/owl.carousel.js"></script>
         <script type="text/javascript">
+
             app.initialize();
   
 $(document).ready(function(){
