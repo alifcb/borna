@@ -162,7 +162,7 @@ background-color: #fbfbFb !important;
     padding: 0.3em 1em !important;
     text-align: center !important;
 }
-.pad1{padding:5px 33px !important}
+.pad1{padding:5px 28px !important}
 .pad2{padding:5px 62px !important}
 .rooz{
   padding: 1px 0 !important;
@@ -173,6 +173,13 @@ background-color: #fbfbFb !important;
 	 background: rgba(0, 0, 0, 0) url("../res/text/rooz.png") no-repeat  right 8px center;
 	 
 }
+/*.ui-panel.ui-panel-open {
+    position:fixed !important;
+}
+
+.ui-panel .ui-panel-inner {
+  	position:absolute;
+} */
 .twit{
 	 background: rgba(0, 0, 0, 0) url("../res/text/twit.png") no-repeat  right 8px center;
 	 font-family:'BYekan';

@@ -573,14 +573,14 @@ function myMap() {
   </div>
 
  <div data-role="main" class="ui-content" dir="rtl" >
- <a id="bimod" href="#list_yad" class="green ui-btn" style="width:100%" >نمایش لیست</a>
+ <a id="bimod" href="#list_yad" class="green ui-btn" ng-click="list_yad();" style="width:90%" >نمایش لیست</a>
  <hr />
       <p  >یادآوری تمديد بيمه نامه</p>
       
        <label>نام</label>
        <input ng-model="yad.name"   type="text">
       <label>تاریخ پایان بيمه نامه</label>
-       <p ng-model="yad.dates" id="sheew"  ></p>
+       <p ng-model="yad.dates" id="sheew"  type="hidden" ></p>
        <input id="datepp3"  type="text">
       <label>شماره تماس</label>
        <input ng-model="yad.tell" type="text">
