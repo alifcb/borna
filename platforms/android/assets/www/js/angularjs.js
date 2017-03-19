@@ -393,7 +393,7 @@ Toast_Material({ content : "برنامه در حال ارسال اطلاعات �
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/api.php',
-  data    : $.param({used:$scope.bime.used,yes:$scope.bime.yes,idcar:$scope.caridm,engh:dateb,sal:$scope.bime.sal,sabe_m:$scope.bime.mali,sabe_s:$scope.bime.sarn}),  // pass in data as strings
+  data    : $.param({used:$scope.bime.used,yes:$scope.bime.yes,sefr:$scope.bime.sefr,idcar:$scope.caridm,engh:dateb,sal:$scope.bime.sal,sabe_m:$scope.bime.mali,sabe_s:$scope.bime.sarn}),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
   .success(function(response) {
@@ -451,6 +451,7 @@ $scope.wopen = function(links) {
  
 
 $scope.mohasebe2 = function(salo) {
+	
 	if($scope.bime2.yes){
 		document.getElementById('showitme2').style.display='block';
 	}else{
@@ -460,7 +461,7 @@ $scope.mohasebe2 = function(salo) {
  
 //alert($scope.caridm);
 var online=document.getElementById('online').value;
- //alert($scope.bime.sal);
+ // alert($scope.bime2.sefr);
 //var laImage = document.getElementById('largeImage0').src;	
 if(!$scope.bime2.sal){
 
@@ -477,10 +478,11 @@ Toast_Material({ content : "برنامه در حال ارسال اطلاعات �
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/api.php',
-  data    : $.param({used:$scope.bime2.used,yes:$scope.bime2.yes,noee:$scope.bime2.noee,engh:dateb,sal:$scope.bime2.sal,sabe_m:$scope.bime2.mali,sabe_s:$scope.bime2.sarn}),  // pass in data as strings
+  data    : $.param({used:$scope.bime2.used,yes:$scope.bime2.yes,sefr:$scope.bime2.sefr,noee:$scope.bime2.noee,engh:dateb,sal:$scope.bime2.sal,sabe_m:$scope.bime2.mali,sabe_s:$scope.bime2.sarn}),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
   .success(function(response) {
+	//  alert(response);
    document.getElementById('showri2').innerHTML='مبلغ حق بیمه : '+response.hbimes[0].mablagh+' ریال ';
   Toast_Material({ content : "محاسبه به اتمام رسید", updown:"bottom", position:"center", align:"center" });
 

@@ -291,9 +291,9 @@
  <div data-role="main" class="ui-content" dir="rtl" >
     <h3 class="margint0">لیست مراکز بازدید</h3>
     <form class="ui-filterable">
-      <input id="myFilterf" data-type="search" placeholder="نام شعبه">
+      <input id="myFilterfb" data-type="search" placeholder="نام شعبه">
     </form>
-   <ul data-role="listview" data-filter="true" data-input="#myFilterf"  data-inset="false"  class="right listst"   >
+   <ul data-role="listview" data-filter="true" data-input="#myFilterfb"  data-inset="false"  class="right listst"   >
       <div id="loadiv" style="text-align:right; float:right"><img src="img/loader1.gif"></div>
 
  <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in mbazdid"  >
@@ -689,9 +689,12 @@ function myMap() {
       </select>
       <label>سال ساخت</label>
        <input ng-model="bime.sal" placeholder="1389" type="text">
-
+       
+       <label for="red2" class="ui-btn-icon-right">آیا خودرو صفر کیلومتر است؟</label>
+       <input type="checkbox" name="sefer"  ng-model="bime.sefr" id="red2" value="0">
+       
        <label for="blue" class="ui-btn-icon-right">بیمه نامه سال قبل دارد</label>
-       <input type="checkbox" name="favcolor"  ng-click="showso()" ng-model="bime.yes" id="blue" value="blue">
+       <input type="checkbox" name="favcolor"  ng-click="showso()" ng-model="bime.yes" id="blue" >
        <hr/> 
        <div id="showitme" style="display:none">
       <label>تاریخ انقضا بیمه نامه</label>
@@ -774,7 +777,7 @@ function myMap() {
       <select   ng-model="karmozd.reshte"   >
       <option ng-repeat="xb in noeen" value="{{xb.ids}}">{{ xb.reshte}}</option>
       </select>
-      
+      <br>
        <div id="loadingo" style="display:none"><img src="img/loader1.gif"></div>
  
       <fieldset data-role="controlgroup1">
@@ -785,7 +788,7 @@ function myMap() {
         <input type="radio" name="gender" id="hoghoghi"  ng-model="karmozd.noe" value="0">
       </fieldset>
  
-      <label></label> 
+     <br>
       <fieldset data-role="controlgroup2">
       <legend>آیا معرف همان واحد صدور است؟</legend>
         <label for="yes">بله</label>
@@ -859,6 +862,9 @@ function myMap() {
       <label>سال ساخت</label> 
        <input ng-model="bime2.sal" placeholder="1389" type="text">
 
+       <label for="red" class="ui-btn-icon-right">آیا خودرو صفر کیلومتر است؟</label>
+       <input type="checkbox" name="sefer"  ng-model="bime2.sefr" id="red" value="1">
+       
        <label for="blue2" class="ui-btn-icon-right">بیمه نامه سال قبل دارد</label>
        <input type="checkbox" name="favcolor"  ng-click="showso2()" ng-model="bime2.yes" id="blue2" value="blue">
        <hr/> 
