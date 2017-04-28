@@ -768,3 +768,42 @@ left: 50%;
     padding-right: 2.5em !important ;
 	padding-left: 0 !important;
 }
+#radioGroup .wrap {
+  display: inline-block;
+}
+#radioGroup label {
+  display: block;
+  text-align: center;
+  margin: 0 0.4em;
+  font-family:BYekan;
+}
+#radioGroup input[type="radio"] {
+  display: block;
+}
+.ui-checkbox input, .ui-radio input {
+    position: absolute;
+    right: 0.466em;
+    top: 50%;
+    width: 22px;
+    height: 22px;
+    margin: -11px 0 0 0;
+    outline: 0!important;
+    z-index: 1;
+}
+.margtb10{margin:10px 30%;}
+.ui-btn, label.ui-btn {
+    font-weight: 700;
+    border-width: 1px;
+    border-style: solid;
+    padding: 8px 30px !important;
+}
+.ui-checkbox input, .ui-radio input {
+    position: absolute;
+    left: .466em;
+    top: 50%;
+    width: 22px;
+    height: 22px;
+    margin: -11px 0 0 0;
+    outline: 0!important;
+    z-index: 2 !important;
+}

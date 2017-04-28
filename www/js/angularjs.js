@@ -128,6 +128,43 @@ $scope.comp_id = function (ides) {
 });	
 };
 
+/////////////////////////////////show khodro
+$scope.khodro = function (ides) {
+
+	    document.getElementById('shobeid').value=1;
+		document.getElementById('loadik').style.display='block';
+	$http.get("ghate.json").then(function(response) {
+    $scope.ghate=response.data.items;
+			document.getElementById('loadik').style.display='none';
+});	
+
+};
+$scope.khods = function (ides) {
+	//alert(ides);
+	for(var i=1; i<=30 ;i++){ 
+     document.getElementById('khodro'+i).style.display='none';		
+	}
+	var view=document.getElementById('khodro'+ides).style.display;	
+	
+	$http.get("ghate.json").then(function(response) {
+	$scope.des = response.data.des;
+	  $scope.desid=ides;
+});	
+if(view=='none'){
+     document.getElementById('khodro'+ides).style.display='block';		
+		}else{
+     document.getElementById('khodro'+ides).style.display='none';		
+	}
+
+};
+$scope.khos = function (ides) {
+ 
+     document.getElementById('khshow'+ides).style.display='none';		
+ 
+
+};
+
+
 /////////////////////////////////show marakez
 $scope.markaz = function (ides) {
 		var shobeid=document.getElementById('shobeid').value;

@@ -45,8 +45,8 @@
 <div data-role="main" class="ui-content">
 <p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
 <input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
-<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>
-<!--<a href="#sherkat" class="ui-btn green">ثبت </a>-->
+<!--<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>-->
+<a href="#sherkat" class="ui-btn green">ثبت </a>
 <br />
 <br />
 
@@ -71,6 +71,7 @@
       <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
       <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
       <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
+      <li data-icon="false"><a ng-click="khodro(1)" class="links" href="#khodro" data-transition="fade">ثبت</a></li>
       <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
       <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
     </ul>
@@ -312,6 +313,88 @@
     </p>
         </a>
       </li>
+
+    </ul>
+  </div>
+
+</div>
+<!-------------------------------------sabt khodro ha-------------------------------------------------->
+<div data-role="page"   id="khodro">
+
+ <div data-role="panel" data-position-fixed="true" id="myPanelkc" data-display="overlay" data-position="right">
+    <img width="162" height="77" class="imgpa" src="img/{{logosazman}}">  
+    <ul data-role="listview" class="right panels"  data-inset="false">  
+     <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
+      <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
+      <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
+      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
+      <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
+      <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
+      <li data-icon="false"><a onClick="cat(2)" class="add" href="#add" data-transition="fade">پیشنهاد افزودن خودرو</a></li>
+      <li data-icon="false"><a  ng-click="showfaver()" class="favorite" href="#favert" data-transition="fade">لیست علاقه مندی ها</a></li>
+      <li data-icon="false"><a ng-click="linkss(1)" class="links" href="#links" data-transition="fade">پیوند ها</a></li>
+      <li data-icon="false"><a onClick="cat(4)" class="contact" href="#contact" data-transition="fade">تماس با ما</a></li>
+      <li data-icon="false"><a class="about" href="#about_us" data-transition="fade">درباره ما</a></li>
+       
+    </ul>
+  </div> 
+
+  <div data-role="header"  class="blue ">
+   
+ <a href="#favert"  ng-click="showfaver()" class="pad_ha" data-role="none"><img src="img/file.png"></a>
+  <h1>برنا، دستيار بيمه اي شما</h1>
+ <a href="#myPanelkc" class="pad_ha" data-role="none"><img src="img/menu.png"></a>
+  </div>
+  
+ <div data-role="main" class="ui-content" dir="rtl" >
+    <h3 class="margint0">ثبت قطعات</h3>
+   <ul data-role="listview"  data-inset="false"  class="right listst"   >
+      <div id="loadik" style="text-align:right; float:right"><img src="img/loader1.gif"></div>
+ <form method="post" action="/action_page_post.php">
+ <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in ghate" id="khshow{{xc.ids}}" >
+        <a   class="ui-btn shobe" ng-click="khods(xc.ids)" data-transition="fade">
+        <!--<img width="72" height="72" src="img/4.jpg">-->
+        <h2 class="font17">{{xc.name}}</h2> 
+        </a>
+ <div style="display:none; padding:10px" id="khodro{{xc.ids}}" >
+<div id="radioGroup" >
+<div class="wrap">
+    <div class="ui-radio"><label for="markStude8nt" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">ندارد</label>
+    <input type="radio" name="mark" id="markStude8nt" value="Student" data-cacheval="true"></div>
+  </div>
+  <div class="wrap">
+    <div class="ui-radio"><label for="markStudt" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">سالم</label>
+    <input type="radio" name="mark" id="markStudt" value="Student" data-cacheval="true"></div>
+  </div>
+    <div class="wrap">
+    <div class="ui-radio"><label for="markStudtr" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">خراب</label>
+    <input type="radio" name="mark" id="markStudtr" value="Student" data-cacheval="true"></div>
+  </div>
+  <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" placeholder="مبلغ خسارت" name="mark" id="mablagh" ></div> 
+  </div>
+  <div id="radioGroup" >
+  <div  ng-repeat="xd in des | filter:{ id_ghate: desid , type:'text' }:true"  class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+  <input type="text" placeholder="{{xd.name}}" name="mark" id="mablagh2" ></div>
+  
+  <div class="wrap"  ng-repeat="xd in des | filter:{ id_ghate: desid , type:'radio' }:true" >
+    <div class="ui-radio"><label for="markStudtw" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">{{xd.name}}</label>
+    <input type="radio" name="mark" id="markStudtw" value="Student" data-cacheval="true"></div>
+  </div> 
+    <div class="wrap"  ng-repeat="xd in des | filter:{ id_ghate: desid , type:'checkbox' }:true" >
+<div class="ui-checkbox"><label for="red" class="ui-btn ui-corner-all ui-btn-inherit ui-first-child   ui-checkbox-off">{{xd.name}}</label>
+<input name="favcolor" id="red" value="red" data-cacheval="false" type="checkbox"></div>
+</div> 
+  </div>
+  <br>
+<span  ng-click="khos(xc.ids)" class="green googlea center margtb10  wid50 pad2">ثبت</span>
+<br>
+
+  </div>
+
+      </li>
+  </form>
 
     </ul>
   </div>
@@ -921,8 +1004,8 @@ function myMap() {
      <li  data-icon="false"><a class="car3" ng-click="markaz('1')" href="#markaz" data-transition="fade">لیست شعب</a></li>
       <li  data-icon="false"><a class="car4" ng-click="bazdid('2')" href="#bazdids" data-transition="fade">لیست مراکز بازدید اولیه</a></li>
       <li  data-icon="false"><a class="pdf" ng-click="books('2')" href="#books" data-transition="fade">كتابخانه</a></li>
-     <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
-     <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
+      <li  data-icon="false"><a class="filem"  href="#h_bime2" data-transition="fade">استعلام نرخ حق بيمه شخص ثالث</a></li>
+      <li  data-icon="false"><a class="listm"  href="#yadavar" data-transition="fade">يادآوري تمديد بيمه نامه</a></li>
       <li  data-icon="false"><a class="listco"  href="#sherkat" data-transition="fade">راهنمای بازدید اولیه اتومبیل</a></li>
       <li data-icon="false"><a class="credit-card" href="#karmozd"  ng-click="list_kar('1')" data-transition="fade">کارمزد</a></li>
       <li  data-icon="false"><a onClick="cat(1)" ng-click="comp_id()" class="car" href="#mashinha" data-transition="fade">لیست خودرو ها</a></li>
