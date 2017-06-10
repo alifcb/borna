@@ -130,7 +130,7 @@ $scope.comp_id = function (ides) {
 
 /////////////////////////////////show khodro
 $scope.khodro = function (ides) {
-
+//alert(ides);
 	    document.getElementById('shobeid').value=1;
 		document.getElementById('loadik').style.display='block';
 	$http.get("ghate.json").then(function(response) {
@@ -140,7 +140,7 @@ $scope.khodro = function (ides) {
 
 };
 $scope.khods = function (ides) {
-	//alert(ides);
+	 document.getElementById('idghate').value=ides;	
 	for(var i=1; i<=30 ;i++){ 
      document.getElementById('khodro'+i).style.display='none';		
 	}
@@ -157,14 +157,7 @@ if(view=='none'){
 	}
 
 };
-$scope.khos = function (ides) {
  
-     document.getElementById('khshow'+ides).style.display='none';		
- 
-
-};
-
-
 /////////////////////////////////show marakez
 $scope.markaz = function (ides) {
 		var shobeid=document.getElementById('shobeid').value;
@@ -232,7 +225,27 @@ $scope.noeevn = function () {
  	document.getElementById('noeevn').style.display="block";
   });
 };
-
+//////////////////////////////////////noeen daste khodro baray hagh bime 2
+$scope.noeevn2 = function () {
+	var value = document.getElementById('groh2').value; 
+	document.getElementById('loadingo2').style.display="block";
+	 document.getElementById('noeevn2').style.display='none';	
+ $http.get("http://borna-grp.ir/api.php?onevan="+value).then(function(response) {
+	$scope.noeencar = response.data.onevan;
+	//alert($scope.noeencar );
+});	
+ $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/api.php',
+  data    : $.param({usedid:value}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+  .success(function(response) {
+	 $scope.usedn=response.usedid;
+	 	document.getElementById('loadingo2').style.display="none";
+ 	document.getElementById('noeevn2').style.display="block";
+  });
+};
 ////////////////////////////////////////
 $scope.showfaver = function () {
 //faver  
@@ -346,7 +359,7 @@ $('#myfive img').attr('src', src);
 }
 	  });
 
-}
+};
 
 ///////////////////////////////////////////////////ersal form tamas
 $scope.forms = {};	
@@ -531,7 +544,7 @@ Toast_Material({ content : "برنامه در حال ارسال اطلاعات �
 ///////////////////////////////////////// لیست رشته ها
 $scope.list_kar = function (ides) {
 	//alert(ides);
-	$http.get("http://www.borna-grp.ir/api.php?id_reshte=3").then(function(response) {
+	$http.get("http://www.borna-grp.ir/api.php?id_reshte=1").then(function(response) {
 	$scope.noeen = response.data.reshteha;
 	   
 });	
@@ -615,6 +628,213 @@ $scope.google = function(addr) {
   $.mobile.changePage( "#google", { transition: "slideup"} );
 
 };  
+/////////////////////////////////////////////////////////////////////////ersal form sabt bimegozar
+$scope.khodr = {};	
+
+$scope.khodro_one = function () {
+var fname=$scope.khodr.fname;
+var lname=$scope.khodr.lname;
+var sex=$scope.khodr.sexx; 
+var tell=$scope.khodr.tell;
+var cell=$scope.khodr.cell;
+var address=$scope.khodr.address; 
+var type=$scope.khodr.type;
+var eqtesadi=$scope.khodr.eqtesadi;
+var codemeli=$scope.khodr.codemeli; 
+var date= document.getElementById('kh_tavalod').value;
+if(fname==undefined || tell==undefined || address==undefined || codemeli==undefined){
+Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;} 
+Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });		
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/sabt_kh.php',
+  data    : $.param({fname: fname, lname:lname, tell:tell,cell: cell, address:address, type:type,sex: sex, codemeli:codemeli, date:date,eqtesadi: eqtesadi}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+.success(function(data) {
+document.getElementById('bimgozar').value=data;
+$scope.khodr ={};
+ $.mobile.changePage( "#khodros", { transition: "slideup"} );
+ Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
+  });
+ };
+ 
+ /////////////////////////////////////////////////////////////////////////ersal form sabt khodro
+$scope.khodro_two = function () {
+var shahr=$scope.khodr.shahr;
+var sal=$scope.khodr.sal;
+var sh_mot=$scope.khodr.sh_mot; 
+var ma_shm=$scope.khodr.ma_shm;
+var sh_sha=$scope.khodr.sh_sha;
+var ma_sha=$scope.khodr.ma_sha; 
+var zarfiat=$scope.khodr.zarfiat;
+var groh=$scope.khodr.groh;
+var noee=$scope.khodr.noee; 
+var used=$scope.khodr.used;
+var rang=$scope.khodr.rang;
+var keshvar=$scope.khodr.keshvar; 
+var id_bg= document.getElementById('bimgozar').value;
+if(sal==undefined || sh_mot==undefined || sh_sha==undefined || zarfiat==undefined){
+Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
+Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });		
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/sabt_kh.php',
+  data    : $.param({shahr: shahr, sal:sal, sh_mot:sh_mot,ma_shm: ma_shm, sh_sha:sh_sha, ma_sha:ma_sha,zarfiat: zarfiat, groh:groh, noee:noee,used: used, rang:rang, keshvar:keshvar,id_bg: id_bg}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+.success(function(data) {
+$scope.khodr ={};
+$scope.khodro(1);
+$.mobile.changePage( "#khodro", { transition: "slideup"} );
+Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
+  });
+ };
+
+/////////////////////////////////////////////////////////////////////////ersal form sabt ghate
+$scope.ghate = {};	
+
+$scope.khodro_seven = function (ides) {
+var vaziat=$scope.ghate.vaziat;
+var khesarat=$scope.ghate.khesarat;
+var text=$scope.ghate.texte; 
+var radio=$scope.ghate.radio;
+var check=$scope.ghate.check;
+var ids=document.getElementById('idghate').value; 
+var id_bg= document.getElementById('bimgozar').value;
+if(!check){check=0; }else{check=1;}
+if(!radio){radio=0;}
+if(text==undefined){text='';}
+if(khesarat=="" ){
+Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
+Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/sabt_kh.php',
+  data    : $.param({vaziat: vaziat, khesarat:khesarat, text:text,radio: radio,ids:ids, check:check,id_bg: id_bg }),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+.success(function(data) {
+ $scope.ghate.texte="";
+ $scope.ghate.khesarat="";
+document.getElementById('khshow'+ides).style.display='none';	
+Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
+  });
+ };
+  
+  /////////////////////////////////////////////////////////////////////////ersal form sabt vaziat
+
+$scope.khodro_three = function () {
+var va_ez=$scope.khodr.va_ez;
+var ghva=$scope.khodr.ghva;
+var va_vz=$scope.khodr.va_vz; 
+var khesarat=$scope.khodr.khesarat;
+var id_bg= document.getElementById('bimgozar').value;
+if(ghva==undefined || khesarat==undefined ){
+Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
+	Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/sabt_kh.php',
+  data    : $.param({va_ez: va_ez, ghva:ghva, va_vz:va_vz,khesarat: khesarat,id_bg: id_bg}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+.success(function(data) {
+ $scope.khodr ={};
+Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
+  });
+ };
+ 
+   /////////////////////////////////////////////////////////////////////////ersal form sabt soti
+$scope.soti = {};	
+$scope.khodro_four = function () {
+var nooe=$scope.soti.nooe;
+var noee=$scope.soti.noee;
+var keshvar=$scope.soti.keshvar; 
+var name=$scope.soti.name;
+var shomare=$scope.soti.shomare;
+var ghymat=$scope.soti.ghymat;
+var tba=$scope.soti.tba; 
+var tbe=$scope.soti.tbe;
+var wate=$scope.soti.wate;
+var markb=$scope.soti.markb;
+var ghymatb=$scope.soti.ghymatb; 
+var id_bg= document.getElementById('bimgozar').value;
+if(ghymatb==undefined || tbe==undefined || name==undefined || shomare==undefined){
+Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
+	Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });		
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/sabt_kh.php',
+  data    : $.param({nooe: nooe, noee:noee, keshvar:keshvar,name: name,shomare: shomare, ghymat:ghymat, tba:tba,tbe: tbe,wate:wate, markb:markb,ghymatb: ghymatb,id_bg: id_bg}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+.success(function(data) {
+	$scope.soti = {};	
+$.mobile.changePage( "#akss", { transition: "slideup"} );
+Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
+  });
+ };
+    /////////////////////////////////////////////////////////////////////////ersal form sabt tasvir
+$scope.tasvir = {};	
+$scope.khodro_five = function () {
+var nooe=$scope.tasvir.nooe;
+var name=$scope.tasvir.name;
+var id_bg= document.getElementById('bimgozar').value;
+var d = new Date();	
+namefile=d.getTime()+'.jpg';
+var largeImage = document.getElementById('largeImagex0');
+
+imageURI=largeImage.src;
+ 
+todoServicez.UserImg(imageURI,namefile,'end').then(function(items){});
+if( name==undefined  ){
+Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
+ Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/sabt_kh.php',
+  data    : $.param({nooe: nooe, namet: name,photo:namefile,id_bg: id_bg}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+.success(function(data) {
+	$scope.tasvir = {};	
+$.mobile.changePage( "#nahai", { transition: "slideup"} );
+Toast_Material({ content : "ثبت با موفقیت انجام شد بازگشت به ابتدا", updown:"bottom", position:"center", align:"center" });	
+  });
+ };
+    /////////////////////////////////////////////////////////////////////////ersal form sabt soti
+$scope.end = {};	
+$scope.khodro_six = function () {
+var gheymat=$scope.end.gheymat;
+var arzeshv=$scope.end.arzeshv;
+var ghva=$scope.end.ghva;
+var address=$scope.end.address;
+var date=$scope.end.date;
+var good=$scope.end.good; 
+var id_bg= document.getElementById('bimgozar').value;
+if(gheymat==undefined || arzeshv==undefined || ghva==undefined ){
+Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
+ Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
+  $http({
+  method  : 'POST',
+  url     : 'http://www.borna-grp.ir/sabt_kh.php',
+  data    : $.param({gheymat: gheymat, arzeshv:arzeshv, ghva:ghva,address: address, date:date, good:good, id_bg: id_bg}),  // pass in data as strings
+  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+ })
+.success(function(data) {
+	$scope.end = {};
+$.mobile.changePage( "#bimegozar", { transition: "slideup"} );
+Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
+  });
+ };
 ///////////////////////////////////////////////// ارسال تصویر
  $scope.users = {};	
 $scope.sendform = function(urlpic) {

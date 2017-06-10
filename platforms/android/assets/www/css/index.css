@@ -421,7 +421,7 @@ ul li a:active{
 .ui-listview>.ui-li-has-thumb>.ui-btn, .ui-listview>.ui-li-static.ui-li-has-thumb{padding-left:5px; padding-right:90px;}
 .ui-listview .ui-li-has-thumb>img:first-child, .ui-listview .ui-li-has-thumb>.ui-btn>img:first-child, .ui-listview .ui-li-has-thumb .ui-li-thumb{right:5px;}
 .ui-input-text input, .ui-input-search input{text-align:right; direction:rtl; padding-right:20px;}
-.ui-block-a, .ui-block-b, .ui-block-c {
+.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e {
     border:1px solid #C5C3C3 !important;
 	border-radius:4px;
     text-align: center;
@@ -430,18 +430,46 @@ ul li a:active{
 }
 .ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b {
     width: 48% !important;
+	
 }
-.ui-block-a .ui-btn, .ui-block-b .ui-btn, .ui-block-c .ui-btn {
+.ui-block-a .ui-btn, .ui-block-b .ui-btn, .ui-block-c .ui-btn, .ui-block-d .ui-btn, .ui-block-e .ui-btn {
 	margin:0 !important;
-		border-radius:4px;
+	border-radius:4px;
+	font-size: 12px !important;
 	border:none !important;
-    padding:  0px !important;
+    padding:  3px 2px !important;
 }
-.ui-input-text input, .ui-input-search input{text-align:right !important; padding: 0.6em !important; font-size: 15px !important;}
+.ui-grid-c>.ui-block-a, .ui-grid-c>.ui-block-b, .ui-grid-c>.ui-block-c, .ui-grid-c>.ui-block-d {
+    width: 23.5% !important;
+    text-align: right;
+    float: right;
+	margin:2px !important;
+}
+.ui-btn-active{
+	 color:#2DB4ED !important;
+}
+.ui-grid-b>.ui-block-a, .ui-grid-b>.ui-block-b, .ui-grid-b>.ui-block-c {
+     text-align: right;
+    float: right;
+    width: 31.733% !important;
+	margin:2px !important;
+}
+.ui-mobile label, div.ui-controlgroup-label {
+    font-weight: 400;
+    font-size: 14px !important;
+}
+.ui-input-text input, .ui-input-search input{text-align:right !important; padding: 0.4em !important; font-size: 14px !important;}
 .ui-header .ui-title, .ui-footer .ui-title{font-size: 17px !important;    padding: .4em 0 .2em !important; min-height: 1.4em !important;
     margin: 0 25% !important;}
 .ui-btn-left, .ui-btn-right {
     top: 0.33em !important;
+}
+.nbord .ui-block-a, .nbord .ui-block-b, .nbord .ui-block-c, .nbord .ui-block-d, .nbord .ui-block-e {
+     border: none !important;  
+    border-radius: 4px;
+    text-align: right; 
+    padding: 0px !important;
+    margin: 4px !important;
 }
 .ui-panel-inner h2{margin: 25px 0 !important;}
 .ui-listview>.ui-li-has-thumb>.ui-btn, .ui-listview>.ui-li-static.ui-li-has-thumb {
@@ -450,7 +478,10 @@ ul li a:active{
 }
 .ui-mobile a img, .ui-mobile fieldset {
     border-width: 0;
-
+}
+.ui-controlgroup-controls .ui-btn-corner-all, .ui-controlgroup-controls .ui-btn.ui-corner-all {
+    margin: 0 !important;
+	 padding: 8px 35px !important;
 }
 .ui-header .ui-btn-left, .ui-header .ui-btn-right {
     font-size: 9.5px !important;
@@ -697,8 +728,11 @@ left: 50%;
 .ui-listview>li h1, .ui-listview>li h2, .ui-listview>li h3, .ui-listview>li h4, .ui-listview>li h5, .ui-listview>li h6 {
     font-size: 14px !important;
     font-weight: normal !important;
+	
 }
-
+#sherkat h2, #mashinha h2{
+	    margin-right: 55px !important;
+}
 .ui-listview li .font17{font-size:15px !important;}	
 .ui-listview  .shobe {padding:0px 15px !important;}
 .ui-listview  span {
@@ -708,7 +742,7 @@ left: 50%;
 .updates a{ color:#fff !important; text-decoration:none;font-weight:normal !important;  font-size:13px;}
 
 .ui-mobile label, .ui-controlgroup-label {
-    margin: 2em 0 0.4em !important;
+    margin: 1em 0 0.4em !important;
 }
 .ui-checkbox .ui-btn, .ui-radio .ui-btn {
     text-align: right !important;
@@ -806,4 +840,9 @@ left: 50%;
     margin: -11px 0 0 0;
     outline: 0!important;
     z-index: 2 !important;
+}
+a.disabled {
+	    background-color: #F8CBCB !important;
+    pointer-events: none;
+	cursor:default;
 }

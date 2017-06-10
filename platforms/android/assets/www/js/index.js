@@ -208,6 +208,21 @@ function exitFromApp()
 ////////////////////////////////////////////////////////////////////////////////////
 // Called when a photo is successfully retrieved
 //
+function onPhotoURISuccessx0(imageURI) {
+  var largeImage = document.getElementById('largeImagex0');
+  largeImage.style.display = 'inline';
+  largeImage.src = imageURI;
+}
+// A button will call this function
+//
+function getPhotox0(source) {
+
+  // Retrieve image file location from specified source
+  navigator.camera.getPicture(onPhotoURISuccessx0, onFail, { quality: 50,
+	destinationType: destinationType.FILE_URI,
+	sourceType: source });
+}
+///////////////////////////
 function onPhotoURISuccessf(imageURI) {
   var largeImage = document.getElementById('largeImage0');
   largeImage.style.display = 'inline';
