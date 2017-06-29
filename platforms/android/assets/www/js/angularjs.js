@@ -640,16 +640,20 @@ var cell=$scope.khodr.cell;
 var address=$scope.khodr.address; 
 var type=$scope.khodr.type;
 var eqtesadi=$scope.khodr.eqtesadi;
+var shmeli=$scope.khodr.shmeli;
 var codemeli=$scope.khodr.codemeli; 
 var date= document.getElementById('kh_tavalod').value;
+var codd=$scope.Codemeli(codemeli);
+if(codd==false){Toast_Material({ content : "لطفا کد ملی را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
 if(fname==undefined || tell==undefined || address==undefined || codemeli==undefined){
-Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
  return 0;} 
 Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });		
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/sabt_kh.php',
-  data    : $.param({fname: fname, lname:lname, tell:tell,cell: cell, address:address, type:type,sex: sex, codemeli:codemeli, date:date,eqtesadi: eqtesadi}),  // pass in data as strings
+  data    : $.param({fname: fname, lname:lname, tell:tell,cell: cell, address:address, type:type,sex: sex, codemeli:codemeli, date:date,shmeli:shmeli,eqtesadi: eqtesadi}),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
 .success(function(data) {
@@ -659,6 +663,28 @@ $scope.khodr ={};
  Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
   });
  };
+ $scope.Codemeli = function (input) {
+    if (!/^\d{10}$/.test(input)
+|| input=='0000000000'
+|| input=='1111111111'
+|| input=='2222222222'
+|| input=='3333333333'
+|| input=='4444444444'
+|| input=='5555555555'
+|| input=='6666666666'
+|| input=='7777777777'
+|| input=='8888888888'
+|| input=='9999999999')
+        return false;
+    var check = parseInt(input[9]);
+    var sum = 0;
+    var i;
+    for (i = 0; i < 9; ++i) {
+        sum += parseInt(input[i]) * (10 - i);
+    }
+    sum %= 11;
+    return (sum < 2 && check == sum) || (sum >= 2 && check + sum == 11);
+}
  
  /////////////////////////////////////////////////////////////////////////ersal form sabt khodro
 $scope.khodro_two = function () {
@@ -784,29 +810,34 @@ Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بع
 $scope.tasvir = {};	
 $scope.khodro_five = function () {
 var nooe=$scope.tasvir.nooe;
-var name=$scope.tasvir.name;
+var name='test';
 var id_bg= document.getElementById('bimgozar').value;
 var d = new Date();	
-namefile=d.getTime()+'.jpg';
-var largeImage = document.getElementById('largeImagex0');
+nameimage=d.getTime()+'.jpg';
+namevideo=d.getTime()+'.mp4';
+var Videofild = $scope.tasvir.video;;
+var Imagefild= document.getElementById('imeagv').value;
+var Videofild= document.getElementById('videov').value;
+ if(Imagefild!=0){document.getElementById('imload').src='img/ajax-loader.gif';todoServicez.UserImg(Imagefild,nameimage,'end').then(function(items){document.getElementById('imload').src='';
+  $.mobile.changePage( "#nahai", { transition: "slideup"} );
+Toast_Material({ content : "ثبت با موفقیت انجام شد بازگشت به ابتدا", updown:"bottom", position:"center", align:"center" });
+ });
+}
+ if(Videofild!=0){document.getElementById('viload').src='img/ajax-loader.gif';todoServicez.UserImg(Videofild,namevideo,'end').then(function(items){document.getElementById('viload').src='';});}
 
-imageURI=largeImage.src;
- 
-todoServicez.UserImg(imageURI,namefile,'end').then(function(items){});
-if( name==undefined  ){
-Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
- return 0;}
+//if( name==undefined  ){
+//Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+// return 0;}
  Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/sabt_kh.php',
-  data    : $.param({nooe: nooe, namet: name,photo:namefile,id_bg: id_bg}),  // pass in data as strings
+  data    : $.param({nooe: nooe, namet: name,photo:nameimage,video:namevideo,id_bg: id_bg}),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
 .success(function(data) {
 	$scope.tasvir = {};	
-$.mobile.changePage( "#nahai", { transition: "slideup"} );
-Toast_Material({ content : "ثبت با موفقیت انجام شد بازگشت به ابتدا", updown:"bottom", position:"center", align:"center" });	
+	
   });
  };
     /////////////////////////////////////////////////////////////////////////ersal form sabt soti
@@ -818,15 +849,21 @@ var ghva=$scope.end.ghva;
 var address=$scope.end.address;
 var date=$scope.end.date;
 var good=$scope.end.good; 
+var lato= document.getElementById('lato').value;
+var long= document.getElementById('long').value;
+alert(lato);
 var id_bg= document.getElementById('bimgozar').value;
-if(gheymat==undefined || arzeshv==undefined || ghva==undefined ){
+if(gheymat==undefined || arzeshv==undefined  ){
 Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
+ return 0;}
+ if(lato==undefined  || long==undefined  ){
+Toast_Material({ content : "لطفا جی پی اس گوشی خود را روشن کنید.", updown:"bottom", position:"center", align:"center" });	
  return 0;}
  Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/sabt_kh.php',
-  data    : $.param({gheymat: gheymat, arzeshv:arzeshv, ghva:ghva,address: address, date:date, good:good, id_bg: id_bg}),  // pass in data as strings
+  data    : $.param({gheymat: gheymat, arzeshv:arzeshv, ghva:ghva,address: address,long:long,lato:lato, date:date, good:good, id_bg: id_bg}),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
 .success(function(data) {
@@ -864,7 +901,7 @@ namefile=d.getTime()+'.jpg';
 var largeImage = document.getElementById('largeImage'+i);
 
 imageURI=largeImage.src;
-//alert(imageURI);
+alert(imageURI);
 if(i==3){ends='end'}else{ends='no'}
 todoServicez.UserImg(imageURI,namefile,ends).then(function(items)
 {
@@ -1046,9 +1083,9 @@ this.UserImg=function(imageURI,file_name,counts){
 			var ftd = new FileTransfer();
 			ftd.upload(imageURI, encodeURI('http://www.borna-grp.ir/sabt_kh.php'),
 				function(r){
-					//console.log("Code = " + r.responseCode);
+				//console.log("Code = " + r.responseCode);
 				// alert("Response = " + r.response);
-					 //console.log("Sent = " + r.bytesSent);
+				//console.log("Sent = " + r.bytesSent);
 					 deferred.resolve(r.response);
 
 				},

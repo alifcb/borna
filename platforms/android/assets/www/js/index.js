@@ -372,4 +372,33 @@ function Toast_Material(options){
   }
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
- 
+
+var captureSuccessi= function(mediaFiles) {
+    var i, path, len;
+    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+        path = mediaFiles[i].fullPath;
+		 document.getElementById('imeagv').value=path;
+		// alert(path);
+        // do something interesting with the file
+    }
+};
+var captureSuccessv= function(mediaFiles) {
+    var i, path, len;
+    for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+        path = mediaFiles[i].fullPath;
+		 document.getElementById('videov').value=path;
+        // do something interesting with the file
+    }
+};
+// capture error callback
+var captureError = function(error) {
+    navigator.notification.alert('Error code: ' + error.code, null, 'Capture Error');
+};
+function videoca(){
+// start video capture
+navigator.device.capture.captureVideo(captureSuccessv, captureError, {limit:1, quality: 0 , duration: 30 });
+}
+function imageca(){
+// start image capture
+navigator.device.capture.captureImage(captureSuccessi, captureError, {limit:1});
+}

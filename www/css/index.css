@@ -469,7 +469,7 @@ ul li a:active{
     border-radius: 4px;
     text-align: right; 
     padding: 0px !important;
-    margin: 4px !important;
+    margin: 0 4px 1px !important;
 }
 .ui-panel-inner h2{margin: 25px 0 !important;}
 .ui-listview>.ui-li-has-thumb>.ui-btn, .ui-listview>.ui-li-static.ui-li-has-thumb {
@@ -742,7 +742,7 @@ left: 50%;
 .updates a{ color:#fff !important; text-decoration:none;font-weight:normal !important;  font-size:13px;}
 
 .ui-mobile label, .ui-controlgroup-label {
-    margin: 1em 0 0.4em !important;
+    margin: 0em 0 0.4em !important;
 }
 .ui-checkbox .ui-btn, .ui-radio .ui-btn {
     text-align: right !important;
@@ -839,7 +839,7 @@ left: 50%;
     height: 22px;
     margin: -11px 0 0 0;
     outline: 0!important;
-    z-index: 2 !important;
+    z-index: 11 !important;
 }
 a.disabled {
 	    background-color: #F8CBCB !important;
