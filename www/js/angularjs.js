@@ -643,10 +643,14 @@ var eqtesadi=$scope.khodr.eqtesadi;
 var shmeli=$scope.khodr.shmeli;
 var codemeli=$scope.khodr.codemeli; 
 var date= document.getElementById('kh_tavalod').value;
-var codd=$scope.Codemeli(codemeli);
+
+if(codemeli==undefined  || codemeli==''){codemeli=0;}else{var codd=$scope.Codemeli(codemeli);
 if(codd==false){Toast_Material({ content : "لطفا کد ملی را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
  return 0;}
-if(fname==undefined || tell==undefined || address==undefined || codemeli==undefined){
+}alert(codemeli);
+if(shmeli==undefined){shmeli=0;}
+if(eqtesadi==undefined){eqtesadi=0;}
+if(fname==undefined || tell==undefined || address==undefined ){
  Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
  return 0;} 
 Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });		
@@ -845,13 +849,14 @@ $scope.end = {};
 $scope.khodro_six = function () {
 var gheymat=$scope.end.gheymat;
 var arzeshv=$scope.end.arzeshv;
-var ghva=$scope.end.ghva;
+//var ghva=$scope.end.ghva;
 var address=$scope.end.address;
 var date=$scope.end.date;
 var good=$scope.end.good; 
+var ghva= document.getElementById('pricer').value;
 var lato= document.getElementById('lato').value;
 var long= document.getElementById('long').value;
-alert(lato);
+//alert(lato);
 var id_bg= document.getElementById('bimgozar').value;
 if(gheymat==undefined || arzeshv==undefined  ){
 Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	

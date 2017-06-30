@@ -402,3 +402,20 @@ function imageca(){
 // start image capture
 navigator.device.capture.captureImage(captureSuccessi, captureError, {limit:1});
 }
+///////////////////////
+document.addEventListener("deviceready", glocation, false);
+    function glocation() {//alert('yes');
+     navigator.geolocation.getCurrentPosition(onSuccessdd, onErroeer,{ timeout: 10000 });
+    }
+	
+	  var onSuccessdd = function(position) {//alert('yes');
+                document.getElementById('lato').value=position.coords.latitude;
+	            document.getElementById('long').value=position.coords.longitude;
+				document.getElementById('gpsno').style.display='none';
+				document.getElementById('gpsyes').style.display='block';
+	
+    };
+    function onErroeer(error) {
+        //alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+    }
+

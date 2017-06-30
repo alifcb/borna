@@ -47,8 +47,8 @@
 <div data-role="main" class="ui-content">
 <p>لطفا جهت ورود به برنامه کد فعالسازی خریداری شده را وارد نمایید.</p>
 <input ng-model="user.code" type="text" placeholder="سریال خریداری شده">
-<!--<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>-->
-<a href="#sherkat" class="ui-btn green">ثبت </a>
+<a ng-click="sabtcode();" class="ui-btn green">ثبت </a>
+<!--<a href="#sherkat" class="ui-btn green">ثبت </a>-->
 <br />
 <br />
 
@@ -462,7 +462,7 @@
         <ul>
         <li><a class="disabled" href="#vaziat" >وضعیت وسایل</a></li>
         <li><a class="disabled" href="#soti" >دستگاه صوتی</a></li>
-        <li><a class="" href="#akss" >عکس</a></li>
+        <li><a class="disabled" href="#akss" >عکس</a></li>
         <li><a class="disabled" href="#nahai" >وضعیت نهایی</a></li>
       </ul>
     </div>
@@ -594,7 +594,7 @@
        <div id="loadingo" style="display:none"><img src="img/loader1.gif"></div>
        <div id="noeevn">
        <label for="noee">نوع وسیله نقلیه</label>
-    <input ng-model="khodr.zarfiat"   type="text">
+    <input ng-model="khodr.noee"   type="text">
       
       <label for="sharhs">مورد استفاده</label>
       <select id="sharhs" ng-model="khodr.used" >
@@ -1005,9 +1005,9 @@
        <input ng-model="end.ghva" disabled id="pricer"  type="text">
            <label>آدرس محل بازدید</label>
        <input ng-model="end.address"   type="text">
-       <input ng-model="end.lato" id="lato" value="0"   type="text">
-       <input ng-model="end.long" id="long" value="0"   type="text">
-       <p>لطفا gps گوشی خود را روشن کنید</p>
+       <input   id="lato" value="0"   type="hidden">
+       <input   id="long" value="0"   type="hidden">
+
         <label>تاریخ و ساعت بازدید</label>
        <input ng-model="end.date"   type="text">
            <fieldset data-role="controlgroup">
@@ -1019,8 +1019,13 @@
       <label for="type6">بد</label>
       <input type="radio" name="gender" ng-model="end.good"  id="type6" value="2">
   </fieldset>
-  <input id="yadowsw" class="green" onClick="glocation()"   type="button" value="0ثبت">
-      <input id="yadkk" class="green" onClick="glocation()"   ng-click="khodro_six();" type="button" value="ثبت">
+  <div id="gpsno">
+  <p>لطفا gps گوشی خود را روشن کنید</p>
+  <input id="yadowsw" class="red" onClick="glocation()"   type="button" value="تلاش مجدد">
+  </div>
+  <div id="gpsyes" style="display:none">
+      <input id="yadkk" class="green"  ng-click="khodro_six();" type="button" value="ثبت">
+      </div>
   </div>
 
 </div>
@@ -1866,7 +1871,7 @@ one1=parseInt(one);
 two1=parseInt(two)
 document.getElementById('pricer').value=(one1+two1);
 }
-function glocation() {
+function glocationss() {
 	alert('dds');
 	navigator.geolocation.getCurrentPosition(onSuccessy, onErroru);
 }
