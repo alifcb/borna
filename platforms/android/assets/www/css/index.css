@@ -846,3 +846,6 @@ a.disabled {
     pointer-events: none;
 	cursor:default;
 }
+select option[disabled] {
+    display: none;
+}

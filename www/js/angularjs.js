@@ -643,14 +643,19 @@ var eqtesadi=$scope.khodr.eqtesadi;
 var shmeli=$scope.khodr.shmeli;
 var codemeli=$scope.khodr.codemeli; 
 var date= document.getElementById('kh_tavalod').value;
-
-if(codemeli==undefined  || codemeli==''){codemeli=0;}else{var codd=$scope.Codemeli(codemeli);
+if(sex==undefined){sex=0;}
+if(type==undefined){type=0;}
+if(cell.length==11){}else{Toast_Material({ content : "لطفا شماره تلفن همراه را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
+ return 0;} 
+if(codemeli==undefined  || codemeli==''){codemeli=0;}else{
+var codemelic = codemeli.toString();	
+var codd=$scope.Codemeli(codemelic);
 if(codd==false){Toast_Material({ content : "لطفا کد ملی را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
  return 0;}
-}alert(codemeli);
+}
 if(shmeli==undefined){shmeli=0;}
 if(eqtesadi==undefined){eqtesadi=0;}
-if(fname==undefined || tell==undefined || address==undefined ){
+if(fname==undefined || lname==undefined || tell==undefined || address==undefined){
  Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
  return 0;} 
 Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });		
@@ -705,6 +710,7 @@ var used=$scope.khodr.used;
 var rang=$scope.khodr.rang;
 var keshvar=$scope.khodr.keshvar; 
 var id_bg= document.getElementById('bimgozar').value;
+
 if(sal==undefined || sh_mot==undefined || sh_sha==undefined || zarfiat==undefined){
 Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
  return 0;}
@@ -819,11 +825,13 @@ var id_bg= document.getElementById('bimgozar').value;
 var d = new Date();	
 nameimage=d.getTime()+'.jpg';
 namevideo=d.getTime()+'.mp4';
+evv=parseInt(nooe)-1;
 var Videofild = $scope.tasvir.video;;
 var Imagefild= document.getElementById('imeagv').value;
 var Videofild= document.getElementById('videov').value;
+document.getElementById('grohw2').options[evv].disabled = true;
  if(Imagefild!=0){document.getElementById('imload').src='img/ajax-loader.gif';todoServicez.UserImg(Imagefild,nameimage,'end').then(function(items){document.getElementById('imload').src='';
-  $.mobile.changePage( "#nahai", { transition: "slideup"} );
+  //$.mobile.changePage( "#nahai", { transition: "slideup"} );
 Toast_Material({ content : "ثبت با موفقیت انجام شد بازگشت به ابتدا", updown:"bottom", position:"center", align:"center" });
  });
 }
@@ -851,7 +859,8 @@ var gheymat=$scope.end.gheymat;
 var arzeshv=$scope.end.arzeshv;
 //var ghva=$scope.end.ghva;
 var address=$scope.end.address;
-var date=$scope.end.date;
+var d = new Date();	
+var date=d.getTime();
 var good=$scope.end.good; 
 var ghva= document.getElementById('pricer').value;
 var lato= document.getElementById('lato').value;
@@ -906,7 +915,7 @@ namefile=d.getTime()+'.jpg';
 var largeImage = document.getElementById('largeImage'+i);
 
 imageURI=largeImage.src;
-alert(imageURI);
+//alert(imageURI);
 if(i==3){ends='end'}else{ends='no'}
 todoServicez.UserImg(imageURI,namefile,ends).then(function(items)
 {

@@ -384,15 +384,15 @@
 <div id="radioGroup" >
 <div class="wrap"> 
     <div class="ui-radio"><label for="markStude8nt" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">ندارد</label>
-    <input type="radio" name="mark" id="markStude8nt" value="0" ng-model="ghate.vaziat"  data-cacheval="true"></div>
+    <input type="radio" name="mark" id="markStude8nt" value="0" ng-model="ghate.vaziat"   ></div>
   </div>
   <div class="wrap">
     <div class="ui-radio"><label for="markStudt" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">سالم</label>
-    <input type="radio" name="mark" id="markStudt" value="1" ng-model="ghate.vaziat" data-cacheval="true"></div>
+    <input type="radio" name="mark" id="markStudt" value="1" ng-model="ghate.vaziat"   ></div>
   </div>
     <div class="wrap">
     <div class="ui-radio"><label for="markStudtr" class="ui-btn ui-corner-all ui-btn-inherit ui-btn-icon-left ui-radio-off">خسارتی</label>
-    <input type="radio" name="mark" id="markStudtr" value="2" ng-model="ghate.vaziat" data-cacheval="true"></div>
+    <input type="radio" name="mark" id="markStudtr" value="2" ng-model="ghate.vaziat"   ></div>
   </div>
   <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" placeholder="مبلغ خسارت" ng-model="ghate.khesarat" name="mark" id="mablagh" ></div> 
   </div>
@@ -479,11 +479,11 @@
        </div>
        <div class="ui-block-a">
        <label>تلفن همراه</label>
-       <input ng-model="khodr.cell"   type="text"> 
+       <input ng-model="khodr.cell"  onKeyPress="if(this.value.length==11) return false;"  type="number"> 
        </div>
        <div class="ui-block-b">
-          <label>تلفن</label>
-       <input ng-model="khodr.tell"   type="text">
+          <label>تلفن ثابت</label>
+       <input ng-model="khodr.tell"   type="number">
 
        </div>
        </div>
@@ -491,8 +491,8 @@
       <div class="ui-block-a">
        <fieldset data-role="controlgroup">
     <legend>نوع مشتری:</legend>
-      <label for="male">حقیقی</label>
-      <input type="radio" ng-model="khodr.type" name="type" onChange="tapp(this.value)"  id="male" value="0">
+      <label for="male" class="ui-radio-on">حقیقی</label>
+      <input type="radio" ng-model="khodr.type" name="type" onChange="tapp(this.value)" ng-checked="true"   id="male" value="0">
       <label for="female">حقوقی</label>
       <input type="radio" ng-model="khodr.type" name="type" onChange="tapp(this.value)"  id="female" value="1">
   </fieldset>
@@ -501,7 +501,7 @@
   <fieldset data-role="controlgroup">
     <legend>جنسیت:</legend>
       <label for="male2">مرد</label>
-      <input type="radio" id="male2" name="sexx" value="0" ng-model="khodr.sexx">
+      <input type="radio"  id="male2" name="sexx" ng-checked="true"    value="0" ng-model="khodr.sexx">
       <label for="female2">زن</label>
       <input type="radio" id="female2" name="sexx" value="1" ng-model="khodr.sexx">
   </fieldset>
@@ -510,16 +510,16 @@
         <div class="ui-grid-a nbord">
        <div class="ui-block-a" id="codh">
        <label>کدملی</label>
-       <input ng-model="khodr.codemeli"   type="text">
+       <input ng-model="khodr.codemeli"   type="number">
        </div>
        <div id="eghh" style="display:none">
        <div class="ui-block-a">
        <label>شناسه ملی</label>
-       <input ng-model="khodr.shmeli"   type="text">
+       <input ng-model="khodr.shmeli"   type="number">
        </div>
        <div class="ui-block-b" >
        <label>شناسه اقتصادی</label>
-       <input ng-model="khodr.eqtesadi"   type="text">
+       <input ng-model="khodr.eqtesadi"   type="number">
        </div>
        </div>
        </div>
@@ -606,7 +606,7 @@
       <input ng-model="khodr.rang"   type="text"> 
       
       <label>ظرفیت</label>
-    <input ng-model="khodr.zarfiat"   type="text">
+    <input ng-model="khodr.zarfiat"  onKeyPress="if(this.value.length==2) return false;"  type="number">
     
       <label for="groh4">کشور سازنده</label>
       <select id="groh4"  ng-model="khodr.keshvar" >
@@ -619,7 +619,6 @@
       <option   value="7">ایتالیا</option>
       <option   value="8">سایر</option>
       </select>
-      
 
  <div class="ui-grid-a nbord">
       <div class="ui-block-a">
@@ -628,7 +627,7 @@
        </div>
        <div class="ui-block-b">
        <label>سال ساخت</label>
-       <input ng-model="khodr.sal"   type="text">
+       <input ng-model="khodr.sal" onKeyPress="if(this.value.length==4) return false;"  type="number">
        </div>
           <div class="ui-block-a">
         <label>شماره موتور</label>
@@ -642,12 +641,11 @@
         <label>شماره شاسی</label>
        <input ng-model="khodr.sh_sha"   type="text">
        </div>
-       <div class="ui-block-b">
-       <label>محل رویت شماره شاسی</label>
-       <input ng-model="khodr.ma_sha"   type="text">
-       </div>
+ 
  </div>
-
+  <label>محل قرارگیری شماره شاسی</label>
+       <input ng-model="khodr.ma_sha"   type="text">
+       
       <input id="yados" class="green" ng-click="khodro_two();" type="button" value="ثبت">
   </div>
 
@@ -724,12 +722,12 @@
   
  <div class="ui-grid-a nbord">
       <div class="ui-block-a">
-        <label>قیمت</label>
-       <input ng-model="khodr.ghva"   type="text">
+        <label>قیمت: <span id="splito1">0</span></label>
+       <input ng-model="khodr.ghva" id="splii1" onkeyup="javascript:FormatNumber('splii1','splito1');"  type="number">
        </div>
        <div class="ui-block-b">
-       <label>خسارت</label>
-       <input ng-model="khodr.khesarat"   type="text">
+       <label>خسارت: <span id="splito2">0</span></label>
+       <input ng-model="khodr.khesarat" id="splii2"  onkeyup="javascript:FormatNumber('splii2','splito2');" type="number">
        </div>
  
  </div>
@@ -779,7 +777,7 @@
         <ul>
         <li><a href="#vaziat" >وضعیت وسایل</a></li>
         <li><a href="#soti" >دستگاه صوتی</a></li>
-        <li><a href="#akss" >عکس</a></li>
+        <li><a href="#akss" >عکس و فیلم</a></li>
         <li><a href="#nahai" >وضعیت نهایی</a></li>
       </ul>
     </div>
@@ -823,28 +821,28 @@
        <input ng-model="soti.shomare"   type="text">
        </div>
        <div class="ui-block-b">
-       <label>قیمت</label>
-       <input ng-model="soti.ghymat"   type="text">
+       <label>قیمت: <span id="splito3">0</span></label>
+       <input ng-model="soti.ghymat"  id="splii13" onkeyup="javascript:FormatNumber('splii3','splito3');"   type="number">
        </div>
              <div class="ui-block-a">
         <label>تعداد بلندگو اصلی</label>
-       <input ng-model="soti.tba"   type="text">
+       <input ng-model="soti.tba"    type="number">
        </div>
        <div class="ui-block-b">
        <label>تعداد بلند گو اضافه</label>
-       <input ng-model="soti.tbe"   type="text">
+       <input ng-model="soti.tbe"   type="number">
        </div>
              <div class="ui-block-a">
         <label>وات</label>
-       <input ng-model="soti.wate"   type="text">
+       <input ng-model="soti.wate"   type="number">
        </div>
        <div class="ui-block-b">
        <label>مارک بلندگو</label>
        <input ng-model="soti.markb"   type="text">
        </div>
        <div class="ui-block-a">
-        <label>قیمت بلندگو</label>
-       <input ng-model="soti.ghymatb"   type="text">
+        <label>قیمت بلندگو: <span id="splito4">0</span></label>
+       <input ng-model="soti.ghymatb"   id="splii14" onkeyup="javascript:FormatNumber('splii4','splito4');"   type="number">
        </div>
  </div>
       <input id="yadosw" class="green"    ng-click="khodro_four();" type="button" value="ثبت">
@@ -902,8 +900,8 @@
      
        <label for="grohw2">نوع فایل</label>
       <select id="grohw2"  ng-model="tasvir.nooe">
-      <option   value="1">جلو</option>
-      <option   value="2">عقب</option>
+      <option   value="1">نمای جلو</option>
+      <option   value="2">نمای عقب</option>
       <option   value="3">نمای سمت راست</option>
       <option   value="4">نمای سمت چپ</option>
       <option   value="5">نمای داخل خودرو</option>
@@ -926,11 +924,12 @@
              <a  onclick="imageca();" class="ui-btn ui-btn-inline ui-mini">تهیه تصویر</a>
               <input ng-model="tasvir.imagee" id="imeagv" value="0"    type="hidden">
               <img src="" id="imload">
+              <img src="" id="imload2" width="250" height="160px">
 <!--     <a  onclick="getPhotox0(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn ui-btn-inline ui-mini">تهیه تصویر</a>
 -->         <label>فیلم</label>
      <a  onclick="videoca();" class="ui-btn ui-btn-inline ui-mini">تهیه فیلم</a>
       <input ng-model="tasvir.video"  id="videov"  value="0"    type="hidden">
-      <img src="" id="viload">
+ <img src="" id="viload">
         <div id="shoso" style=" display:block;">
           <img style="display:none; padding:15px" width="64" height="64" id="largeImagex0" src="img/tick.png" />
         </div>
@@ -991,12 +990,12 @@
  <div class="ui-grid-a nbord">
       
        <div class="ui-block-b">
-       <label>قیمت روز خودرو</label>
-       <input ng-model="end.gheymat" id="pone" onChange="pricess()"   type="text">
+       <label>قیمت روز خودرو: <span id="splito5">0</span> </label>
+       <input ng-model="end.gheymat" id="pone" onChange="pricess()"    onkeyup="javascript:FormatNumber('pone','splito5');"  type="number">
        </div>
        <div class="ui-block-a">
-        <label>ارزش وسایل اضافه</label>
-       <input ng-model="end.arzeshv" id="ptwo" onChange="pricess()"   type="text">
+        <label>ارزش وسایل اضافه: <span id="splito6">0</span></label>
+       <input ng-model="end.arzeshv" id="ptwo" onChange="pricess()"   onkeyup="javascript:FormatNumber('ptwo','splito6');" type="number">
        </div>
  
  </div>
@@ -1007,9 +1006,7 @@
        <input ng-model="end.address"   type="text">
        <input   id="lato" value="0"   type="hidden">
        <input   id="long" value="0"   type="hidden">
-
-        <label>تاریخ و ساعت بازدید</label>
-       <input ng-model="end.date"   type="text">
+ 
            <fieldset data-role="controlgroup">
     <legend>وضعیت کنونی خودرو:</legend>
       <label for="type4">خوب</label>
@@ -1018,9 +1015,11 @@
       <input type="radio" name="gender" ng-model="end.good"  id="type5" value="1">
       <label for="type6">بد</label>
       <input type="radio" name="gender" ng-model="end.good"  id="type6" value="2">
+      <label for="type7">غیر قابل بیمه </label>
+      <input type="radio" name="gender" ng-model="end.good"  id="type7" value="3">
   </fieldset>
   <div id="gpsno">
-  <p>لطفا gps گوشی خود را روشن کنید</p>
+  <p>لطفا برای ثبت نهایی بازدید، gps  دستگاه خود را روشن کنید.</p>
   <input id="yadowsw" class="red" onClick="glocation()"   type="button" value="تلاش مجدد">
   </div>
   <div id="gpsyes" style="display:none">
@@ -1872,7 +1871,7 @@ two1=parseInt(two)
 document.getElementById('pricer').value=(one1+two1);
 }
 function glocationss() {
-	alert('dds');
+	//alert('dds');
 	navigator.geolocation.getCurrentPosition(onSuccessy, onErroru);
 }
 function onSuccessy(position) {
@@ -1889,6 +1888,7 @@ function onErroru(error) {
         cellWidth: 40, 
         cellHeight: 32,
         fontSize: 14, 
+		
     });
 	 $("#datepp2").persianDatepicker({        
         cellWidth: 40, 
@@ -1904,6 +1904,8 @@ function onErroru(error) {
         cellWidth: 40, 
         cellHeight: 32,
         fontSize: 14, 
+		startDate: "1300/01/01", 
+        endDate:"today"
     });
     </script>
 <script src="js/owl.carousel.js"></script>
