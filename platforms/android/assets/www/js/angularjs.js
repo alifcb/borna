@@ -636,7 +636,7 @@ var fname=$scope.khodr.fname;
 var lname=$scope.khodr.lname;
 var sex=$scope.khodr.sexx; 
 var tell=$scope.khodr.tell;
-var cell=$scope.khodr.cell;
+var cella=$scope.khodr.cell;
 var address=$scope.khodr.address; 
 var type=$scope.khodr.type;
 var eqtesadi=$scope.khodr.eqtesadi;
@@ -645,6 +645,7 @@ var codemeli=$scope.khodr.codemeli;
 var date= document.getElementById('kh_tavalod').value;
 if(sex==undefined){sex=0;}
 if(type==undefined){type=0;}
+var cell = cella.toString();
 if(cell.length==11){}else{Toast_Material({ content : "لطفا شماره تلفن همراه را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
  return 0;} 
 if(codemeli==undefined  || codemeli==''){codemeli=0;}else{
