@@ -646,7 +646,7 @@ var date= document.getElementById('kh_tavalod').value;
 if(sex==undefined){sex=0;}
 if(type==undefined){type=0;}
 var cell = cella.toString();
-alert(cell.length);
+//alert(cell.length);
 if(cell.length==10){}else{Toast_Material({ content : "لطفا شماره تلفن همراه را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
  return 0;} 
 if(codemeli==undefined  || codemeli==''){codemeli=0;}else{
