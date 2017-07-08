@@ -646,7 +646,8 @@ var date= document.getElementById('kh_tavalod').value;
 if(sex==undefined){sex=0;}
 if(type==undefined){type=0;}
 var cell = cella.toString();
-if(cell.length==11){}else{Toast_Material({ content : "لطفا شماره تلفن همراه را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
+alert(cell.length);
+if(cell.length==10){}else{Toast_Material({ content : "لطفا شماره تلفن همراه را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
  return 0;} 
 if(codemeli==undefined  || codemeli==''){codemeli=0;}else{
 var codemelic = codemeli.toString();	
