@@ -237,6 +237,9 @@ background-color: #fbfbFb !important;
 .links{
      background: rgba(0, 0, 0, 0) url("../img/chains.png") no-repeat  right 6px center;
 }
+.bimeg{
+     background: rgba(0, 0, 0, 0) url("../img/car3.png") no-repeat  right 6px center;
+}
 .helpt {
     background: rgba(0, 0, 0, 0) url("../img/help.png") no-repeat right 6px center;
     padding-right: 40px;
@@ -842,7 +845,7 @@ left: 50%;
     z-index: 11 !important;
 }
 a.disabled {
-	    background-color: #F8CBCB !important;
+	    background-color: #F0F0F0 !important;
     pointer-events: none;
 	cursor:default;
 }

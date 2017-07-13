@@ -565,7 +565,7 @@ if(online==0){
 Toast_Material({ content : "اتصال به اینترنت برقرار نیست!", updown:"bottom", position:"center", align:"center" });	
 }else
 {	
-
+alert($scope.karmozd.noe+''+$scope.karmozd.moaref)
 document.getElementById('showri3').innerHTML='در حال محاسبه ...';
 Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
   $http({
@@ -646,11 +646,14 @@ var date= document.getElementById('kh_tavalod').value;
 if(sex==undefined){sex=0;}
 if(type==undefined){type=0;}
 var cell = cella.toString();
-//alert(cell.length);
+
 if(cell.length==10){}else{Toast_Material({ content : "لطفا شماره تلفن همراه را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
  return 0;} 
 if(codemeli==undefined  || codemeli==''){codemeli=0;}else{
-var codemelic = codemeli.toString();	
+var codemelic = codemeli.toString();
+if(codemelic.length<10){
+codemelic=$scope.pad(codemelic,10);
+ }	
 var codd=$scope.Codemeli(codemelic);
 if(codd==false){Toast_Material({ content : "لطفا کد ملی را صحیح وارد نمایید", updown:"bottom", position:"center", align:"center" });	
  return 0;}
@@ -674,6 +677,11 @@ $scope.khodr ={};
  Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
   });
  };
+ 
+ $scope.pad = function pad (str, max) {
+	 str = str.toString();
+  return str.length < max ? pad("0" + str, max) : str;
+};
  $scope.Codemeli = function (input) {
     if (!/^\d{10}$/.test(input)
 || input=='0000000000'
@@ -769,12 +777,14 @@ $scope.khodro_three = function () {
 var va_ez=$scope.khodr.va_ez;
 var ghva=$scope.khodr.ghva;
 var va_vz=$scope.khodr.va_vz; 
+ghva=$scope.removecom(ghva);
+va_ez=$scope.removecom(va_ez);
 var khesarat=$scope.khodr.khesarat;
 var id_bg= document.getElementById('bimgozar').value;
 if(ghva==undefined || khesarat==undefined ){
 Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
  return 0;}
-	Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
+Toast_Material({ content : "در حال ارسال اطلاعات لطفا منتظر بمانید", updown:"bottom", position:"center", align:"center" });	
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/sabt_kh.php',
@@ -801,6 +811,8 @@ var tbe=$scope.soti.tbe;
 var wate=$scope.soti.wate;
 var markb=$scope.soti.markb;
 var ghymatb=$scope.soti.ghymatb; 
+ghymatb=$scope.removecom(ghymatb);
+ghymat=$scope.removecom(ghymat);
 var id_bg= document.getElementById('bimgozar').value;
 if(ghymatb==undefined || tbe==undefined || name==undefined || shomare==undefined){
 Toast_Material({ content : "لطفا جهت ارسال فیلد ها را کامل کنید", updown:"bottom", position:"center", align:"center" });	
@@ -854,12 +866,14 @@ Toast_Material({ content : "ثبت با موفقیت انجام شد بازگش�
 	
   });
  };
-    /////////////////////////////////////////////////////////////////////////ersal form sabt soti
+    /////////////////////////////////////////////////////////////////////////ersal form sabt nahai
 $scope.end = {};	
 $scope.khodro_six = function () {
 var gheymat=$scope.end.gheymat;
 var arzeshv=$scope.end.arzeshv;
 //var ghva=$scope.end.ghva;
+arzeshv=$scope.removecom(arzeshv);
+gheymat=$scope.removecom(gheymat);
 var address=$scope.end.address;
 var d = new Date();	
 var date=d.getTime();
@@ -888,6 +902,12 @@ $.mobile.changePage( "#bimegozar", { transition: "slideup"} );
 Toast_Material({ content : "ثبت با موفقیت ارسال به بخش بعدی", updown:"bottom", position:"center", align:"center" });	
   });
  };
+ 
+$scope.removecom=function (id1)
+{
+ide=id1.replace( /,/g, '' );
+return ide;
+}
 ///////////////////////////////////////////////// ارسال تصویر
  $scope.users = {};	
 $scope.sendform = function(urlpic) {
