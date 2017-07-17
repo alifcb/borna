@@ -112,7 +112,7 @@ background-color: #fbfbFb !important;
     border-bottom: 1px solid #bbb;
     border-top: 1px solid #bbb;
 }
-.wid50{width:50% !important
+.wid50{width:60% !important
 }
 .right li a {
     text-align: right !important;
@@ -164,6 +164,7 @@ background-color: #fbfbFb !important;
 }
 .pad1{padding:5px 28px !important}
 .pad2{padding:5px 62px !important}
+.pad11{padding:5px 58px !important}
 .rooz{
   padding: 1px 0 !important;
 	width:99% !important;

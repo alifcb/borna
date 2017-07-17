@@ -565,13 +565,14 @@ if(online==0){
 Toast_Material({ content : "اتصال به اینترنت برقرار نیست!", updown:"bottom", position:"center", align:"center" });	
 }else
 {	
-alert($scope.karmozd.noe+''+$scope.karmozd.moaref)
+//alert($scope.karmozd.noe+''+$scope.karmozd.moaref)
+haghs=$scope.removecom($scope.karmozd.hagh);
 document.getElementById('showri3').innerHTML='در حال محاسبه ...';
 Toast_Material({ content : "برنامه در حال ارسال اطلاعات می باشد لطفا منتظر بمانید!", updown:"bottom", position:"center", align:"center" });	
   $http({
   method  : 'POST',
   url     : 'http://www.borna-grp.ir/api.php',
-  data    : $.param({noe:$scope.karmozd.noe,moaref:$scope.karmozd.moaref,hagh:$scope.karmozd.hagh,karmozd:$scope.karmozd.reshte }),  // pass in data as strings
+  data    : $.param({noe:$scope.karmozd.noe,moaref:$scope.karmozd.moaref,hagh:haghs,karmozd:$scope.karmozd.reshte }),  // pass in data as strings
   headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
  })
   .success(function(response) {
