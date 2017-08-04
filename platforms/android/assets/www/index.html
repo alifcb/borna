@@ -579,7 +579,7 @@
       </ul>
     </div>
     <hr/>
-    <h3 class="margint0">ثبت بازدید اولیه اتومبیل</h3>  
+    <h3 class="margint0">ثبت اطلاعات خودرو</h3>  
     
       <label for="groh">گروه وسیله نقلیه</label>
       <select id="groh" ng-model="khodr.groh" ng-change="noeevn(this)" >
@@ -619,21 +619,31 @@
       <option   value="7">ایتالیا</option>
       <option   value="8">سایر</option>
       </select>
-
- <div class="ui-grid-a nbord">
+<div class="ui-grid-c nbord bplak">
       <div class="ui-block-a">
-        <label>شماره شهربانی</label>
-       <input ng-model="khodr.shahr"   type="text">
+       <input ng-model="khodr.shahr1"   type="text">
        </div>
-       <div class="ui-block-b">
+        <div class="ui-block-a">
+       <input ng-model="khodr.shahr2"   type="text">
+       </div>
+        <div class="ui-block-a">
+       <input ng-model="khodr.shahr3"   type="text">
+       </div>
+        <div class="ui-block-a">
+       <input ng-model="khodr.shahr4"   type="text">
+       </div>
+ </div>
+ <div class="ui-grid-a nbord">
+
+       <div class="ui-block-a">
        <label>سال ساخت</label>
        <input ng-model="khodr.sal" onKeyPress="if(this.value.length==4) return false;"  type="number">
        </div>
-          <div class="ui-block-a">
+          <div class="ui-block-b">
         <label>شماره موتور</label>
        <input ng-model="khodr.sh_mot"   type="text">
        </div>
-       <div class="ui-block-b" style="display:none">
+       <div class="ui-block-a" style="display:none">
        <label>محل رویت شماره موتور</label>
        <input ng-model="khodr.ma_shm"   type="text">
        </div>
@@ -641,10 +651,12 @@
         <label>شماره شاسی</label>
        <input ng-model="khodr.sh_sha"   type="text">
        </div>
- 
- </div>
-  <label>محل قرارگیری شماره شاسی</label>
+       <div class="ui-block-b">
+     <label>محل قرارگیری شماره شاسی</label>
        <input ng-model="khodr.ma_sha"   type="text">
+       </div>
+ </div>
+
        
       <input id="yados" class="green" ng-click="khodro_two();" type="button" value="ثبت">
   </div>
@@ -1292,7 +1304,7 @@ function myMap() {
  <div data-role="main" class="ui-content" dir="rtl" >
  <a id="bimod" href="#list_yad" class="green ui-btn" ng-click="list_yad();" style="width:80%" >نمایش لیست</a>
  <hr />
-      <p  >یادآوری تمديد بيمه نامه</p>
+      <p>یادآوری تمديد بيمه نامه</p>
       
        <label>نام</label>
        <input ng-model="yad.name"   type="text">
@@ -1340,9 +1352,9 @@ function myMap() {
  <div data-role="main" class="ui-content" dir="rtl" >
     <h3 class="margint0">لیست یادآوری ها</h3>
     <form class="ui-filterable">
-      <input id="myFilterdr" data-type="search" placeholder="نام شعبه">
+      <input id="myFilterfv" data-type="search" placeholder="نام ">
     </form>
-   <ul data-role="listview" data-filter="true" data-input="#myFilterdr"  data-inset="false"  class="right listst"   >
+   <ul data-role="listview" data-filter="true" data-input="#myFilterfv"  data-inset="false"  class="right listst"   >
 
  <li data-icon="false" class="ng-scope ui-li-has-thumb" ng-repeat="xc in listyadc"  >
         <a   class="ui-btn shobe" ng-click="listy(xc.ids)" data-transition="fade">
@@ -1350,10 +1362,10 @@ function myMap() {
         <h2 class="font17">{{xc.name}}</h2>
            
         <p style="display:none" id="listy{{xc.ids}}"> 
-        <span>تاریخ: </span>{{xc.date}}<br>
-        <span>تلفن: </span>{{xc.tell}}<br>
+        <span>تاریخ پایان بيمه نامه: </span>{{xc.date}}<br>
+        <span>شماره تماس: </span>{{xc.tell}}<br>
         <br>
-        <span  ng-click="smsb(xc.tell)" class="green googlea wid50 pad1">پیامک</span>
+        <span  ng-click="smsb(xc.tell)" class="green googlea wid50 pad11">پیامک</span>
         <span  ng-click="tellb(xc.tell)" class="green googlea wid50 pad2">تماس</span>
     </p></a>
         
@@ -1517,12 +1529,12 @@ function myMap() {
         <input type="radio" name="gender1" id="no"  ng-model="karmozd.moaref" value="0">
       </fieldset>
               <hr/> 
-      <label>حق بیمه با مالیات:</label>
-      <input ng-model="karmozd.hagh"   type="text">
+      <label>حق بیمه با مالیات(ریال):</label>
+      <input ng-model="karmozd.hagh"   id="splii16" onkeyup="javascript:FormatNumber('splii16','splii16');" type="text">
  
 
       <input id="bimo2" class="green"  ng-click="karmozd();" type="button" value="محاسبه">
-    <p id="showri3" class="mohaseb" style=" text-align:center;">مبلغ کارمزد:  </p>
+    <p id="showri3" class="mohaseb" style=" text-align:center;">مبلغ کارمزد (ریال):  </p>
     </div>
   </div>
 <!--  //////////////////////-------------hagh bime 2-------------------------////////////-->

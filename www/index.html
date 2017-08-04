@@ -619,21 +619,31 @@
       <option   value="7">ایتالیا</option>
       <option   value="8">سایر</option>
       </select>
-
- <div class="ui-grid-a nbord">
+<div class="ui-grid-c nbord bplak">
       <div class="ui-block-a">
-        <label>شماره شهربانی</label>
-       <input ng-model="khodr.shahr"   type="text">
+       <input ng-model="khodr.shahr1"   type="text">
        </div>
-       <div class="ui-block-b">
+        <div class="ui-block-a">
+       <input ng-model="khodr.shahr2"   type="text">
+       </div>
+        <div class="ui-block-a">
+       <input ng-model="khodr.shahr3"   type="text">
+       </div>
+        <div class="ui-block-a">
+       <input ng-model="khodr.shahr4"   type="text">
+       </div>
+ </div>
+ <div class="ui-grid-a nbord">
+
+       <div class="ui-block-a">
        <label>سال ساخت</label>
        <input ng-model="khodr.sal" onKeyPress="if(this.value.length==4) return false;"  type="number">
        </div>
-          <div class="ui-block-a">
+          <div class="ui-block-b">
         <label>شماره موتور</label>
        <input ng-model="khodr.sh_mot"   type="text">
        </div>
-       <div class="ui-block-b" style="display:none">
+       <div class="ui-block-a" style="display:none">
        <label>محل رویت شماره موتور</label>
        <input ng-model="khodr.ma_shm"   type="text">
        </div>
@@ -641,10 +651,12 @@
         <label>شماره شاسی</label>
        <input ng-model="khodr.sh_sha"   type="text">
        </div>
- 
- </div>
-  <label>محل قرارگیری شماره شاسی</label>
+       <div class="ui-block-b">
+     <label>محل قرارگیری شماره شاسی</label>
        <input ng-model="khodr.ma_sha"   type="text">
+       </div>
+ </div>
+
        
       <input id="yados" class="green" ng-click="khodro_two();" type="button" value="ثبت">
   </div>

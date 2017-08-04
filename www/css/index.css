@@ -107,7 +107,10 @@ background-color: #fbfbFb !important;
     text-shadow: 0 1px 0 #999 !important;
 	 font-family:'BYekan' !important;
 }
-
+.bplak{ background-image:url(../img/pelak.jpg) ;
+background-size: 100% 100%;
+    background-repeat: no-repeat;
+	    padding: 17px 10px 10px;}
 .border-tb {
     border-bottom: 1px solid #bbb;
     border-top: 1px solid #bbb;
@@ -474,6 +477,10 @@ ul li a:active{
     text-align: right; 
     padding: 0px !important;
     margin: 0 4px 1px !important;
+}
+.bplak .ui-block-a, .bplak .ui-block-b, .bplak .ui-block-c, .bplak .ui-block-d, .bplak .ui-block-e {
+	width:17% !important;
+    margin: 0 9px 1px !important;
 }
 .ui-panel-inner h2{margin: 25px 0 !important;}
 .ui-listview>.ui-li-has-thumb>.ui-btn, .ui-listview>.ui-li-static.ui-li-has-thumb {

@@ -708,7 +708,11 @@ $scope.khodr ={};
  
  /////////////////////////////////////////////////////////////////////////ersal form sabt khodro
 $scope.khodro_two = function () {
-var shahr=$scope.khodr.shahr;
+var shahr1=$scope.khodr.shahr1;
+var shahr2=$scope.khodr.shahr2;
+var shahr3=$scope.khodr.shahr3;
+var shahr4=$scope.khodr.shahr4;
+var shahr=shahr1+shahr2+shahr3+shahr4;
 var sal=$scope.khodr.sal;
 var sh_mot=$scope.khodr.sh_mot; 
 var ma_shm=$scope.khodr.ma_shm;
