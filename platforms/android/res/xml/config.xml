@@ -4,7 +4,7 @@
     <description>طراحی و پیاده سازی شرکت گسترش وب نامیا</description>
     <author email="support@namiaweb.com" href="http://namiaweb.com">namiaweb</author>
     <content src="index.html" />
-    <gap:plugin name="org.apache.cordova.camera" source="npm" />
+    <gap:plugin name="cordova-plugin-camera" source="npm" />
     <gap:plugin name="org.apache.cordova.media-capture" source="npm" />
     <gap:plugin name="org.apache.cordova.console" source="npm" />
     <gap:plugin name="org.apache.cordova.geolocation" source="npm" />
