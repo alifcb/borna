@@ -235,6 +235,9 @@ background-size: 100% 100%;
 .help{
      background: rgba(0, 0, 0, 0) url("../img/help.png") no-repeat  right 6px center;
 }
+.nama{
+     background: rgba(0, 0, 0, 0) url("../img/users.png") no-repeat  right 6px center;
+}
 .credit-card{
      background: rgba(0, 0, 0, 0) url("../img/credit-card.png") no-repeat  right 6px center;
 }
@@ -860,3 +863,33 @@ a.disabled {
 select option[disabled] {
     display: none;
 }
+.nama>.ui-li-has-thumb>.ui-btn  {
+    min-height: 4.2em !important;
+    padding-left: 1.25em !important;
+	 
+}
+.nama li .font17 {
+    font-size: 19px !important;
+	margin-right:70px !important;
+	 margin-top: 20px !important;
+}
+.nama li p {
+    margin:-5px 70px 5px 0 !important;
+}
+.nama img  {
+    border-radius: 3px !important;
+}
+.nama li:nth-child(2) {
+	border-right:6px solid #FFF133;
+}
+.nama li:nth-child(3) {
+	border-right:6px solid #C8C8C8;
+}
+.nama li:nth-child(4) {
+	border-right:6px solid #F9A241;
+}
+.uselect .ui-select .ui-btn {
+     padding: 8px 14px 9px 6px !important;
+    width: 100%;
+}
+.uselect .ui-select {margin-right:-7px !important;margin-left: 1.0125em !important;}

@@ -203,7 +203,30 @@ $scope.mbaz = function (ides) {
 	}
 
 };
+//////////////////////namayande
+ 
+$scope.namayande = function (ides) {
+		var namaid=document.getElementById('namaid').value;
+if(namaid==0){
+	    document.getElementById('namaid').value=1;
+			document.getElementById('loadna').style.display='block';
+	$http.get("http://borna-grp.ir/api.php?idnama=3").then(function(response) {
+	$scope.namayande = response.data.namayande;
+	//alert(response.data.shobe[0].ids);
+	document.getElementById('loadna').style.display='none';
+});	
+}
+};
+$scope.namas = function (ides) {
+	//alert(ides);
+	var view=document.getElementById('namay'+ides).style.display;
+	if(view=='none'){
+     document.getElementById('namay'+ides).style.display='block';		
+		}else{
+     document.getElementById('namay'+ides).style.display='none';		
+	}
 
+};
 //////////////////////////////////////noeen daste khodro
 $scope.noeevn = function () {
 	var value = document.getElementById('groh').value; 
