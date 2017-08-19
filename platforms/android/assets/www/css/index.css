@@ -871,7 +871,12 @@ select option[disabled] {
 .nama li .font17 {
     font-size: 19px !important;
 	margin-right:70px !important;
-	 margin-top: 20px !important;
+	 margin-top: 12px !important;
+}
+.nama li .font16 {
+    font-size: 14px !important;
+	margin-right:70px !important;
+	 margin-top: -7px !important;
 }
 .nama li p {
     margin:-5px 70px 5px 0 !important;
@@ -880,13 +885,13 @@ select option[disabled] {
     border-radius: 3px !important;
 }
 .nama li:nth-child(2) {
-	border-right:6px solid #FFF133;
+	border-right:9px solid #FFF133;
 }
 .nama li:nth-child(3) {
-	border-right:6px solid #C8C8C8;
+	border-right:9px solid #C8C8C8;
 }
 .nama li:nth-child(4) {
-	border-right:6px solid #F9A241;
+	border-right:9px solid #F9A241;
 }
 .uselect .ui-select .ui-btn {
      padding: 8px 14px 9px 6px !important;
